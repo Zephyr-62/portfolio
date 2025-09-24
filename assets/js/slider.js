@@ -1,3 +1,5 @@
+// @ts-check
+
 const images = [
 	"images/pic01.jpg",
 	"images/pic02.jpg",
@@ -15,30 +17,43 @@ const images = [
 	"images/pic14.jpg",
     "images/pic15.jpg"
 ];
-let current = 0;
 
 window.addEventListener('DOMContentLoaded', function () {
-	const img = document.getElementById('slider-image');
-	const prevBtn = document.getElementById('prev-btn');
-	const nextBtn = document.getElementById('next-btn');
+	document.querySelectorAll('.image-slider').forEach(function (slider, sliderIndex) {
+		const img = slider.querySelector('.slider-image');
+		const img2 = slider.querySelector('.slider-image2');
+		const prevBtn = slider.querySelector('.prev-btn');
+		const nextBtn = slider.querySelector('.next-btn');
+		let currentImg = sliderIndex % images.length;
 
-	function showImage(index, direction) {
-		img.style.transform = `translateX(${direction === 'next' ? '100%' : '-100%'})`;
-		setTimeout(() => {
-			img.src = images[index];
-			img.style.transform = `translateX(${direction === 'next' ? '-100%' : '100%'})`;
+		function showImage(index, direction) {
+			img.style.transform = `translateX(${direction === 'next' ? '100%' : '-100%'})`;
 			setTimeout(() => {
-				img.style.transform = 'translateX(0)';
-			}, 20);
-		}, 500);
-	}
+				img.src = images[index];
 
-	nextBtn.onclick = function () {
-		current = (current + 1) % images.length;
-		showImage(current, 'next');
-	};
-	prevBtn.onclick = function () {
-		current = (current - 1 + images.length) % images.length;
-		showImage(current, 'prev');
-	};
+				if (direction === 'next') {
+                    img2.src = images[(index - 1 + images.length) % images.length];
+					img.style.transform = `translateX(-100%})`;
+				} else {
+                    img2.src = images[(index + 1) % images.length];
+					img.style.transform = `translateX(100%})`;
+				}
+				img2.style.transform = `translateX(0})`;
+
+				setTimeout(() => {
+					img.style.transform = 'translateX(0)';
+                    img2.style.transform = `translateX(${direction === 'next' ? '-100%' : '100%'})`;
+				}, 20);
+			}, 500);
+		}
+
+		nextBtn.onclick = function () {
+			currentImg = (currentImg + 1) % images.length;
+			showImage(currentImg, 'next');
+		};
+		prevBtn.onclick = function () {
+			currentImg = (currentImg - 1 + images.length) % images.length;
+			showImage(currentImg, 'prev');
+		};
+	});
 });
