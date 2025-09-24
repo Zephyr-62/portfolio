@@ -13,320 +13,334 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="no-sidebar is-preload">
+		<!-- create a block here  with a list of all the images in the project-->
+		@
 		<div id="page-wrapper">
 
 			<!-- Header -->
-				<div id="header">
-					<!-- Inner -->
-						<div class="inner">
-							<header>
-								<h1><a href="index.html" id="logo">Raúl Martín</a></h1>
-								<p>Game Developer & Computer Science Engineer</p>
-							</header>
-						</div>		
-					<!-- Nav -->
-					<nav id="nav">
-						<ul>
-							<li><a href="index.html">Games</a></li>
-							<li><a href="#">Software</a>
-								<ul>
-									<li><a href="#">Lorem ipsum dolor</a></li>
-									<li><a href="#">Magna phasellus</a></li>
-									<li><a href="#">Etiam dolore nisl</a></li>
-									<li>
-										<a href="#">And a submenu &hellip;</a>
-										<ul>
-											<li><a href="#">Lorem ipsum dolor</a></li>
-											<li><a href="#">Phasellus consequat</a></li>
-											<li><a href="#">Magna phasellus</a></li>
-											<li><a href="#">Etiam dolore nisl</a></li>
-										</ul>
-									</li>
-									<li><a href="#">Veroeros feugiat</a></li>
-								</ul>
-							</li>
-							<li><a href="left-sidebar.html">Research</a></li>
-							<li><a href="right-sidebar.html">Resume</a></li>
-							<li><a href="no-sidebar.html">About Me</a></li>
-						</ul>
-					</nav>			
+			<div id="header">
+				<!-- Inner -->
+				<div class="inner">
+					<header>
+						<h1><a href="index.html" id="logo">Raúl Martín</a></h1>
+						<p>Game Developer & Computer Science Engineer</p>
+					</header>
 				</div>
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Games</a></li>
+						<li>
+							<a href="#">Software</a>
+							<ul>
+								<li><a href="#">Lorem ipsum dolor</a></li>
+								<li><a href="#">Magna phasellus</a></li>
+								<li><a href="#">Etiam dolore nisl</a></li>
+								<li>
+									<a href="#">And a submenu &hellip;</a>
+									<ul>
+										<li><a href="#">Lorem ipsum dolor</a></li>
+										<li><a href="#">Phasellus consequat</a></li>
+										<li><a href="#">Magna phasellus</a></li>
+										<li><a href="#">Etiam dolore nisl</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Veroeros feugiat</a></li>
+							</ul>
+						</li>
+						<li><a href="left-sidebar.html">Research</a></li>
+						<li><a href="right-sidebar.html">Resume</a></li>
+						<li><a href="no-sidebar.html">About Me</a></li>
+					</ul>
+				</nav>
+			</div>
 
 			<!-- Main -->
-				<div class="wrapper style1">
+			<div class="wrapper style1">
 
-					<div class="container">
-						<article id="main" class="special">
-							<header>								
-								<p>
-									Welcome to my portfolio. I'm a Computer Science engineer currently studying Game Design and Technology at University of Gothenburg. I Enjoy doing tool development and game design. Here's a list of projects I've worked over the last few years.
-								</p>
-							</header>
+				<div class="container">
+					<article id="main" class="special">
+						<header>
+							<p>
+								Welcome to my portfolio. I'm a Computer Science engineer currently studying Game Design and Technology at University of Gothenburg. I Enjoy doing tool development and game design. Here's a list of projects I've worked over the last few years.
+							</p>
+						</header>
 
-							<!-- Carousel -->
-				<section class="carousel">
-					<div class="reel">
+						<!-- Carousel -->
+						<section id="image-slider" style="max-width: 350px; margin: 2em auto; text-align: center;">
+							<div id="slider-container" style="position: relative; overflow: hidden; height: 200px;">
+								<img id="slider-image" src="images/pic01.jpg" alt="Slider Image" style="width: 100%; max-width: 350px; height: 200px; object-fit: cover; transition: transform 0.5s;">
+							</div>
+							<div style="margin-top: 1em;">
+								<button id="prev-btn" style="margin-right: 1em;">Previous</button>
+								<button id="next-btn">Next</button>
+							</div>
+						</section>
+						<section class="carousel">
+							<div class="reel">
 
-						<article>
-							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+								<article>
+									<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+									<header>
+										<h3><a href="#">Pulvinar sagittis congue</a></h3>
+									</header>
+									<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+								</article>
+
+								<article>
+									<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+									<header>
+										<h3><a href="#">Fermentum sagittis proin</a></h3>
+									</header>
+									<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+								</article>
+
+								<article>
+									<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+									<header>
+										<h3><a href="#">Sed quis rhoncus placerat</a></h3>
+									</header>
+									<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+								</article>
+
+								<article>
+									<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+									<header>
+										<h3><a href="#">Ultrices urna sit lobortis</a></h3>
+									</header>
+									<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+								</article>
+
+								<article>
+									<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
+									<header>
+										<h3><a href="#">Varius magnis sollicitudin</a></h3>
+									</header>
+									<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+								</article>
+
+								<article>
+									<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+									<header>
+										<h3><a href="#">Pulvinar sagittis congue</a></h3>
+									</header>
+									<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+								</article>
+
+								<article>
+									<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+									<header>
+										<h3><a href="#">Fermentum sagittis proin</a></h3>
+									</header>
+									<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+								</article>
+
+								<article>
+									<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+									<header>
+										<h3><a href="#">Sed quis rhoncus placerat</a></h3>
+									</header>
+									<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+								</article>
+
+								<article>
+									<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+									<header>
+										<h3><a href="#">Ultrices urna sit lobortis</a></h3>
+									</header>
+									<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+								</article>
+
+								<article>
+									<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
+									<header>
+										<h3><a href="#">Varius magnis sollicitudin</a></h3>
+									</header>
+									<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+								</article>
+
+							</div>
+						</section>
+
+
+
+						<h2>Zote The Mighty Fangame</h2>
+						<section>
 							<header>
-								<h3><a href="#">Pulvinar sagittis congue</a></h3>
+								<h3>A Hollow Knight Fan Video Game DEMO</h3>
 							</header>
-							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
-						</article>
-
-						<article>
-							<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+							<a class="image featured"><img src="images/pic06.jpg" alt="" /></a>
+							<p>
+								This was my first Unity project I worked on. It was made during my bachelors in a Game Development Course in 4 months. I worked in a team of 3 and we designed a full world and story around it. The demo we managed to deliver only contains a few mechanics and enemies, but quite a few systems necessary to start with the level design. We have a YouTube trailer <a href="https://www.youtube.com/watch?v=q4P7AiaYRQ4">here</a>, and an earlt gameplay overview <a href="https://www.youtube.com/watch?v=Zn65SlHgJqo"> here</a>.
+							</p>
+							<p>
+								I personally worked on the project management; the camera system which detects if an area has been discovered or not, and is bounded to an area collider; I worked on the mechanics for the main character, that is, movement and special abilities; scene transition system; interaction system; and finally I worked on a few sprite animations.
+							</p>
+						</section>
+						<hr />
+						<h2>World Painter 2D</h2>
+						<section>
 							<header>
-								<h3><a href="#">Fermentum sagittis proin</a></h3>
+								<h3>Unity Asset Store's Free Asset</h3>
 							</header>
-							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
-						</article>
-
-						<article>
-							<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+							<a class="image featured"><img src="images/pic06.jpg" alt="" /></a>
+							<p>
+								Description
+							</p>
+						</section>
+						<hr />
+						<h2>Advanced Editor Tools</h2>
+						<section>
 							<header>
-								<h3><a href="#">Sed quis rhoncus placerat</a></h3>
+								<h3>Unity Asset Store's Free Asset</h3>
 							</header>
-							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
-						</article>
-
-						<article>
-							<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+							<a class="image featured"><img src="images/pic06.jpg" alt="" /></a>
+							<p>
+								Description
+							</p>
+						</section>
+						<hr />
+						<h2>Incentivizing Artistic Expression with Games</h2>
+						<section>
 							<header>
-								<h3><a href="#">Ultrices urna sit lobortis</a></h3>
+								<h3>Non-Published Research Paper</h3>
 							</header>
-							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
-						</article>
-
-						<article>
-							<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
+							<a class="image featured"><img src="images/pic06.jpg" alt="" /></a>
+							<p>
+								Description
+							</p>
+						</section>
+						<hr />
+						<h2>Crowley</h2>
+						<section>
 							<header>
-								<h3><a href="#">Varius magnis sollicitudin</a></h3>
+								<h3>48h GameJam Video Game</h3>
 							</header>
-							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
-						</article>
-
-						<article>
-							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+							<a class="image featured"><img src="images/pic06.jpg" alt="" /></a>
+							<p>
+								Description
+							</p>
+						</section>
+						<hr />
+						<h2>Crater Crevice Cravers</h2>
+						<section>
 							<header>
-								<h3><a href="#">Pulvinar sagittis congue</a></h3>
+								<h3>Board Game Design</h3>
 							</header>
-							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
-						</article>
-
-						<article>
-							<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+							<a class="image featured"><img src="images/pic06.jpg" alt="" /></a>
+							<p>
+								Description
+							</p>
+						</section>
+						<hr />
+						<h2>Voxel Game Engine</h2>
+						<section>
 							<header>
-								<h3><a href="#">Fermentum sagittis proin</a></h3>
+								<h3>Hybrid Renderer with Raytraced Octrees and Rasterized Meshes</h3>
 							</header>
-							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
-						</article>
-
-						<article>
-							<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+							<a class="image featured"><img src="images/pic06.jpg" alt="" /></a>
+							<p>
+								Description
+							</p>
+						</section>
+						<hr />
+						<h2>Solid State Drive</h2>
+						<section>
 							<header>
-								<h3><a href="#">Sed quis rhoncus placerat</a></h3>
+								<h3>Video Game made during an Agile Methodology course</h3>
 							</header>
-							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
-						</article>
-
-						<article>
-							<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+							<a class="image featured"><img src="images/pic06.jpg" alt="" /></a>
+							<p>
+								Description
+							</p>
+						</section>
+						<hr />
+						<h2>Merge Conflict</h2>
+						<section>
 							<header>
-								<h3><a href="#">Ultrices urna sit lobortis</a></h3>
+								<h3> Non-euclidean Escape Room VR Video Game</h3>
 							</header>
-							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
-						</article>
-
-						<article>
-							<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
+							<a class="image featured"><img src="images/pic06.jpg" alt="" /></a>
+							<p>
+								Description
+							</p>
+						</section>
+						<hr />
+						<h2>Creatures of the Deep</h2>
+						<section>
 							<header>
-								<h3><a href="#">Varius magnis sollicitudin</a></h3>
+								<h3>WIP: Video Game about Submarine Exploration</h3>
 							</header>
-							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
-						</article>
-
-					</div>
-				</section>
-
-
-
-							<h2>Zote The Mighty Fangame</h2>
-							<section>
-								<header>
-									<h3>A Hollow Knight Fan Video Game DEMO</h3>
-								</header>
-								<a class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-								<p>
-									This was my first Unity project I worked on. It was made during my bachelors in a Game Development Course in 4 months. I worked in a team of 3 and we designed a full world and story around it. The demo we managed to deliver only contains a few mechanics and enemies, but quite a few systems necessary to start with the level design. We have a YouTube trailer <a href="https://www.youtube.com/watch?v=q4P7AiaYRQ4">here</a>, and an earlt gameplay overview <a href="https://www.youtube.com/watch?v=Zn65SlHgJqo"> here</a>.
-								</p>
-								<p>
-									I personally worked on the project management; the camera system which detects if an area has been discovered or not, and is bounded to an area collider; I worked on the mechanics for the main character, that is, movement and special abilities; scene transition system; interaction system; and finally I worked on a few sprite animations.
-								</p>
-							</section>	
-							<hr />		
-							<h2>World Painter 2D</h2>
-							<section>
-								<header>
-									<h3>Unity Asset Store's Free Asset</h3>
-								</header>
-								<a class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-								<p>
-									Description
-								</p>
-							</section>	
-							<hr />	
-							<h2>Advanced Editor Tools</h2>
-							<section>
-								<header>
-									<h3>Unity Asset Store's Free Asset</h3>
-								</header>
-								<a class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-								<p>
-									Description
-								</p>
-							</section>	
-							<hr />	
-							<h2>Incentivizing Artistic Expression with Games</h2>
-							<section>
-								<header>
-									<h3>Non-Published Research Paper</h3>
-								</header>
-								<a class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-								<p>
-									Description
-								</p>
-							</section>	
-							<hr />					
-							<h2>Crowley</h2>
-							<section>
-								<header>
-									<h3>48h GameJam Video Game</h3>
-								</header>
-								<a class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-								<p>
-									Description
-								</p>
-							</section>	
-							<hr />	
-							<h2>Crater Crevice Cravers</h2>
-							<section>
-								<header>
-									<h3>Board Game Design</h3>
-								</header>
-								<a class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-								<p>
-									Description
-								</p>
-							</section>	
-							<hr />	
-							<h2>Voxel Game Engine</h2>
-							<section>
-								<header>
-									<h3>Hybrid Renderer with Raytraced Octrees and Rasterized Meshes</h3>
-								</header>
-								<a class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-								<p>
-									Description
-								</p>
-							</section>	
-							<hr />	
-							<h2>Solid State Drive</h2>
-							<section>
-								<header>
-									<h3>Video Game made during an Agile Methodology course</h3>
-								</header>
-								<a class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-								<p>
-									Description
-								</p>
-							</section>	
-							<hr />	
-							<h2>Merge Conflict</h2>
-							<section>
-								<header>
-									<h3> Non-euclidean Escape Room VR Video Game</h3>
-								</header>
-								<a class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-								<p>
-									Description
-								</p>
-							</section>	
-							<hr />	
-							<h2>Creatures of the Deep</h2>
-							<section>
-								<header>
-									<h3>WIP: Video Game about Submarine Exploration</h3>
-								</header>
-								<a class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-								<p>
-									Description
-								</p>
-							</section>	
-							<hr />	
-							<h2>Rodolfo Mascarpone y Ramón Cazanuecos: Amenaza en el molinillo</h2>
-							<section>
-								<header>
-									<h3>WIP: 2D-Scroller Action Platormer Video Game</h3>
-								</header>
-								<a class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-								<p>
-									Description
-								</p>
-							</section>	
-							<hr />	
-						</article>
-					</div>
-
+							<a class="image featured"><img src="images/pic06.jpg" alt="" /></a>
+							<p>
+								Description
+							</p>
+						</section>
+						<hr />
+						<h2>Rodolfo Mascarpone y Ramón Cazanuecos: Amenaza en el molinillo</h2>
+						<section>
+							<header>
+								<h3>WIP: 2D-Scroller Action Platormer Video Game</h3>
+							</header>
+							<a class="image featured"><img src="images/pic06.jpg" alt="" /></a>
+							<p>
+								Description
+							</p>
+						</section>
+						<hr />
+					</article>
 				</div>
 
+			</div>
+
 			<!-- Footer -->
-				<div id="footer">
-					<div class="container">
-						<div class="row">
-							<div class="col-12">
+			<div id="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
 
-								<!-- Contact -->
-									<section class="contact">
-										<header>
-											<h3>That's all for now! Check my links down here ↓</h3>
-										</header>
-										<p>More tools and games to come in the future...</p>
-										<ul class="icons">
-											<li><a href="mailto:raul.martin.principal@gmail.com" class="icon fa-envelope"><span class="label">Mail</span></a></li>
-											<li><a href="https://www.linkedin.com/in/ra%C3%BAl-mart%C3%ADn-632703331/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-											<li><a href="https://github.com/Zephyr-62" class="icon brands fa-github"><span class="label">Github</span></a></li>
-											<li><a href="https://assetstore.unity.com/publishers/57591" class="icon brands fa-unity"><span class="label">Unity Asset Store</span></a></li>
-											<li><a href="https://raul-martin.itch.io/" class="icon brands fa-itch-io"><span class="label">Itch</span></a></li>
+							<!-- Contact -->
+							<section class="contact">
+								<header>
+									<h3>That's all for now! Check my links down here ↓</h3>
+								</header>
+								<p>More tools and games to come in the future...</p>
+								<ul class="icons">
+									<li><a href="mailto:raul.martin.principal@gmail.com" class="icon fa-envelope"><span class="label">Mail</span></a></li>
+									<li><a href="https://www.linkedin.com/in/ra%C3%BAl-mart%C3%ADn-632703331/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/Zephyr-62" class="icon brands fa-github"><span class="label">Github</span></a></li>
+									<li><a href="https://assetstore.unity.com/publishers/57591" class="icon brands fa-unity"><span class="label">Unity Asset Store</span></a></li>
+									<li><a href="https://raul-martin.itch.io/" class="icon brands fa-itch-io"><span class="label">Itch</span></a></li>
 
-										</ul>
-									</section>
+								</ul>
+							</section>
 
-								<!-- Copyright -->
-									<div class="copyright">
-										<ul class="menu">
-											<li>&copy; 2018 - 2024 Raúl Martín</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-										</ul>
-									</div>
-
+							<!-- Copyright -->
+							<div class="copyright">
+								<ul class="menu">
+									<li>&copy; 2018 - 2024 Raúl Martín</li>
+									<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								</ul>
 							</div>
 
 						</div>
+
 					</div>
 				</div>
+			</div>
 
 		</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/slider.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
