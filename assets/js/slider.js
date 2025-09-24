@@ -34,24 +34,23 @@ window.addEventListener('DOMContentLoaded', function () {
 		function showImage(index, direction) {
 			img.style.transform = `translateX(${direction === 'next' ? '100%' : '-100%'})`;
 			img2.style.transform = `translateX(0)`;
+
+			img.src = images[index]; //new image to show
+			let slideDir2 = '';
+
+			if (direction === 'next') {
+				img2.src = images[(index - 1 + images.length) % images.length]; // old image to slide out
+				img.style.transform = `translateX(-100%)`;
+				slideDir2 = `translateX(-100%)`;
+			} else {
+				img2.src = images[(index + 1) % images.length];  // old image to slide out
+				img.style.transform = `translateX(100%)`;
+				slideDir2 = `translateX(100%)`;
+			}
+
 			setTimeout(() => {
-				img.src = images[index]; //new image to show
-				let slideDir2 = '';
-
-				if (direction === 'next') {
-                    img2.src = images[(index - 1 + images.length) % images.length]; // old image to slide out
-					img.style.transform = `translateX(-100%)`;
-					slideDir2 = `translateX(-100%)`;
-				} else {
-					img2.src = images[(index + 1) % images.length];  // old image to slide out
-					img.style.transform = `translateX(100%)`;
-					slideDir2 = `translateX(100%)`;
-				}
-
-				setTimeout(() => {
-					img.style.transform = 'translateX(0)';
-					img2.style.transform = slideDir2;
-				}, 20);
+				img.style.transform = 'translateX(0)';
+				img2.style.transform = slideDir2;
 			}, 500);
 		}
 
