@@ -26,23 +26,31 @@ window.addEventListener('DOMContentLoaded', function () {
 		const nextBtn = slider.querySelector('.next-btn');
 		let currentImg = sliderIndex % images.length;
 
+		// why is this code not working. Answer: because the image paths are incorrect
+		// which ones are incorrect? All of them. Tell me the line numbers. Lines 4 to 18
+		// those are correct, there is something in this function that is wrong
+		// I think the problem is with the way the images are being loaded
+
 		function showImage(index, direction) {
 			img.style.transform = `translateX(${direction === 'next' ? '100%' : '-100%'})`;
 			setTimeout(() => {
-				img.src = images[index];
+				img.src = images[index]; //new image to show
+				img2.style.transform = `translateX(0)`;
+				let slideDir2 = '';
 
 				if (direction === 'next') {
-                    img2.src = images[(index - 1 + images.length) % images.length];
+                    img2.src = images[(index - 1 + images.length) % images.length]; // old image to slide out
 					img.style.transform = `translateX(-100%})`;
+					slideDir2 = `translateX(-100%})`
 				} else {
-                    img2.src = images[(index + 1) % images.length];
+					img2.src = images[(index + 1) % images.length];  // old image to slide out
 					img.style.transform = `translateX(100%})`;
+					slideDir2 = `translateX(100%})`
 				}
-				img2.style.transform = `translateX(0})`;
 
 				setTimeout(() => {
 					img.style.transform = 'translateX(0)';
-                    img2.style.transform = `translateX(${direction === 'next' ? '-100%' : '100%'})`;
+					img2.style.transform = slideDir2;
 				}, 20);
 			}, 500);
 		}
