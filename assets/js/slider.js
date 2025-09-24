@@ -41,11 +41,11 @@ window.addEventListener('DOMContentLoaded', function () {
 				if (direction === 'next') {
                     img2.src = images[(index - 1 + images.length) % images.length]; // old image to slide out
 					img.style.transform = `translateX(-100%)`;
-					slideDir2 = `translateX(-100%)`
+					slideDir2 = `translateX(-100%)`;
 				} else {
 					img2.src = images[(index + 1) % images.length];  // old image to slide out
 					img.style.transform = `translateX(100%)`;
-					slideDir2 = `translateX(100%)`
+					slideDir2 = `translateX(100%)`;
 				}
 
 				setTimeout(() => {
