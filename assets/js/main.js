@@ -12,7 +12,7 @@
 
 			// Carousels
 				carousels: {
-					speed: 6,
+					speed: 15,
 					fadeIn: true,
 					fadeDelay: 200
 				},
@@ -139,7 +139,7 @@
 				$forward
 					.appendTo($t)
 					.hide()
-					.mouseenter(function(e) {
+					.mousedown(function (e) {
 						timerId = window.setInterval(function() {
 							pos -= settings.carousels.speed;
 
@@ -152,7 +152,7 @@
 							$t._updatePos();
 						}, 10);
 					})
-					.mouseleave(function(e) {
+					.mouseup(function(e) {
 						window.clearInterval(timerId);
 					});
 
@@ -160,7 +160,7 @@
 				$backward
 					.appendTo($t)
 					.hide()
-					.mouseenter(function(e) {
+					.mousedown(function(e) {
 						timerId = window.setInterval(function() {
 							pos += settings.carousels.speed;
 
@@ -174,7 +174,7 @@
 							$t._updatePos();
 						}, 10);
 					})
-					.mouseleave(function(e) {
+					.mouseup(function(e) {
 						window.clearInterval(timerId);
 					});
 

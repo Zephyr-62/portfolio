@@ -1,0 +1,36 @@
+[
+    {
+        "Id": "projectSlug",
+        "Title": "ProjectTitle",
+        "Subtitle": "ProjectSubtitle",
+        "DateStarted": "YYYY-MM-DD", 
+        "DateEnded": "YYYY-MM-DD",
+        "Halted": true,
+        "Relevance": 1,
+        "Featured": false,
+        "Keywords": ["keyword1", "keyword2"],
+        "URLs": [
+            {
+                "DisplayText": "GitHub Repository",
+                "URL": "https://github.com/username/repo"
+            }
+        ],
+        "CatTags": ["VideoGame"],
+        "TechTags": ["React", "Node"],
+        "ShortDescription": "ShortDescription",
+        "LongDescription": "LongDescriptionGoesHere",
+        "Images": [
+            {
+                "path": "images/projects/projectId/image1.jpg",
+                "footnote": "",
+                "alt": "altText"
+            },
+            {
+                "path": "images/projects/projectId/image1.jpg",
+                "footnote": "",
+                "alt": "altText"
+            }
+        ],
+        "Collaborators": ["Collaborator One", "Collaborator Two"]
+    }
+]
