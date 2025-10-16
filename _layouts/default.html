@@ -1,18 +1,28 @@
+---
+---
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Raúl Martín - {{ page.title }}</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-</head>
-<body>
-  {% include header.html %}
-  <main>
-    {{ content }}
-  </main>
+	<head>
+		<title>Raúl Martín - {{ page.title }}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css" />
+		<link rel="icon" type="image/png" href="{{ site.baseurl }}/images/favicon.png">
+		<noscript><link rel="stylesheet" href="{{ site.baseurl }}/assets/css/noscript.css" /></noscript>
+	</head>
+	{% if page.url == "/" %}
+	<body class="homepage is-preload">	
+	{% else %}
+	<body>	
+	{% endif %}
+		<div>
+			{% include header.html %}
 
-  {% include footer.html %}
-</body>
+			{{ content }}
+
+			{% include footer.html %}
+			{% include scripts.html %}
+		</div>
+	</body>
 </html>

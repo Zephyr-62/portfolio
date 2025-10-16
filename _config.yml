@@ -1,6 +1,6 @@
 title: My Portfolio
 description: Portfolio site for game dev projects
-baseurl: "Portfolio"
+baseurl: "/portfolio"
 url: "https://zephyr-62.github.io"
 markdown: kramdown
 collections:

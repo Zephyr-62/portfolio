@@ -1,36 +1,27 @@
-[
-    {
-        "Id": "projectSlug",
-        "Title": "ProjectTitle",
-        "Subtitle": "ProjectSubtitle",
-        "DateStarted": "YYYY-MM-DD", 
-        "DateEnded": "YYYY-MM-DD",
-        "Halted": true,
-        "Relevance": 1,
-        "Featured": false,
-        "Keywords": ["keyword1", "keyword2"],
-        "URLs": [
+---
+layout: null
+permalink: /projects.json
+---
+{
+    {% for project in site.projects %}
+    "{{ project.projId }}":{
+        "title": "{{ project.title }}",
+        "subtitle": "{{ project.subtitle }}",
+        "startDate": "{{ project.startDate }}", 
+        "endDate": "{{ project.endDate }}",
+        "halted": {{ project.halted }},
+        "featured": {{ project.featured }},
+        "keywords": "{{ project.keywords }}",
+        "categoryTags": [{% for tag in project.categoryTags %}"{{ tag }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
+        "techTags": [{% for tag in project.techTags %}"{{ tag }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
+        "shortDescription": "{{ project.shortDescription }}",
+        "longDescription": "{{ project.longDescription }}",
+        "images": [{% for image in project.images %}
             {
-                "DisplayText": "GitHub Repository",
-                "URL": "https://github.com/username/repo"
-            }
-        ],
-        "CatTags": ["VideoGame"],
-        "TechTags": ["React", "Node"],
-        "ShortDescription": "ShortDescription",
-        "LongDescription": "LongDescriptionGoesHere",
-        "Images": [
-            {
-                "path": "images/projects/projectId/image1.jpg",
-                "footnote": "",
-                "alt": "altText"
-            },
-            {
-                "path": "images/projects/projectId/image1.jpg",
-                "footnote": "",
-                "alt": "altText"
-            }
-        ],
-        "Collaborators": ["Collaborator One", "Collaborator Two"]
-    }
-]
+                "path": "{{ 'images/projects/' | append: project.projId | append: '/' | append: image.name | relative_url }}",
+                "footnote": "{{image.footnote}}",
+                "alt": "{{image.alt}}"
+            }{% unless forloop.last %},{% endunless %}{% endfor %}
+        ]
+    }{% unless forloop.last %},{% endunless %}{% endfor %}            
+}

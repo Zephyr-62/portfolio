@@ -1,0 +1,52 @@
+---
+layout: default
+title: "Home"
+---
+
+<section id="banner">
+	<header>
+		<p>
+			Welcome! I'm a Computer Science engineer currently studying Game Design and Technology at University of Gothenburg.
+			<br />
+			I enjoy working on <b>tool development</b> and <b>level design</b>.
+		</p>
+	</header>
+</section>
+
+<section class="featured-projects">
+	{% assign projCount = 0 %}
+	{% for project in site.projects %}
+		{% if project.featured %}
+			{% if projCount > 0 %}
+				<hr>
+			{% endif %}
+			{% assign projCountMod = projCount | modulo: 2 %}
+			<div class="column-container">
+				<article class="column10"></article>
+				<article class="column80">
+					{% if projCountMod == 0 %}
+						{% include featuredProject.html project=project isLeft=true %}
+					{% else %}
+						{% include featuredProject.html project=project isLeft=false %}
+					{% endif %}
+				</article>
+			</div>	
+    		{% assign projCount = projCount | plus: 1 %}
+		{% endif %}			
+	{% endfor %}	
+</section>
+
+<section class="carousel">
+	<div class="reel">
+		{% for project in site.projects %}
+			{% unless project.featured %}
+				{% include projectReelView.html project=project %}
+			{% endunless %}			
+		{% endfor %}
+	</div>
+</section>
+
+
+<script>const projectsUrl = "{{ '/projects.json' | relative_url }}";</script>
+<script src="{{site.baseurl}}/assets/js/imagesSlideshow.js"></script>
+<script src="{{site.baseurl}}/assets/js/projectsReel.js"></script>

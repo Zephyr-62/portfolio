@@ -1,29 +1,48 @@
 
-<nav id="nav">
-  <ul>
-    <li><a href="index.html">Games</a></li>
-    <li>
-      <a href="#">Software</a>
-      <ul>
-        <li><a href="#">Lorem ipsum dolor</a></li>
-        <li><a href="#">Magna phasellus</a></li>
-        <li><a href="#">Etiam dolore nisl</a></li>
-        <li>
-          <a href="#">And a submenu &hellip;</a>
-          <ul>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-            <li><a href="#">Phasellus consequat</a></li>
-            <li><a href="#">Magna phasellus</a></li>
-            <li><a href="#">Etiam dolore nisl</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Veroeros feugiat</a></li>
-      </ul>
-    </li>
-    <li><a href="left-sidebar.html">Research</a></li>
-    <li><a href="index.html">HOME PAGE</a></li>
-    <li><a href="right-sidebar.html">Resume</a></li>
-    <li><a href="no-sidebar.html">About Me</a></li>
-    <li><a href="no-sidebar.html">Contact</a></li>
-  </ul>
-</nav>
+{% assign home_url = site.baseurl | append: "/" %}
+{% if page.url == home_url %}
+<div id="header" style="background-image: {{ site.baseurl }}/images/header.png;">
+{% else %}
+<div id="header" style="background-image: {{ site.baseurl }}/images/header.png;">
+{% endif %}
+<!-- Nav -->
+	<nav id="nav">
+		<ul>
+			<li><a href="index.html">Games</a></li>
+			<li>
+				<a href="#">Software</a>
+				<ul>
+					<li><a href="#">Lorem ipsum dolor</a></li>
+					<li><a href="#">Magna phasellus</a></li>
+					<li><a href="#">Etiam dolore nisl</a></li>
+					<li>
+						<a href="#">And a submenu &hellip;</a>
+						<ul>
+							<li><a href="#">Lorem ipsum dolor</a></li>
+							<li><a href="#">Phasellus consequat</a></li>
+							<li><a href="#">Magna phasellus</a></li>
+							<li><a href="#">Etiam dolore nisl</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Veroeros feugiat</a></li>
+				</ul>
+			</li>
+			<li><a href="left-sidebar.html">Research</a></li>
+			<li><a href="{{home_url}}">HOME PAGE</a></li>
+			<li><a href="right-sidebar.html">Resume</a></li>
+			<li><a href="no-sidebar.html">About Me</a></li>
+			<li><a href="no-sidebar.html">Contact</a></li>
+		</ul>
+	</nav>
+	<!-- Inner -->
+	<div class="inner">
+		<header>
+				{% if page.url == home_url %}
+				<h1><a id="logo">Raúl Martín</a></h1>
+				<p>Game Dev & Computer Science Engineer</p>
+				{% else %}
+				<h1><a href="{{home_url}}" id="logo">Raúl Martín</a></h1>
+				{% endif %}
+			</header>
+		</div>
+</div>

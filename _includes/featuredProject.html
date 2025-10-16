@@ -1,0 +1,41 @@
+<h2>{{ project.title }}</h2>
+<header>
+    <h3>{{ project.subtitle }}</h3>
+</header>
+<div class="column-container">
+    {% if include.isLeft %}
+    <div class="image-display-container column60" data-project-id="{{project.projId}}">
+        <a href="{{ project.id | relative_url }}">
+            <img class="image-display1" src="images/pic01.jpg" alt="Slider Image">
+            <img class="image-display2" src="images/pic02.jpg" alt="Slider Image" style="opacity: 0;">
+        </a>
+    </div>
+    <div class="columnRest" style="display: block;">
+        <p style="font-size: auto; word-break: break-all; line-height: 1.2em; height: 75%; overflow-y: scroll; display: block;">
+            {{ project.shortDescription }}
+        </p>
+        <p> {% for tag in project.techTags%} 
+                {{tag}}{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+        </p>
+        <a href="{{ project.id | relative_url }}">Read More</a>
+    </div>
+    {% else %}
+    <div class="columnRest" style="display: block;">
+        <p style="font-size: auto; word-break: break-all; line-height: 1.2em; height: 75%; overflow-y: scroll; display: block;">
+            {{ project.shortDescription }}
+        </p>
+        <p> {% for tag in project.techTags%} 
+                {{tag}}{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+        </p>
+        <a href="{{ project.id | relative_url }}">Read More</a>
+    </div>
+    <div class="image-display-container column60" data-project-id="{{project.projId}}">
+        <a href="{{ project.id | relative_url }}">
+            <img class="image-display1" src="images/pic01.jpg" alt="Slider Image">
+            <img class="image-display2" src="images/pic02.jpg" alt="Slider Image" style="opacity: 0;">
+        </a>
+    </div>
+    {% endif %}
+</div>
