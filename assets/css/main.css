@@ -2094,7 +2094,7 @@ input, select, textarea {
         button:hover,
         .button:hover {
             color: #fff;
-            background: #ef8376;
+            background: #f4948a;
         }
 
         input[type="button"].alt,
@@ -2110,7 +2110,7 @@ input, select, textarea {
             input[type="reset"].alt:hover,
             button.alt:hover,
             .button.alt:hover {
-                background: #3B353C;
+                background: #5c545d;
             }
 
 /* Post */
@@ -3281,4 +3281,12 @@ input, select, textarea {
 
   .columnRest {
     flex: 1; /* take the rest (40%) */
+  }
+
+  .filter-btn{
+    margin: 0 0.2em;
+    height: 2.5em;
+    font-size: large;
+    flex: 0 0 fit-content;
+    padding: 0 1em;
   }
