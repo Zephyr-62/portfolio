@@ -3,10 +3,11 @@ layout: projectDetail
 projId: VoxelEngine
 title: "C# Voxel Engine"
 subtitle: "Course Project ~ Game Engine Architecture"
-startDate: "2023-01-12"
-endDate: "2023-03-23"
+startDate: "2024-01-12"
+endDate: "2024-03-23"
 halted: false
 featured: false
+relevance: 60
 keywords: "Fun, Exciting, Madeupwords, Something else"
 categoryTags:
     - Software 

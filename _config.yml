@@ -6,3 +6,6 @@ markdown: kramdown
 collections:
   projects:
     output: true
+include:
+  - pages
+

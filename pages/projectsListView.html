@@ -1,0 +1,18 @@
+---
+layout: default
+title: "Projects - Raúl Martín"
+permalink: /projectListing/
+---
+
+<section id="banner">
+	<div class="column-container" style="float: right;">
+        <p class="column columnRest"></p>
+        <button class="column column10 game-btn" onclick="toggleFilter('Game')" >Games</button> 
+        <button class="column column10 software-btn" onclick="toggleFilter('Software')" >Software</button> 
+        <button class="column column10 research-btn" onclick="toggleFilter('Research')" >Research</button> 
+        <button class="column column10 sort-btn" onclick="toggleSort()" >Sorted By Relevance</button> 
+    </div>
+</section>
+
+{% include projectsList.html project=project showAllButtonEnabled=false %}
+

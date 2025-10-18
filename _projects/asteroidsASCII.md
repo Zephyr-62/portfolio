@@ -7,6 +7,7 @@ startDate: "2022-03-26"
 endDate: "2022-06-29"
 halted: false
 featured: false
+relevance: 10
 keywords: "Fun, Exciting, Madeupwords, Something else"
 categoryTags:
     - Game
@@ -20,10 +21,13 @@ summary: "A NEAT algorithm was integrated to train and play a custom implementat
 shortDescription: "This is a template with example data that shows how an example project should look. This short description could extend a paragraph or two, but not get too much into detail."
 longDescription: "This is my very long description, it could go on, and on, and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on, but it wont. It can also include html tags like <strong>this one</strong>..."
 images:
-    - name: pic01.jpg
+    - name: asciiSmall.png
       alt: "Miniature"
-      footnote: "This is my example miniature"
-    - name: pic02.jpg
-      alt: "Example image"
-      footnote: "This is an example image"
+      footnote: "note"
+    - name: asciiLarge.png
+      alt: "Miniature"
+      footnote: "note"
+    - name: pygame.png
+      alt: "Miniature"
+      footnote: "note"
 ---

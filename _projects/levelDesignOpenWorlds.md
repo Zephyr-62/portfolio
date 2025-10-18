@@ -1,22 +1,23 @@
 ---
 layout: projectDetail
-projId: templateApp
-title: "Template App"
-subtitle: "Made with YAML and Json in Jekyll"
-startDate: "2025-09-27"
+projId: level-design-pcg
+title: "Level Design in Open Worlds using PCG"
+subtitle: "WIP Master's Thesis"
+startDate: "2024-11-18"
 endDate: ""
 halted: false
 featured: false
+relevance: 90
 keywords: "Fun, Exciting, Madeupwords, Something else"
 categoryTags:
-    - Game
-    - Software 
+    - Software
     - Research
 techTags: 
     - Unity
     - C#
-    - More tags...
-summary: "This is the summary of the project in two sentences"
+    - Level Design
+    - PCG
+summary: "Research that explores how to influence open-world experiences through level design using procedural content generation"
 shortDescription: "This is a template with example data that shows how an example project should look. This short description could extend a paragraph or two, but not get too much into detail."
 longDescription: "This is my very long description, it could go on, and on, and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on, but it wont. It can also include html tags like <strong>this one</strong>..."
 images:

@@ -7,6 +7,7 @@ startDate: "2022-01-12"
 endDate: "2023-01-24"
 halted: false
 featured: true
+relevance: 85
 keywords: "Fun, Exciting, Madeupwords, Something else"
 categoryTags:
     - Software 

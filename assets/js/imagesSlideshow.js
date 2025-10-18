@@ -11,11 +11,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
 			let project = projects[imgContainer.dataset.projectId];
 			let images = project.images;
+			
 			let currentImg = imgIndex % images.length;
 			let nSlidings = 0;
 			let activeSlideshow = false;
-
+			
+			if(images.length == 0) return;
 			setImage(img, 0);
+			if(images.length == 1) return;
 			setImage(img2, 1);
 
 			/**

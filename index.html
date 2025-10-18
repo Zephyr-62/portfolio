@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Home"
+permalink: "/"
 ---
 
 <section id="banner">
@@ -13,28 +14,8 @@ title: "Home"
 	</header>
 </section>
 
-<section class="featured-projects">
-	{% assign projCount = 0 %}
-	{% for project in site.projects %}
-		{% if project.featured %}
-			{% if projCount > 0 %}
-				<hr>
-			{% endif %}
-			{% assign projCountMod = projCount | modulo: 2 %}
-			<div class="column-container">
-				<article class="column10"></article>
-				<article class="column80">
-					{% if projCountMod == 0 %}
-						{% include featuredProject.html project=project isLeft=true %}
-					{% else %}
-						{% include featuredProject.html project=project isLeft=false %}
-					{% endif %}
-				</article>
-			</div>	
-    		{% assign projCount = projCount | plus: 1 %}
-		{% endif %}			
-	{% endfor %}	
-</section>
+{% include projectsList.html project=project showAllButtonEnabled=true %}
+<script> featuredFilter = true; </script>
 
 <section class="carousel">
 	<div class="reel">
@@ -45,8 +26,4 @@ title: "Home"
 		{% endfor %}
 	</div>
 </section>
-
-
-<script>const projectsUrl = "{{ '/projects.json' | relative_url }}";</script>
-<script src="{{site.baseurl}}/assets/js/imagesSlideshow.js"></script>
 <script src="{{site.baseurl}}/assets/js/projectsReel.js"></script>

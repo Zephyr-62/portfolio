@@ -11,6 +11,7 @@ permalink: /projects.json
         "endDate": "{{ project.endDate }}",
         "halted": {{ project.halted }},
         "featured": {{ project.featured }},
+        "relevance": {{project.relevance}},
         "keywords": "{{ project.keywords }}",
         "categoryTags": [{% for tag in project.categoryTags %}"{{ tag }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
         "techTags": [{% for tag in project.techTags %}"{{ tag }}"{% unless forloop.last %},{% endunless %}{% endfor %}],

@@ -7,6 +7,7 @@ startDate: "2023-08-27"
 endDate: "2023-10-03"
 halted: false
 featured: false
+relevance: 10
 keywords: "Fun, Exciting, Madeupwords, Something else"
 categoryTags:
     - Research

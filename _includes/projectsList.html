@@ -1,0 +1,22 @@
+
+<section class="projects-list" data-show-all-button-enabled="{{include.showAllButtonEnabled}}">
+	{% for project in site.projects %}
+		<div class="column-container project" data-project-id="{{project.projId}}">
+			<article class="column10"></article>
+			<article class="column80">
+				{% include projectListItem.html project=project isLeft=true %}
+			</article>
+		</div>	
+	{% endfor %}	
+	{% if include.showAllButtonEnabled %}
+		<div class="column-container" style ="margin: 0; padding: 0; background-image: none;">
+			<article class="column90"></article>
+			<article class="columnRest">
+				<a href="{{ 'projectListing' | relative_url }}" class="button" style="padding: 0 2em; float: right; margin: 1em 1em 0 0;">Explore all projects →</a>
+			</article>
+		</div>
+	{% endif %}
+</section>
+
+<script src="{{site.baseurl}}/assets/js/listProjects.js"></script>
+<script src="{{site.baseurl}}/assets/js/imagesSlideshow.js"></script>
