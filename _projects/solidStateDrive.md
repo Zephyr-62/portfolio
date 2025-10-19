@@ -8,7 +8,6 @@ endDate: "2024-03-07"
 halted: false
 featured: false
 relevance: 60
-keywords: "Fun, Exciting, Madeupwords, Something else"
 categoryTags:
     - Game
 techTags: 
@@ -19,6 +18,7 @@ techTags:
 summary: "Dodge projectiles and obstacles for as long as you can on the road to the Cybersoviet Union's mainframe"
 shortDescription: "This is a template with example data that shows how an example project should look. This short description could extend a paragraph or two, but not get too much into detail."
 longDescription: "This is my very long description, it could go on, and on, and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on, but it wont. It can also include html tags like <strong>this one</strong>..."
+teamSize: 6
 images:
     - name: mainMenu.png
       alt: "Miniature"

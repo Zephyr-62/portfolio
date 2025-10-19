@@ -1782,7 +1782,7 @@ input, select, textarea {
         header > p {
             display: block;
             font-size: 1.5em;
-            margin: 1em 0 2em 0;
+            margin: 0.5em 0 1em 0;
             line-height: 1.5em;
             text-align: inherit;
         }
@@ -2180,7 +2180,7 @@ input, select, textarea {
 /* Wrapper */
 
     .wrapper {
-        background: #fff;
+        background: transparent;
         margin: 0 0 2em 0;
         padding: 6em 0 6em 0;
     }
@@ -2449,8 +2449,8 @@ input, select, textarea {
 /* Sidebar */
 
     #sidebar > hr {
-        top: 3em;
-        margin-bottom: 6em;
+        top: 0;
+        margin: 2em 0;
     }
 
         #sidebar > hr.first {
@@ -2459,6 +2459,11 @@ input, select, textarea {
 
     #sidebar > section {
         margin-bottom: 0;
+    }
+
+    section header h3 {
+        color: var(--accent-color);
+        font-weight: bold;
     }
 
 /* Main */
@@ -3290,3 +3295,50 @@ input, select, textarea {
     flex: 0 0 fit-content;
     padding: 0 1em;
   }
+
+
+.gallery {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    width: 100%;
+}
+
+.gallery a {
+  aspect-ratio: 3 / 2;  /* makes every tile square */
+  overflow: hidden;
+}
+
+.gallery img {
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+.gslide-description {
+    padding: 1em;                          /* internal spacing */
+    margin: 0;                           /* external spacing from image */
+    max-width: 90%;                         /* optional max width */
+    font-size: 1rem;                        /* adjust text size */
+    line-height: 1.4;
+}
+
+.glightbox-clean .gslide-description{
+    background-color: transparent;
+}
+
+.gslide-desc{
+    color: white;                           /* text color */
+    background-color: rgba(0, 0, 0, 0.9); /* semi-transparent black */
+    padding: 0.5em;
+    border: 2px solid white;
+    border-radius: 6px;                     /* optional rounded corners */
+}

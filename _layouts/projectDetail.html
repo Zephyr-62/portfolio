@@ -3,11 +3,111 @@ layout: default
 title: {{page.shortTitle}}
 permalink: /project/{{page.id}}
 ---
-<h1>{{ page.title }}</h1>
-<p>{{ page.subtitle }}</p>
+<div class="wrapper style1">
+    <div class="container">
+        <div class="row gtr-200">
+            <div class="col-8 col-12-mobile" id="content">
+                <article id="main">
+                    <header>
+                        <h2>{{ page.title }}</h2>
+                        <p>{{ page.subtitle }}</p>
+                    </header>
+                    <div class="image-display-container" style="height:25em">
+                        <a class="glightbox-cover image featured">
+                            <img class="project-image" data-project-id="{{page.projId}}" data-image-idx="0">
+                        </a>
+                    </div>
 
-<div class="gallery">
-  {% for img in page.images %}
-    <img src="{{ img.path }}" alt="{{ img.alt }}">
-  {% endfor %}
+                    <br>                
+                    <p>{{ page.shortDescription }}</p>
+                    <div class="row">
+                        <div class="gallery">
+                            {% for img in page.images %}
+                            {% unless forloop.index0 == 0 %}
+                            <div class="image-display-container">
+                                <a class="glightbox1 image featured"><img class="glightbox project-image" data-project-id="{{page.projId}}" data-image-idx="{{forloop.index0}}"></a>
+                            </div>
+                            {% endunless %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    
+                    <br>   
+                    {{ page.longDescription }}     
+
+                    <div class="row">
+                        <div class="gallery">
+                            {% for img in page.imagesDev %}
+                            <div class="image-display-container">
+                                <a class="glightbox2 image featured"><img class="glightbox project-image-dev" data-project-id="{{page.projId}}" data-image-idx="{{forloop.index0}}"></a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="col-4 col-12-mobile" id="sidebar">
+                <hr class="first">
+                <section>
+                    <header>
+                        <h3>Summary</h3>
+                    </header>
+                    <p> {{ page.summary }} </p>
+                </section>
+                <hr>
+                <section>
+                    <header> <h3>Details</h3> </header>                    
+                    <div class="row gtr-50">
+                        <div class="col-5">
+                            <h4>Dates</h4>
+                            <p> Started: <i>{{page.startDate}}</i> </p>
+                            <p>
+                                Closed: <i>
+                                    {% if page.endDate == "" %} 
+                                    ---
+                                    {% else %}
+                                    {{ page.endDate }}
+                                    {% endif %}
+                                </i>
+                            </p>
+                        </div>
+                        <div class="col-5">
+                            <h4>Status</h4>
+                            <p> 
+                                {% unless page.endDate == "" %} 
+                                    {% if page.halted %}
+                                        Halted
+                                    {% else %}
+                                        Closed
+                                    {% endif %}
+                                {% else %}
+                                    Active
+                                {% endunless %}
+                            </p>
+                        </div>                    
+                    </div>
+                    <h5>Team size: <b>{{ page.teamSize }}</b></h5>
+                    <br>
+                    <h4>Keywords</h4>
+                    <ul style="list-style-type:none">
+                        {% for tag in page.techTags %}
+                            <li>{{tag}}</li>
+                        {% endfor %}
+                    </ul>
+                </section>
+                <hr>
+                <section>
+                    <header>
+                        <h3>Contributions</h3>
+                    </header>                    
+                    {{ page.contributions }}
+                </section>
+            </div>
+        </div>
+    </div>
 </div>
+
+
+<script src="{{site.baseurl}}/assets/js/imagesSlideshow.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script src="{{site.baseurl}}/assets/js/gallery.js"></script>

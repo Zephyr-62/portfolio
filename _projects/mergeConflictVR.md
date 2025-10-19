@@ -8,7 +8,6 @@ endDate: "2024-05-28"
 halted: false
 featured: false
 relevance: 80
-keywords: "Fun, Exciting, Madeupwords, Something else"
 categoryTags:
     - Game
     - Research
@@ -20,6 +19,7 @@ techTags:
 summary: "Exploration of VR sense of space <b>without</b> using virtual locomotion systems. Walk in-game by walking in real life"
 shortDescription: "This is a template with example data that shows how an example project should look. This short description could extend a paragraph or two, but not get too much into detail."
 longDescription: "This is my very long description, it could go on, and on, and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on, but it wont. It can also include html tags like <strong>this one</strong>..."
+teamSize: 3
 images:
     - name: hub.png
       alt: "Miniature"

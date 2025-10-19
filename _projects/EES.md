@@ -8,65 +8,92 @@ endDate: "2023-01-24"
 halted: false
 featured: true
 relevance: 85
-keywords: "Fun, Exciting, Madeupwords, Something else"
 categoryTags:
     - Software 
     - Research
 techTags: 
     - Unity
     - Compute Shaders
+    - Prey-predator model
     - Genetic Algorithm
     - Data Visualization
-summary: "This is the summary of the project in two sentences"
-shortDescription: "This is a template with example data that shows how an example project should look. This short description could extend a paragraph or two, but not get too much into detail."
-longDescription: "This is my very long description, it could go on, and on, and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on, but it wont. It can also include html tags like <strong>this one</strong>..."
+summary: "Simulator that tests the prey-predator model with bushes and trees, and trains a genetic algorithm to fine tune the parameters"
+shortDescription: "<p>This project was my computer science's bachelor's thesis. I worked on it for over a year, and it encompased working on an offline simulator, implementing rules for evolution such as genomes, mutation, gene crossover; working on all the UI and data serialization; doing quite a lot of data analysis tools; and implementing a genetic algorithm that runs the simulator dozens of times to fine-tune the parameters and find stability between both types of entities: bushes and trees. </p>"
+longDescription: "
+                  <header><h3>Description of Systems</h3></header>
+                  <p>
+                  This is my very long description, it could go on, and on, and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on, but it wont. It can also include html tags like <strong>this one</strong>...
+                  </p>
+                 "
+teamSize: 1
+contributions: "<p>
+                    Everything was designed and implemented by me. The most relevant systems that I worked on include:
+                </p>
+                <p>
+                    - Spatio-temporal clustering algorithm
+                </p>
+                <p>
+                    - GPU compute shaders to detect collisions and calculate interactions between entities
+                </p>
+                <p>
+                    - Genetic Algorithm that runs dozens of simulations to fine-tune the simulator itself
+                </p>
+                <p>
+                    - Data analysis tools like heatmaps, plots, entity attributes...
+                </p>
+                <p>
+                    - Revisit past simulations at any saved point, and visit the live scene at that time
+                </p>
+                "
+
 images:
     - name: Miniatura_1.png
       alt: "Thumbnail"
-      footnote: "Thumbnail of the EES software"
+      footnote: ""
     - name: gaResult.png
-      alt: "Pretty view of the results of the genetic algorithm finetuning the parameters of the simulator."
-      footnote: "This is a visualization of the result of the execution of the GA finetunning the parameters of the simulator."
+      alt: "GA Scene Result"
+      footnote: "This is a visualization of the result of the execution of the genetic algorithm finetunning the parameters of the simulator."
     - name: heatMaps.png
-      alt: "Simulation Animation"
-      footnote: "This animation is so cool!"
+      alt: "heatmaps"
+      footnote: "Results of a simulation. Here is shown the heatmaps of both bushes (left) and trees (right) in a specific point in time."
     - name: loadingScreen.png
-      alt: "Simulation Animation"
-      footnote: "This animation is so cool!"
+      alt: "loading screen"
+      footnote: "2D animation that plays on the loading screen when a simulation is finished and the program processess all data."
     - name: loadSim.png
-      alt: "Simulation Animation"
-      footnote: "This animation is so cool!"
+      alt: "load save menu"
+      footnote: "Simulation file selection menu"
     - name: niceSimRender.png
-      alt: "Simulation Animation"
-      footnote: "This animation is so cool!"
+      alt: "scene view"
+      footnote: "Nice looking results of a simulation, where both trees and bushes coexist."
     - name: niceSim.gif
-      alt: "Simulation Animation"
-      footnote: "This animation is so cool!"
+      alt: "simulation species animation"
+      footnote: "This clip shows how the different species of both bushes (left) and trees (right) evolutioned in a simulation."
     - name: simExec1.png
-      alt: "Simulation Animation"
-      footnote: "This animation is so cool!"
+      alt: "simulation execution"
+      footnote: "Simulation in progress screen. Here you can see loads of statistics to understand how the evolution is progressing."
     - name: simExec2.png
-      alt: "Simulation Animation"
-      footnote: "This animation is so cool!"
+      alt: "simulation execution"
+      footnote: "Simulation in progress screen. Here you can see loads of statistics to understand how the evolution is progressing."
     - name: simNav1.png
-      alt: "Simulation Animation"
-      footnote: "This animation is so cool!"
+      alt: "simulation navigation"
+      footnote: "You can pause a simulation to inspect the scene and see how it is currently looking"
     - name: simResults1.png
-      alt: "Simulation Animation"
-      footnote: "This animation is so cool!"
+      alt: "simulation results 1"
+      footnote: "Here you can see the statistics of how the species of bushes existed in a specific point in time, and how the heatmaps of trees looked at the same time."
     - name: simResults2.png
-      alt: "Simulation Animation"
-      footnote: "This animation is so cool!"
+      alt: "simulation results 2"
+      footnote: "Here you can see the properties of the different species in a graph view"
+imagesDev:
     - name: species_detection_3.png
-      alt: "Simulation Animation"
-      footnote: "This animation is so cool!"
+      alt: "species detection design"
+      footnote: "This is a demonstration of how the species detection algorithm is supposed to work within a specific gene attribute. It explains how a species can be born, extinct, or mutate into new species"
     - name: bushes_balance.gif
-      alt: "Simulation Animation"
-      footnote: "This animation is so cool!"
+      alt: "simulation species result"
+      footnote: "This animation shows how different species of bushes evolved through a simulation"
     - name: clustersSmall.png
-      alt: "Simulation Animation"
-      footnote: "This animation is so cool!"
+      alt: "clusters gpu 1"
+      footnote: "This image was generated in the GPU. It labeled all randomly generated circles based on conectivity, where each different group has a different colour."
     - name: clustersLarge.png
-      alt: "Simulation Animation"
-      footnote: "This animation is so cool!"
+      alt: "clusters gpu 2"
+      footnote: "This image was generated in the GPU. It labeled all randomly generated circles based on conectivity, where each different group has a different colour. This was a stress test to see how large the texture could get while having good performance, since this algorithm had to be executed per simulation step."
 ---

@@ -1,5 +1,10 @@
 // @ts-check
 
+document.addEventListener("projectsReady", function() {
+    processProjects();
+    updateFilterButtons();
+});
+
 function getQueryParams() {
   const params = {};
   const queryString = window.location.search.substring(1);
@@ -12,20 +17,7 @@ function getQueryParams() {
 }
 
 let queryParams = getQueryParams();
-let projects = []
 let featuredFilter = false;
-
-document.addEventListener("DOMContentLoaded", function() {  
-	fetch(projectsUrl)
-    .then(res => res.json())
-    .then(projectsData => {
-        projects = projectsData;
-        processProjects();
-    });
-    
-    updateFilterButtons();
-});
-
 
 function updateFilterButtons(){
     const sortBtn = document.querySelector('.sort-btn');

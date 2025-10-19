@@ -5,15 +5,13 @@
 <div class="column-container project-column">
     <div class="image-display-container column column60" data-project-id="{{project.projId}}">
         <a href="{{ project.id | relative_url }}">
-            <img class="image-display1" src="images/pic01.jpg" alt="Slider Image">
-            <img class="image-display2" src="images/pic02.jpg" alt="Slider Image" style="opacity: 0;">
+            <img class="image-display1" alt="Slider Image">
+            <img class="image-display2" alt="Slider Image" style="opacity: 0;">
         </a>
     </div>
     <div class="column columnRest">
-        <p class="description">
-            {{ project.shortDescription }}
-        </p>
-        <p> {% for tag in project.techTags%} 
+        {{ project.shortDescription }}
+        <p style="font-weight: bold;"> {% for tag in project.techTags%} 
                 {{tag}}{% unless forloop.last %},{% endunless %}
             {% endfor %}
         </p>
