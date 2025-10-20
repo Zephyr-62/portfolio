@@ -2448,7 +2448,7 @@ input, select, textarea {
 
 /* Sidebar */
 
-    #sidebar > hr {
+    hr {
         top: 0;
         margin: 2em 0;
     }
@@ -3341,4 +3341,17 @@ input, select, textarea {
     padding: 0.5em;
     border: 2px solid white;
     border-radius: 6px;                     /* optional rounded corners */
+}
+
+
+.text-list p{
+    margin-bottom: 0.5em;
+}
+
+.text-list div{
+    padding-left: 1em;
+}
+
+.text-list hr{
+    margin: 0.5em;
 }
