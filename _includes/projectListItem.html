@@ -10,11 +10,13 @@
         </a>
     </div>
     <div class="column columnRest">
-        {{ project.shortDescription }}
-        <p style="font-weight: bold;"> {% for tag in project.techTags%} 
+        <div class="description">            
+            {{ project.shortDescription }}
+        </div>
+        <p style="font-weight: bold;" class="details"> {% for tag in project.techTags%} 
                 {{tag}}{% unless forloop.last %},{% endunless %}
             {% endfor %}
         </p>
-        <a href="{{ project.id | relative_url }}">Read More</a>
+        <a href="{{ project.id | relative_url }}" class="details">Read More</a>
     </div>
 </div>

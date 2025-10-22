@@ -13,9 +13,15 @@
   --dark-color1: #483949;
   --dark-color2: #2b252c;
 
+  --alt-light-color2: #7894c8;
+  --alt-light-color1: #3f9bcc;
+  --alt-dark-color1: #49384a;
+  --alt-dark-color2: #291f2b;
+
   --accent-color: white;
   --hover-color: #ffd560;
 }
+/* Alt color #3f9bcc ♥*/
 
 
 html, body, div, span, applet, object,
@@ -3209,18 +3215,25 @@ input, select, textarea {
         background-color: transparent;
     }
 
-    .projects-list div{
+    .projects-list .project{
         display: flex;
         align-items: left;
         gap: 1.5em;
-        margin: 1.5em 0 0 0;
-        background-image: radial-gradient(circle, var(--dark-color2) -10%, var(--dark-color1)90%, var(--light-color2) 100%);
+        border-radius: 2.5em;
+        margin: 1.5em 1.5em 1.5em 1.5em;
+        background-image: radial-gradient(circle, var(--alt-dark-color2) -10%, var(--alt-dark-color1)90%,  var(--alt-dark-color1) 100%);
         background-color: transparent;
+        width: auto;
+        filter: drop-shadow(4px 4px 6px rgba(0,0,0,0.4));
     }
 
         .projects-list div div{
             background-image: none;
             margin: 0;
+        }
+
+        .projects-list .image-display-container{
+            border-radius: 8px;
         }
 
     .projects-list .column-container{
@@ -3239,13 +3252,25 @@ input, select, textarea {
   }
 
   .column-container div{
-        height: 25vw;
+        height: 26vw;
   }
 
 
 .column-container .column {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
+
+.column-container .column .details{
+    flex-shrink: 0; /* Don’t shrink these */
+}
+
+.column-container .column .description{
+    flex: 1; /* Take remaining space */
+    overflow-y: auto; /* Scroll only inside this */
+}
+
 .column .description {
     font-size: larger;
     word-break: normal;
@@ -3288,7 +3313,11 @@ input, select, textarea {
     flex: 1; /* take the rest (40%) */
   }
 
-  .filter-btn{
+.column-container .filter-btn{
+    display: block;
+}
+
+.filter-btn{
     margin: 0 0.2em;
     height: 2.5em;
     font-size: large;
