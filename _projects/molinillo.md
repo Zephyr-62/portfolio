@@ -10,6 +10,8 @@ featured: true
 relevance: 100
 categoryTags:
     - Game
+    - LevelDesign
+    - Tool
 techTags: 
     - Godot
     - Level Design
@@ -27,6 +29,7 @@ longDescription: "<section>
                         And more paragraphs.... Or even more sections!.. Anyway, that's it
                     </p>
                 </section>"
+ldDescription: "test description"
 teamSize: 3
 images:
     - name: cover.jpg

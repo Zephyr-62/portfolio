@@ -35,6 +35,11 @@ permalink: /project/{{page.id}}
                     <br>   
                     {{ page.longDescription }}     
 
+                    {% if page.ldDescription %}
+                        <h3 id="levelDesign"> Level Design Specifics</h3>
+                        {{ page.ldDescription }}
+                    {% endif %}
+
                     <div class="row">
                         <div class="gallery">
                             {% for img in page.imagesDev %}
@@ -53,6 +58,12 @@ permalink: /project/{{page.id}}
                         <h3>Summary</h3>
                     </header>
                     <p> {{ page.summary }} </p>
+
+                    {% if page.ldDescription %}
+                    <a href="#levelDesign">Goto Level Design Section →</a>
+                    <br>
+                    {% endif %}
+                    <a href="#tool">Goto Tool Implementation Section →</a>
                 </section>
                 <hr>
                 <section>
