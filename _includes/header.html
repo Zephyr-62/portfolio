@@ -10,6 +10,7 @@
 		<ul>
 			{% assign base = 'projectListing' | relative_url %}
 			<li><a href="{{home_url}}">HOME PAGE</a></li>
+			<li><a href="{{ 'resume' | relative_url }}">Resume</a></li>
 			<li>||</li>
 			<li><a href="{{ base }}?filter=LevelDesign">Level Design</a></li>
 			<li><a href="{{ base }}?filter=Tool">Tool Development</a></li>
@@ -23,7 +24,6 @@
 				</ul>
 			</li>	
 			<li>||</li>
-			<li><a href="{{ 'resume' | relative_url }}">Resume</a></li>
 			<li><a href="{{ 'aboutMe' | relative_url }}">About Me</a></li>
 			<li><a href="#footer">Contact</a></li>
 		</ul>

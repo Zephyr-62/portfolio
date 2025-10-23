@@ -22,10 +22,19 @@ shortDescription: "This is a template with example data that shows how an exampl
 longDescription: "This is my very long description, it could go on, and on, and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on, but it wont. It can also include html tags like <strong>this one</strong>..."
 teamSize: 1
 images:
-    - name: pic01.jpg
+    - name: islands.png
       alt: "Miniature"
-      footnote: "This is my example miniature"
-    - name: pic02.jpg
-      alt: "Example image"
-      footnote: "This is an example image"
+      footnote: "note"
+    - name: biomes.png
+      alt: "Miniature"
+      footnote: "note"
+    - name: mainGraph.png
+      alt: "Miniature"
+      footnote: "note"
+    - name: LD.png
+      alt: "Miniature"
+      footnote: "note"
+    - name: PCG.png
+      alt: "Miniature"
+      footnote: "note"
 ---
