@@ -6,12 +6,13 @@ subtitle: "WIP Master's Thesis"
 startDate: "2024-11-18"
 endDate: ""
 halted: false
-featured: false
+featured: true
 relevance: 90
 categoryTags:
     - Software
     - Research
     - LevelDesign
+    - Tool
 techTags: 
     - Unity
     - C#

@@ -10,12 +10,12 @@
 		<ul>
 			{% assign base = 'projectListing' | relative_url %}
 			<li><a href="{{home_url}}">HOME PAGE</a></li>
-			<li><a href="{{ 'resume' | relative_url }}">Resume</a></li>
 			<li>||</li>
 			<li><a href="{{ base }}?filter=LevelDesign">Level Design</a></li>
 			<li><a href="{{ base }}?filter=Tool">Tool Development</a></li>
+			<!--
 			<li style="user-select: none; cursor: pointer; white-space: nowrap; opacity: 1;" class="opener">
-            	<a href="{{ base }}">Projects List</a>		
+				<a href="{{ base }}">Projects List</a>		
 				<ul style="user-select: none; display: none; position: absolute;">
 					<li style="white-space: nowrap;"><a href="{{ base }}" style="display: block;">All</a></li>
 					<li style="white-space: nowrap;"><a href="{{ base }}?filter=Game" style="display: block;">Games</a></li>
@@ -23,7 +23,9 @@
 					<li style="white-space: nowrap;"><a href="{{ base }}?filter=Research" style="display: block;">Research</a></li>
 				</ul>
 			</li>	
+			-->
 			<li>||</li>
+			<li><a href="{{ 'resume' | relative_url }}">Resume</a></li>
 			<li><a href="{{ 'aboutMe' | relative_url }}">About Me</a></li>
 			<li><a href="#footer">Contact</a></li>
 		</ul>

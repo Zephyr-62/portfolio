@@ -10,6 +10,7 @@ featured: false
 relevance: 70
 categoryTags:
     - Game
+    - LevelDesign
 techTags: 
     - Godot
     - Grid Based

@@ -24,13 +24,13 @@ function updateFilterButtons(){
     if(sortBtn != null){
         switch (queryParams.sort) {
             case "date":   
-                sortBtn.innerHTML = "Sorted By Date ↓"
+                sortBtn.innerHTML = "Date ↓"
                 break;        
             case "dateInv":   
-                sortBtn.innerHTML = "Sorted By Date ↑"
+                sortBtn.innerHTML = "Date ↑"
                 break;    
             default:
-                sortBtn.innerHTML = "Sorted By Relevance"
+                sortBtn.innerHTML = "Relevance ↓"
                 break;
         }
     }

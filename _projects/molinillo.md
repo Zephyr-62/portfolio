@@ -1,7 +1,7 @@
 ---
 layout: projectDetail
 projId: molinillo
-title: "Rodolfo Mascarpone y Ramón Cazanuecos - Amenaza en el Molinillo"
+title: "Amenaza en el Molinillo"
 subtitle: "<i>Numae Games</i> First Released Game"
 startDate: "2023-06-12"
 endDate: ""

@@ -10,21 +10,35 @@ permalink: "/"
 			Welcome! I'm a Computer Science engineer currently studying Game Design and Technology at University of Gothenburg.
 			<br/>
 			I enjoy working on <b>level design</b> and <b>tool development</b>.
-			NOTE: This portfolio is under construction, you might find some missing descriptions, images, details...
+			
+			<div style="margin-top: 1em;">
+				<a href="{{ 'projectListing?filter=LevelDesign' | relative_url  }}" class="button"><h2>Level Design Projects</h2></a>
+				<a href="{{ 'projectListing?filter=Tool' | relative_url  }}" class="button" style="margin-left: 18em;"><h2>Tool Dev Projects</h2></a>
+			</div>
 		</p>
 	</header>
 </section>
 
-{% include projectsList.html project=project showAllButtonEnabled=true %}
-<script> featuredFilter = true; </script>
-
+<div class="wrapper style1" style="margin: 2em; padding:0;">
+	<section id="features" class="container special">
+		<header>
+			<h2>Featured Projects</h2>
+			<p>These are the projects I'm most proud of working on,<br> although <b>not</b> necessarily related to level design or tool development</p>
+		</header>
+	</section>
+</div>
 <section class="carousel">
 	<div class="reel">
 		{% for project in site.projects %}
-			{% unless project.featured %}
-				{% include projectReelView.html project=project %}
-			{% endunless %}			
+		{% if project.featured %}
+		{% include projectReelView.html project=project %}
+		{% endif %}			
 		{% endfor %}
 	</div>
 </section>
+<div>
+	<a href="{{ 'projectListing' | relative_url }}" class="button" style="padding: 0.5em; margin: 2em; display: block;"><b>Project archive →</b></a>
+</div>
+
+
 <script src="{{site.baseurl}}/assets/js/projectsReel.js"></script>

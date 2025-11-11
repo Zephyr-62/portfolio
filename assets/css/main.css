@@ -20,6 +20,10 @@
 
   --accent-color: white;
   --hover-color: #ffd560;
+
+  --button-blink1-color: #df7366;
+  --button-blink2-color: #ffb3ab;
+
 }
 /* Alt color #3f9bcc ♥*/
 
@@ -161,7 +165,6 @@ input, select, textarea {
 
     strong, b {
         font-weight: 400;
-        color: var(--accent-color);
     }
 
     em, i {
@@ -2305,14 +2308,15 @@ input, select, textarea {
 /* Nav */
 
     #nav {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         text-align: center;
-        padding: 1.5em 0 1.5em 0;
-        z-index: 1;
+        padding: .75em 0 .75em 0;
+        z-index: 10;
         overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.85);
     }
 
         #nav > ul {
@@ -3315,6 +3319,7 @@ input, select, textarea {
 
 .column-container .filter-btn{
     display: block;
+    margin-left: 1em;
 }
 
 .filter-btn{
@@ -3383,4 +3388,29 @@ input, select, textarea {
 
 .text-list hr{
     margin: 0.5em;
+}
+
+.button {
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.6);  
+}
+
+.button:hover{
+    background-color: var(--hover-color);
+    color: var(--dark-color2);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation: pulse;
+    animation-duration: 0.5s;
+    --animate-repeat: infinite;
+}
+
+#logo {
+    background-color: rgba(0,0,0,0.5);
+    padding: 0.7em;
+    border-radius: 0.2em;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.6);
+}
+
+.reel-project-container:hover{
+    animation: pulse;
+    animation-duration: 0.5s;
 }
