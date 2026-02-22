@@ -1,6 +1,6 @@
 ---
 layout: projectDetail
-projId: templateApp
+projId: zoteFangame
 title: "Zote The Mighty ~ Fangame"
 subtitle: "Course Project ~ Intro to Game Dev"
 startDate: "2021-09-16"
@@ -15,16 +15,33 @@ techTags:
     - Unity
     - C#
     - Level Editor
-summary: "First small prototype that implements a few systems like platforming mechanics, camera confinement, enemy AI, animations, quests, dialogue systems..."
+summary: "First small unity prototype that implements systems like character controller, camera confinement, enemy AI, animations, quests, dialogue systems..."
 shortDescription: "This is a template with example data that shows how an example project should look. This short description could extend a paragraph or two, but not get too much into detail."
 longDescription: " SYSTEMS: Camera confinment & discovery, quest system, dialogue system, auto-map generator (doors to levels)
  This is my very long description, it could go on, and on, and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on, but it wont. It can also include html tags like <strong>this one</strong>..."
 teamSize: 3
+contributions-short:
+  - Scene Manager System
+  - Camera, Quest, Dialogue & Trigger Systems
+  - World Prototyping Tool
+  - Character Controllers
 images:
-    - name: pic01.jpg
+    - name: zote-title.png
       alt: "Miniature"
       footnote: "This is my example miniature"
-    - name: pic02.jpg
+    - name: zote-cave.png
+      alt: "Example image"
+      footnote: "This is an example image"
+    - name: zote-alpha.gif
+      alt: "Example image"
+      footnote: "This is an example image"
+    - name: zotefly-demo.gif
+      alt: "Example image"
+      footnote: "This is an example image"
+    - name: zote-scene-doors.png
+      alt: "Example image"
+      footnote: "This is an example image"
+    - name: zote-demo.mp4
       alt: "Example image"
       footnote: "This is an example image"
 ---

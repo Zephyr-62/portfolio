@@ -56,38 +56,31 @@ permalink: /project/{{page.id}}
                     </div>
                 </article>
             </div>
-            <div class="col-4 col-12-mobile" id="sidebar">
+            <div class="col-3 col-12-mobile project-details" id="sidebar" style="margin-left: 2em;">
                 <hr class="first">
                 <section>
                     <header>
                         <h3>Summary</h3>
                     </header>
                     {{ page.summary }} </p>
-
-                    {% if page.ldDescription %}
-                    <a href="#levelDesign"><p> → Goto Level Design Details</p></a>
-                    {% endif %}
-
-                    {% if page.toolDescription %}
-                    <a href="#tool"><p> → Goto Tool Implementation Details</p></a>
-                    {% endif %}
                 </section>
                 <hr>
                 <section>
                     <header> <h3>Details</h3> </header>                    
+                    <h4>Dates</h4>
+                    <p> Started: <i>{{page.startDate}}</i> </p>
+                    <p>
+                        Closed: <i>
+                            {% if page.endDate == "" %} 
+                            ---
+                            {% else %}
+                            {{ page.endDate }}
+                            {% endif %}
+                        </i>
+                    </p>
                     <div class="row gtr-50">
                         <div class="col-5">
-                            <h4>Dates</h4>
-                            <p> Started: <i>{{page.startDate}}</i> </p>
-                            <p>
-                                Closed: <i>
-                                    {% if page.endDate == "" %} 
-                                    ---
-                                    {% else %}
-                                    {{ page.endDate }}
-                                    {% endif %}
-                                </i>
-                            </p>
+                            <h5>Team size: <b>{{ page.teamSize }}</b></h5>
                         </div>
                         <div class="col-5">
                             <h4>Status</h4>
@@ -104,7 +97,6 @@ permalink: /project/{{page.id}}
                             </p>
                         </div>                    
                     </div>
-                    <h5>Team size: <b>{{ page.teamSize }}</b></h5>
                     <br>
                     <h4>Keywords</h4>
                     <ul style="list-style-type:none">
@@ -117,9 +109,14 @@ permalink: /project/{{page.id}}
                 <section>
                     <header>
                         <h3>Contributions</h3>
-                    </header>                    
-                    {{ page.contributions }}
+                    </header>             
+                    <ul style="list-style-type:disc">
+                         {% for contribution in page.contributions-short %}
+                            <li>{{contribution}}</li>
+                        {% endfor %}
+                    </ul>       
                 </section>
+                <br>
             </div>
         </div>
     </div>

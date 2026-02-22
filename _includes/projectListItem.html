@@ -1,22 +1,32 @@
 <h2>{{ project.title }}</h2>
-<header>
+<header style="display: ruby;">
     <h3>{{ project.subtitle }}</h3>
 </header>
 <div class="column-container project-column">
-    <div class="image-display-container column column60" data-project-id="{{project.projId}}">
+    <div class="image-display-container column column50" data-project-id="{{project.projId}}">
         <a href="{{ project.id | relative_url }}">
             <img class="image-display1" alt="Slider Image">
             <img class="image-display2" alt="Slider Image" style="opacity: 0;">
         </a>
     </div>
     <div class="column columnRest">
-        <div class="description">            
-            {{ project.shortDescription }}
-        </div>
-        <p style="font-weight: bold;" class="details"> {% for tag in project.techTags%} 
+        <div>
+            <div class="description">            
+                {{ project.summary }}
+                <p> </p>
+                <h4> Contributions </h4>
+                <ul style="list-style-type:disc">
+                    {% for contribution in project.contributions-short %}
+                    <li>{{contribution}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <p class="details"> {% for tag in project.techTags%} 
                 {{tag}}{% unless forloop.last %},{% endunless %}
-            {% endfor %}
-        </p>
-        <a href="{{ project.id | relative_url }}" class="details">Read More</a>
+                {% endfor %}
+            </p>
+            <p class="details"> Project {% if project.endDate != "" %} Finished: <b>{{project.endDate}}</b> {% else %} Started: <b>{{project.startDate}}</b> {% endif %} </p>       
+        </div>
+        <a href="{{ project.id | relative_url }}" style="font-weight: bold; width: 25%; height: 2.5em; padding: 0.5em; text-align: center;" class="button"> Read More </a>
     </div>
 </div>

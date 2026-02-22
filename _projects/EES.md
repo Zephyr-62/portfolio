@@ -15,10 +15,9 @@ categoryTags:
 techTags: 
     - Unity
     - Compute Shaders
-    - Prey-predator model
     - Genetic Algorithm
     - Data Visualization
-summary: "Simulator that tests the prey-predator model with bushes and trees, and trains a genetic algorithm to fine tune the parameters"
+summary: "Simulator that tests the prey-predator model with bushes and trees, and trains a genetic algorithm to fine tune the parameters."
 shortDescription: "This project was my computer science's bachelor's thesis. I worked on it for over a year, and it encompased working on an ecosysten simulator: <ul style='list-style-type:circle'>
  <li>Implementing rules for evolution such as genomes, mutation and gene crossover</li>
  <li>Implementing several data analysis tools</li>
@@ -32,25 +31,18 @@ longDescription: "
                   </p>
                  "
 teamSize: 1
-contributions: "<p>
-                    Everything was designed and implemented by me. The most relevant systems that I worked on include:
-                </p>
-                <p>
-                    - Spatio-temporal clustering algorithm
-                </p>
-                <p>
-                    - GPU compute shaders to detect collisions and calculate interactions between entities
-                </p>
-                <p>
-                    - Genetic Algorithm that runs dozens of simulations to fine-tune the simulator itself
-                </p>
-                <p>
-                    - Data analysis tools like heatmaps, plots, entity attributes...
-                </p>
-                <p>
-                    - Revisit past simulations at any saved point, and visit the live scene at that time
-                </p>
-                "
+
+contributions-short:
+  - GPU Compute Shaders
+  - Spatio-temporal Clustering Algorithm
+  - Simulation Snapshots
+  - Data Serialization
+contributions: 
+  - Spatio-temporal clustering algorithm
+  - GPU compute shaders to detect collisions and calculate interactions between entities
+  - Genetic Algorithm that runs dozens of simulations to fine-tune the simulator itself
+  - Data Analysis tools like heatmaps, distribution plots, entity attributes, and more
+  - Snapshot system to revisit past simulation instances in a 3D scene
 
 images:
     - name: Miniatura_1.png

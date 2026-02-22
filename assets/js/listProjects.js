@@ -150,7 +150,7 @@ function processProjects(){
     let categories = queryParams.filter?.split(";");
 
     projectContainers.forEach(projContainer => {
-        listParentContainer.appendChild(projContainer)
+        listParentContainer.appendChild(projContainer);
 
         let project = projects[projContainer.dataset.projectId];
         let projectShown = true;

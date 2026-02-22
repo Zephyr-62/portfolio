@@ -18,7 +18,8 @@ permalink: /projects.json
         "longDescription": "{{ project.longDescription }}",
         "ldDescription": "{{ project.ldDescription }}",
         "toolDescription": "{{ project.toolDescription }}",
-        "contributions": "{{ project.contributions }}",
+        "contributions-short": [{% for contribution in project.contributions-short %}"{{ contribution }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
+        "contributions": [{% for contribution in project.contributions %}"{{ contribution }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
         "teamSize": "{{ project.teamSize }}",
         "images": [{% for image in project.images %}
             {

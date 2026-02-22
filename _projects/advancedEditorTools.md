@@ -13,18 +13,18 @@ categoryTags:
     - Tool
 techTags: 
     - Unity
-    - C# Reflection
+    - C#
+    - Reflection
     - Engine Tool
-summary: "Unity plugin used to create custom inspectors by simply adding attributes to your fields and methods."
-shortDescription: "Free tool I developed to easily modify the Unity Inspector without the need to create any additional script attatchment, just like the default Unity attributes like [Header] or [Range]. This asset includes layout functionality for Foldouts and Columns with their respective styling, along with some other minor attributes like ReadOnly fields (which are not interactable from the inspector). All these elements can be nested as the user desires, with complex elements like lists of lists of structures or classes. However, by far the most useful functionality is the Button attribute, which allows the user to add a simple [Button('ButtonName')] attribute on top of their method and then they can run this code from the inspector with a single click. It even supports input parameters and async execution!"
+summary: "Unity plugin used to create custom inspectors by simply adding property attributes to fields and methods."
+shortDescription: "Free tool I developed to easily modify the Unity Inspector without the need to create an additional editor script. It follows the same principle as the default Unity property attributes like [Header] or [Range]. This asset includes layout functionality for Foldouts and Columns with their respective styling, along with some other minor attributes like ReadOnly fields (which are not interactable from the inspector). All these elements can be nested as the user desires, with complex elements like lists of lists of structures or classes. However, by far the most useful functionality is the Button attribute, which allows the user to add a simple [Button('ButtonName')] attribute on top of their method and then they can run this code from the inspector with a single click. It even supports input parameters and async execution!"
 longDescription: "This is my very long description, it could go on, and on, and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on, but it wont. It can also include html tags like <strong>this one</strong>..."
 teamSize: 1
-contributions: "This was a solo project, and the most destacable technical bits are the following:
- <ul>
-  <li></li>
-  <li></li>
-  <li></li>
- </ul>"
+contributions-short:
+  - Foldout Layout
+  - Columns Layout
+  - Nested Layouts
+  - Run Methods With Buttons
 images:
     - name: Advanced Editor Tools graphics-2.png
       alt: "Miniature"

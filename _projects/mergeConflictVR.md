@@ -17,12 +17,16 @@ techTags:
     - VR
     - Portals
     - Level/Puzzle/Game Design
-summary: "Exploration of VR sense of space <b>without</b> using virtual locomotion systems. Walk in-game by walking in real life"
+summary: "Exploration of VR sense of space <b><i>without</b></i> using virtual locomotion systems (e.g. joysticks). Walk in-game by walking in real life."
 shortDescription: "This is a template with example data that shows how an example project should look. This short description could extend a paragraph or two, but not get too much into detail."
 longDescription: " Remember to include all the systems you worked on :)
  <br>
  This is my very long description, it could go on, and on, and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on, but it wont. It can also include html tags like <strong>this one</strong>..."
 teamSize: 3
+contributions-short:
+  - Scale Portal Puzzle Branch  
+  - Out-of-bounds System
+  - Interaction System
 images:
     - name: hub.png
       alt: "Miniature"

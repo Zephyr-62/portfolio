@@ -8,21 +8,35 @@
 */
 
 :root {
-  --light-color1: #fef8ff;
-  --light-color2: #6d566f;
-  --dark-color1: #483949;
-  --dark-color2: #2b252c;
-
-  --alt-light-color2: #7894c8;
-  --alt-light-color1: #3f9bcc;
-  --alt-dark-color1: #49384a;
-  --alt-dark-color2: #291f2b;
+    
+    --light-color1: #fef8ff;
+    --light-color2: #6d566f;
+    --dark-color1: #483949;
+    --dark-color2: #2b252c;
+    
+    --alt-light-color: #2ba2e2;
+    --alt-dark-color1: #523d53;
+    --alt-dark-color2: #3d2f40;
+    
+    /*
+    --light-color1: #fef8ff;
+    --light-color2: #715ebc;
+    --dark-color1: #433871;
+    --dark-color2: #2a2442;
+    
+    --alt-light-color2: #7894c8;
+    --alt-light-color1: #3f9bcc;
+    --alt-dark-color1: #372b7c;
+    --alt-dark-color2: #271f52;
+    */
 
   --accent-color: white;
   --hover-color: #ffd560;
 
-  --button-blink1-color: #df7366;
-  --button-blink2-color: #ffb3ab;
+  --button-blink1-color: #e87b44;
+  --button-blink2-color: #f6d07f;
+
+  --footer-color: #342b38;
 
 }
 /* Alt color #3f9bcc ♥*/
@@ -109,6 +123,9 @@ input, select, textarea {
 
     body {
         background-image: linear-gradient(to right, var(--light-color2), var(--dark-color1), var(--dark-color1), var(--light-color2));
+        /*
+        background-image: linear-gradient(to right, var(--bg-color-light), var(--bg-color-dark), var(--bg-color-dark), var(--bg-color-light));
+        */
         color: var(--light-color1);
         font-size: 15pt;
         line-height: 1.85em;
@@ -2081,7 +2098,7 @@ input, select, textarea {
     .button {
         position: relative;
         display: inline-block;
-        background: #df7366;
+        background: var(--button-blink1-color);
         color: #fff;
         text-align: center;
         border-radius: 0.5em;
@@ -2091,6 +2108,7 @@ input, select, textarea {
         cursor: pointer;
         outline: 0;
         font-weight: 300;
+        overflow: visible;
         -moz-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
         -webkit-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
         -ms-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
@@ -2103,7 +2121,7 @@ input, select, textarea {
         button:hover,
         .button:hover {
             color: #fff;
-            background: #f4948a;
+            background: var(--button-blink2-color);
         }
 
         input[type="button"].alt,
@@ -2492,13 +2510,13 @@ input, select, textarea {
         position: relative;
         overflow: hidden;
         padding: 6em 0 6em 0;
-        background: #2b252c;
+        background: var(--footer-color);
         color: #fff;
     }
 
         #footer .icon.circled {
             background: #fff;
-            color: #2b252c;
+            color: var(--footer-color);
         }
 
         #footer header {
@@ -3224,12 +3242,33 @@ input, select, textarea {
         align-items: left;
         gap: 1.5em;
         border-radius: 2.5em;
-        margin: 1.5em 1.5em 1.5em 1.5em;
+        margin: 1.5em 15em;
         background-image: radial-gradient(circle, var(--alt-dark-color2) -10%, var(--alt-dark-color1)90%,  var(--alt-dark-color1) 100%);
         background-color: transparent;
         width: auto;
         filter: drop-shadow(4px 4px 6px rgba(0,0,0,0.4));
+    
+        transition: cubic-bezier(0.25,0.1,0.25,1);
+        transition-duration: 0.10s;
+        transition-delay: 0.05s;
     }
+
+    .projects-list .project:hover{   
+        /*
+        background-image: radial-gradient(circle, var(--alt-dark-color2) -10%, var(--alt-dark-color1)90%,  var(--alt-dark-color1) 100%);
+        animation: pulse 0.25s;
+        */
+        background-image: none;
+        background-color: var(--alt-dark-color2);
+        scale: 1.075;
+
+        transition: cubic-bezier(0.25,0.1,0.25,1);
+        transition-duration: 0.20s;
+        transition-delay: 0.05s;
+    }
+    .project:hover
+
+    
 
         .projects-list div div{
             background-image: none;
@@ -3237,11 +3276,11 @@ input, select, textarea {
         }
 
         .projects-list .image-display-container{
-            border-radius: 8px;
+            border-radius: 6px;
         }
 
     .projects-list .column-container{
-        padding: 2em 0 2em 0;
+        padding: 2em 0;
     }
 
         .projects-list .column-container .column-container{
@@ -3255,9 +3294,11 @@ input, select, textarea {
     gap: 1.5em;
   }
 
+  /*
   .column-container div{
-        height: 26vw;
-  }
+    height: 20vw;
+    }
+    */
 
 
 .column-container .column {
@@ -3395,7 +3436,7 @@ input, select, textarea {
 }
 
 .button:hover{
-    background-color: var(--hover-color);
+    background: var(--hover-color);
     color: var(--dark-color2);
     transition: cubic-bezier(0.075, 0.82, 0.165, 1);
     animation: pulse;
@@ -3413,4 +3454,32 @@ input, select, textarea {
 .reel-project-container:hover{
     animation: pulse;
     animation-duration: 0.5s;
+}
+
+.resume-details {
+    border-radius: 2.5em;
+    background-image: radial-gradient(circle, var(--alt-dark-color2) -10%, var(--alt-dark-color1)90%,  var(--alt-dark-color1) 100%);
+    background-color: transparent;
+    filter: drop-shadow(4px 4px 6px rgba(0,0,0,0.4));
+    margin: 2em 1em 1em 1em;
+    padding: 2em !important;
+    height: fit-content;
+}
+
+.project-details {
+    border-radius: 2.5em;
+    background-image: radial-gradient(circle, var(--alt-dark-color2) -10%, var(--alt-dark-color1)90%,  var(--alt-dark-color1) 100%);
+    background-color: transparent;
+    filter: drop-shadow(4px 4px 6px rgba(0,0,0,0.4));
+    margin: 2em 0.5em;
+    padding: 2em !important;
+    height: fit-content;
+}
+
+.outlined-block{
+    outline-style: groove;
+    outline-color: black;
+    border-radius: 1em;
+    margin: 0.5em;
+    padding: 1em;
 }
