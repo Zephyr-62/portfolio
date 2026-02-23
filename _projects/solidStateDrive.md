@@ -10,6 +10,7 @@ featured: false
 relevance: 60
 categoryTags:
     - Game
+    - Others
 techTags: 
     - Godot
     - Procedural Generation

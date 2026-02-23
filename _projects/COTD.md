@@ -10,6 +10,7 @@ featured: true
 relevance: 90
 categoryTags:
     - Game
+    - Others
 techTags: 
     - Unity
     - Blender

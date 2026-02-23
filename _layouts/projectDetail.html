@@ -33,27 +33,63 @@ permalink: /project/{{page.id}}
                     </div>
                     
                     <br>   
-                    {{ page.longDescription }}     
+
+                    {% if page.ldDescription or page.toolDescription %}
+                    <div class="projectTabs">
+                        <button class="projectTab projectTabSelected" data-target="overview">Overview</button>
+                        {% if page.ldDescription %}
+                            <button class="projectTab" data-target="levelDesign">Level Design</button>
+                        {% endif %}
+                        {% if page.toolDescription %}
+                            <button class="projectTab" data-target="tool">Tools Programming</button>
+                        {% endif %}
+                    </div>
+                    <hr>
+                    {% endif %}
+
+                    <div id="overview">
+                        <h2> Project Overview </h2>
+                        <!-- Create a tag to insert through js the content in the correct shape, extracting it from the js in page.longDescription -->
+                        {% for elem in page.longDescription %}
+                            {% if elem.type == "text" %}
+                                <p>{{ elem.content }}</p>
+                            {% elsif elem.type == "yt" %}
+                                <div style=" display: flex; justify-content: center;">
+                                    <iframe
+                                        width="100%"
+                                        height="480"
+                                        src="https://www.youtube-nocookie.com/embed/{{elem.videoId}}"
+                                        title="YouTube video player"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin"
+                                        allowfullscreen>
+                                    </iframe>                                
+                                </div>
+                            {% elsif elem.type == "media" %}
+                                <div class="image-display-container" style="margin: 2em 0;">
+                                    <a class="glightbox2 image"><img class="glightbox project-image-dev" data-project-id="{{page.projId}}" data-image-id="{{elem.id}}"></a>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
 
                     {% if page.ldDescription %}
-                        <h3 id="levelDesign"> Level Design Specifics</h3>
-                        {{ page.ldDescription }}
+                        <div id="levelDesign">
+                            <h2> Level Design </h2>
+                            {{ page.ldDescription }}
+                        </div>
                     {% endif %}
 
                     {% if page.toolDescription %}
-                        <h3 id="tool"> Tool Implementation Details</h3>
-                        {{ page.toolDescription }}
+                        <div id="tool">
+                            <h2> Tools Implementation </h2>
+                            {{ page.toolDescription }}
+                        </div>
                     {% endif %}
 
-                    <div class="row">
-                        <div class="gallery">
-                            {% for img in page.imagesDev %}
-                            <div class="image-display-container">
-                                <a class="glightbox2 image featured"><img class="glightbox project-image-dev" data-project-id="{{page.projId}}" data-image-idx="{{forloop.index0}}"></a>
-                            </div>
-                            {% endfor %}
-                        </div>
-                    </div>
+                    
+
                 </article>
             </div>
             <div class="col-3 col-12-mobile project-details" id="sidebar" style="margin-left: 2em;">
@@ -114,7 +150,7 @@ permalink: /project/{{page.id}}
                          {% for contribution in page.contributions-short %}
                             <li>{{contribution}}</li>
                         {% endfor %}
-                    </ul>       
+                    </ul>
                 </section>
                 <br>
             </div>
@@ -126,3 +162,4 @@ permalink: /project/{{page.id}}
 <script src="{{site.baseurl}}/assets/js/imagesSlideshow.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 <script src="{{site.baseurl}}/assets/js/gallery.js"></script>
+<script src="{{site.baseurl}}/assets/js/projectTabs.js"></script>

@@ -11,6 +11,7 @@ relevance: 10
 categoryTags:
     - Game
     - Software
+    - Others
 techTags: 
     - Ascii Graphics
     - NEAT Algorithm

@@ -9,7 +9,8 @@
 
 :root {
     
-    --light-color1: #fef8ff;
+    --light-color0: #fef8ff;
+    --light-color1:#cfcfcf;
     --light-color2: #6d566f;
     --dark-color1: #483949;
     --dark-color2: #2b252c;
@@ -19,7 +20,7 @@
     --alt-dark-color2: #3d2f40;
     
     /*
-    --light-color1: #fef8ff;
+    --light-color0: #fef8ff;
     --light-color2: #715ebc;
     --dark-color1: #433871;
     --dark-color2: #2a2442;
@@ -35,6 +36,7 @@
 
   --button-blink1-color: #e87b44;
   --button-blink2-color: #f6d07f;
+  --tab-selected-color: #8265aa;
 
   --footer-color: #342b38;
 
@@ -126,7 +128,7 @@ input, select, textarea {
         /*
         background-image: linear-gradient(to right, var(--bg-color-light), var(--bg-color-dark), var(--bg-color-dark), var(--bg-color-light));
         */
-        color: var(--light-color1);
+        color: var(--light-color0);
         font-size: 15pt;
         line-height: 1.85em;
         font-family: 'Source Sans Pro', sans-serif;
@@ -153,7 +155,7 @@ input, select, textarea {
 
     h1, h2, h3, h4, h5, h6 {
         font-weight: 400;
-        color: var(--light-color1);
+        color: var(--light-color0);
         line-height: 1.25em;
     }
 
@@ -3482,4 +3484,57 @@ input, select, textarea {
     border-radius: 1em;
     margin: 0.5em;
     padding: 1em;
+}
+
+.projectTabs {
+  display: flex;
+  width: 100%;
+  gap: 2em;
+}
+
+.projectTab {
+  flex: 1;              /* each takes equal space */
+  text-align: center;
+  padding: 1rem;
+  background: var(--alt-dark-color2);
+  font-weight: bolder;
+  font-size: x-large;
+  outline: var(--dark-color1) 2px solid; 
+  box-shadow: inset 0 1px 0 0 rgba(192, 192, 192, 0.35);
+  transition: 0.1s ease;
+}
+
+.projectTab:hover {
+  background: var(--alt-dark-color1);
+  transition: 0.3s ease;
+}
+
+.projectTabSelected {
+  background: var(--tab-selected-color);
+  outline: var(--light-color1) 2px solid;
+  transition: 0.1s ease;
+}
+
+.projectTabSelected:hover {
+  background: var(--tab-selected-color);
+}
+
+.image-display-container .video::after {
+  content: "▶";
+  position: absolute;
+  font-size: 2rem;
+  color: var(--light-color0);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ytVideo {
+    background: var(--dark-color2);
+}
+
+a img:hover {
+    filter: brightness(115%) drop-shadow(4px 4px 6px rgba(0,0,0,0.4));
+    transition: filter 0.3s ease; /* smooth transition */
+    transform: scale(1.05);
 }

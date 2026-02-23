@@ -35,9 +35,9 @@ function updateFilterButtons(){
         }
     }
 
-    buttonUpdate('.game-btn', "Game");
-    buttonUpdate('.software-btn', "Software");
-    buttonUpdate('.research-btn', "Research");
+    buttonUpdate('.ld-btn', "LevelDesign");
+    buttonUpdate('.tools-btn', "Tool");
+    buttonUpdate('.others-btn', "Others");
 }
 
 function buttonUpdate(btnClass, categoryName){

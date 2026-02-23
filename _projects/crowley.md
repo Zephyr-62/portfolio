@@ -23,7 +23,6 @@ contributions-short:
   - Flight & Camera Controls
   - Procedural Map Generation
   - Enemy AI
-  - "'Paranoia' Meter"
 images:
     - name: startScreen.png
       alt: "Thumbnail"
