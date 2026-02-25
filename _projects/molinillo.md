@@ -179,11 +179,11 @@ images:
 
 devImages:
   - id: firstLevel
-    name: Tool/firstLevel.png
+    name: Tool/FirstLevel.png
     alt: "Level1Building"
     footnote: "The first level implemented was fully handcrafted"
   - id: buildingStyles
-    name: Tool/buildingStyles.png
+    name: Tool/BuildingStyles.png
     alt: "Building Styles"
     footnote: "Selection of different styles and materials"
   - id: buildingFacade

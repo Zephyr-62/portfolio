@@ -24,19 +24,22 @@ contributions-short:
   - Lead Puzzle Designer
   - Physics Implementation
 images:
-    - name: cover.png
-      alt: "Miniature"
-      footnote: "note"
-    - name: levelSpawn.gif
-      alt: "Miniature"
-      footnote: "note"
-    - name: levelPlay1.gif
-      alt: "Miniature"
-      footnote: "note"
-    - name: levelPlay2.png
-      alt: "Miniature"
-      footnote: "note"
-    - name: levelPlay3.png
-      alt: "Miniature"
-      footnote: "note"
+  - name: cover.png
+    alt: "Miniature"
+    footnote: "note"
+  - name: levelSpawn.gif
+    alt: "Miniature"
+    footnote: "note"
+  - name: levelPlay1.gif
+    alt: "Miniature"
+    footnote: "note"
+  - name: levelPlay2.png
+    alt: "Miniature"
+    footnote: "note"
+  - name: levelPlay3.png
+    alt: "Miniature"
+    footnote: "note"
+
+devImages:
+  
 ---
