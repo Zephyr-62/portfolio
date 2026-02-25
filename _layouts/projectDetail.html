@@ -25,7 +25,7 @@ permalink: /project/{{page.id}}
                             {% for img in page.images %}
                             {% unless forloop.index0 == 0 %}
                             <div class="image-display-container">
-                                <a class="glightbox1 image featured"><img class="glightbox project-image" data-project-id="{{page.projId}}" data-image-idx="{{forloop.index0}}"></a>
+                                <a class="glightbox1 image featured"><img class="glightbox project-image zoomableImg" data-project-id="{{page.projId}}" data-image-idx="{{forloop.index0}}"></a>
                             </div>
                             {% endunless %}
                             {% endfor %}
@@ -49,46 +49,22 @@ permalink: /project/{{page.id}}
 
                     <div id="overview">
                         <h2> Project Overview </h2>
-                        <!-- Create a tag to insert through js the content in the correct shape, extracting it from the js in page.longDescription -->
-                        {% for elem in page.longDescription %}
-                            {% if elem.type == "text" %}
-                                <p>{{ elem.content }}</p>
-                            {% elsif elem.type == "yt" %}
-                                <div style=" display: flex; justify-content: center;">
-                                    <iframe
-                                        width="100%"
-                                        height="480"
-                                        src="https://www.youtube-nocookie.com/embed/{{elem.videoId}}"
-                                        title="YouTube video player"
-                                        frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        referrerpolicy="strict-origin-when-cross-origin"
-                                        allowfullscreen>
-                                    </iframe>                                
-                                </div>
-                            {% elsif elem.type == "media" %}
-                                <div class="image-display-container" style="margin: 2em 0;">
-                                    <a class="glightbox2 image"><img class="glightbox project-image-dev" data-project-id="{{page.projId}}" data-image-id="{{elem.id}}"></a>
-                                </div>
-                            {% endif %}
-                        {% endfor %}
+                        {% include projectDescriptionView.html description=page.longDescription %}
                     </div>
-
+                    
                     {% if page.ldDescription %}
                         <div id="levelDesign">
                             <h2> Level Design </h2>
-                            {{ page.ldDescription }}
+                            {% include projectDescriptionView.html description=page.ldDescription %}
                         </div>
                     {% endif %}
 
                     {% if page.toolDescription %}
                         <div id="tool">
                             <h2> Tools Implementation </h2>
-                            {{ page.toolDescription }}
+                            {% include projectDescriptionView.html description=page.toolDescription %}
                         </div>
-                    {% endif %}
-
-                    
+                    {% endif %}                   
 
                 </article>
             </div>

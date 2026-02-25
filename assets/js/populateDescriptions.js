@@ -1,5 +1,0 @@
-document.addEventListener("projectsReady", function(){
-
-    
-
-});

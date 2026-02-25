@@ -1,9 +1,9 @@
 <article class="reel-project-container" data-project-id="{{project.projId}}">
-    <a href="{{ project.id | relative_url }}" class="image featured">        
+    <a href="{{ project.id | relative_url }}" class="image featured" id="noAEffects">        
         {{assign image = project.images[0] }}
         <img src="" alt="{{ image.alt }}" />
         <header>
-            <h3><a href="{{ project.id | relative_url }}">{{ project.title }}</a></h3>
+            <h3><a href="{{ project.id | relative_url }}" id="noAEffects">{{ project.title }}</a></h3>
             <h5>{{ project.subtitle }}</h5>
         </header>
         <p>{{ project.summary }}</p>

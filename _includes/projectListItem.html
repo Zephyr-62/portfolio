@@ -3,13 +3,13 @@
     <h3>{{ project.subtitle }}</h3>
 </header>
 <div class="column-container project-column">
-    <div class="image-display-container column column50" data-project-id="{{project.projId}}">
+    <div id="projListItemImg" class="image-display-container column column50" data-project-id="{{project.projId}}">
         <a href="{{ project.id | relative_url }}">
             <img class="image-display1" alt="Slider Image">
             <img class="image-display2" alt="Slider Image" style="opacity: 0;">
         </a>
     </div>
-    <div class="column columnRest">
+    <div id="projListItemDesc" class="column columnRest">
         <div>
             <div class="description">            
                 {{ project.summary }}

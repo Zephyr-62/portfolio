@@ -15,27 +15,6 @@ permalink: /projects.json
         "categoryTags": [{% for tag in project.categoryTags %}"{{ tag }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
         "techTags": [{% for tag in project.techTags %}"{{ tag }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
         "shortDescription": "{{ project.shortDescription }}",
-        "longDescription":[{% for element in project.longDescription %}
-            {% if element.type == "text" %}
-                {
-                    "type": "htmlInsert",
-                    "content": {{ element.content | jsonify }}
-                }                
-            {% elsif element.type == "yt" %}
-                {
-                    "type": "yt",
-                    "videoId": "{{ element.videoId }}"
-                }                
-            {% elsif element.type == "media" %}
-                {
-                    "type": "media",
-                    "id": "{{ element.id }}"
-                }
-            {% endif %}
-            {% unless forloop.last %},{% endunless %}
-        {%- endfor %}],
-        "ldDescription": "{{ project.ldDescription }}",
-        "toolDescription": "{{ project.toolDescription }}",
         "contributions-short": [{% for contribution in project.contributions-short %}"{{ contribution }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
         "contributions": [{% for contribution in project.contributions %}"{{ contribution }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
         "teamSize": "{{ project.teamSize }}",

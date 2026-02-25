@@ -1,0 +1,22 @@
+{% for elem in include.description %}
+    {% if elem.type == "text" %}
+        <p>{{ elem.content }}</p>
+    {% elsif elem.type == "yt" %}
+        <div style=" display: flex; justify-content: center;">
+            <iframe
+                width="100%"
+                height="480"
+                src="https://www.youtube-nocookie.com/embed/{{elem.videoId}}"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>                                
+        </div>
+    {% elsif elem.type == "media" %}
+        <div class="image-display-container" style="margin: 2em 0;">
+            <a class="glightbox2 image"><img class="glightbox project-image-dev zoomableImg" data-project-id="{{page.projId}}" data-image-id="{{elem.id}}"></a>
+        </div>
+    {% endif %}
+{% endfor %}

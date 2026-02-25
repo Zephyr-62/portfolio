@@ -1,5 +1,6 @@
 // @ts-check
-const slideshowSpeed = 1750; // in ms
+const slideshowSpeed = 2200; //1750; // in ms
+const transitionDuration = 500; // in ms
 
 document.addEventListener("projectsReady", function() {
 	// Use the existing global `projects` object (instead of fetching a non-existent URL)
@@ -17,43 +18,37 @@ document.addEventListener("projectsReady", function() {
 		//if (!projectId) return;
 		const project = projects[projectId];
 		if (!project || !Array.isArray(project.images)) return;
-		const images = project.images;
 
+		const images = project.images;
 		const img = container.querySelector('.image-display1');
 		const img2 = container.querySelector('.image-display2');
 
-		// Ensure both DOM nodes are HTMLImageElement instances
-		// if (!(img instanceof HTMLImageElement) || !(img2 instanceof HTMLImageElement)) return;
-
 		let currentImg = 0; // explicit start index per container
-		let frontIsImg = true; // track which image element is currently front
+		let frontIsImg = true; // true when img2 is transparent, false when img2 is opaque
 		let activeSlideshow = false;
 
 		if (images.length === 0) return;
 
 		// Initialize images and opacities to a consistent state
-		setImage(img, 0);
-		if (images.length === 1) {
-			img.style.opacity = "1";
-			img2.style.opacity = "0";
-			return;
-		}
-		setImage(img2, 1);
+		frontIsImg = true;
 		img.style.opacity = "1";
 		img2.style.opacity = "0";
-		frontIsImg = true;
+		img2.style.transition = `opacity ${transitionDuration}ms ease`;
+
+		setImage(img, 0);
+		if (images.length === 1) return;
 
 		/**
 		 * Shows the image at the given index with a fade transition.
 		 * @param {number} index
 		 */
-		function showImage(index) {
+		function showNextImage(index) {
 			if (frontIsImg) {
-				setImage(img, index);
-				img2.style.opacity = "0";
-			} else {
 				setImage(img2, index);
 				img2.style.opacity = "1";
+			} else {
+				setImage(img, index);
+				img2.style.opacity = "0";
 			}
 			frontIsImg = !frontIsImg;
 		}
@@ -62,7 +57,7 @@ document.addEventListener("projectsReady", function() {
 		function slideshow() {
 			if (activeSlideshow) {
 				currentImg = (currentImg + 1) % images.length;
-				showImage(currentImg);
+				showNextImage(currentImg);
 				timeoutId = setTimeout(slideshow, slideshowSpeed);
 			}
 		}
@@ -80,28 +75,30 @@ document.addEventListener("projectsReady", function() {
 		}
 
 		container.addEventListener('mouseenter', function () {
-			if (!activeSlideshow) {
-				activeSlideshow = true;
-				if (timeoutId !== -1) {
-					clearTimeout(timeoutId);
-					timeoutId = -1;
-				}
-				slideshow();
-			}
-		});
-		
-		container.addEventListener('mouseleave', function () {
-			activeSlideshow = false;
+			activeSlideshow = true;
 			if (timeoutId !== -1) {
 				clearTimeout(timeoutId);
 				timeoutId = -1;
 			}
+			slideshow();
+		});
+		
+		container.addEventListener('mouseleave', function () {
+			if (timeoutId !== -1) {
+				clearTimeout(timeoutId);
+				timeoutId = -1;
+			}
+			activeSlideshow = false;
+
 			// reset to a consistent initial state to avoid parity/skipping issues
-			currentImg = 0;
 			setImage(img, 0);
-			if (images.length > 1) setImage(img2, 1);
+			currentImg = 0;
+			frontIsImg = true;
+			
+			// Instantly set transparency to 0
+			img2.style.transition = `opacity 0ms ease`;
 			img2.style.opacity = "0";
-			frontIsImg = false;
+			img2.style.transition = `opacity ${transitionDuration}ms ease`;
 		});
 	});
 });

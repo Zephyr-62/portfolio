@@ -43,7 +43,7 @@ function updateFilterButtons(){
 function buttonUpdate(btnClass, categoryName){
     const gamesBtn = document.querySelector(btnClass);
     if(gamesBtn != null){
-        if (queryParams.filter != null && queryParams.filter.split(";").includes(categoryName))
+        if (queryParams.filter != null && queryParams.filter == categoryName)
             gamesBtn.style.filter = "";        
         else gamesBtn.style.filter = "grayscale()";
     }
@@ -55,21 +55,10 @@ function toggleFilter(filterName){
     const params = url.searchParams;
 
     let filtersStr = params.get("filter");
-    if (filtersStr == null){
-        params.append("filter", filterName);     
-    } else {
-        let filters = filtersStr.split(";");
-
-        if(filters.includes(filterName))
-            filters = filters.filter(x => ! (x === filterName));
-        else{
-            filters.push(filterName);
-        }
-        filtersStr = filters.join(";");
-        if(filtersStr === "") params.delete("filter");    
-        else params.set("filter", filtersStr);
-    }
-
+    if(filtersStr == filterName)
+        params.delete("filter");
+    else
+        params.set("filter", filterName);     
 
     // Update URL without reloading
     window.history.replaceState({}, "", `${url.pathname}?${params.toString()}`);
@@ -166,13 +155,25 @@ function processProjects(){
         }
 
         // Alternate left and right if shown
-        if(projectShown){
+        function swapColumns(){
+            let projColumn = projContainer.querySelector('.project-column');
+            let projContentColumns = Array.from(projColumn.children);
+            projContentColumns.reverse();
+            projColumn.innerHTML = "";
+            projContentColumns.forEach(content => projColumn.append(content));
+        }
 
-            if(projShownCount %2 == 1){
-                let projColumn = projContainer.querySelector('.project-column');
-                let projContentColumns = Array.from(projColumn.children)
-                projContentColumns.reverse();
-                projContentColumns.forEach(content => projColumn.append(content));
+        // Must use ids, since every click of the button will alternate the order of the elements, so we can't rely on their position in the DOM
+        if(projectShown){
+            let imgColumn = projContainer.querySelector('#projListItemImg');
+            let parentImgContainer = imgColumn.parentElement;
+            if(projShownCount%2 == 0) {
+                if (imgColumn != parentImgContainer.children[0])
+                    swapColumns();
+            }
+            else {
+                if (imgColumn == parentImgContainer.children[0])
+                    swapColumns();
             }
             projShownCount++;
             projContainer.style.display = "";

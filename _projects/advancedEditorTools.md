@@ -7,7 +7,7 @@ startDate: "2023-02-06"
 endDate: "2023-06-22"
 halted: true
 featured: true
-relevance: 95
+relevance: 100
 categoryTags:
     - Software
     - Tool
@@ -19,6 +19,9 @@ techTags:
 summary: "Unity plugin used to create custom inspectors by simply adding property attributes to fields and methods."
 shortDescription: "Free tool I developed to easily modify the Unity Inspector without the need to create an additional editor script. It follows the same principle as the default Unity property attributes like [Header] or [Range]. This asset includes layout functionality for Foldouts and Columns with their respective styling, along with some other minor attributes like ReadOnly fields (which are not interactable from the inspector). All these elements can be nested as the user desires, with complex elements like lists of lists of structures or classes. However, by far the most useful functionality is the Button attribute, which allows the user to add a simple [Button('ButtonName')] attribute on top of their method and then they can run this code from the inspector with a single click. It even supports input parameters and async execution!"
 longDescription: "This is my very long description, it could go on, and on, and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on, but it wont. It can also include html tags like <strong>this one</strong>..."
+toolDescription:
+  - type: text
+    content: "my content"
 teamSize: 1
 contributions-short:
   - Foldout Layout
