@@ -3209,6 +3209,20 @@ input, select, textarea {
         border-radius: 8px;
     }
 
+    .image-display-container.projectDetail-img {
+        margin: 2em 0;
+        width: fit-content;
+        align-content: center;
+        max-height: 20em;
+    }
+
+    .image-display-container.projectDetail-img img{
+        height: fit-content;
+        max-height: 20em;
+        width: auto;
+        max-width: 100%;
+    }
+
         .image-display-container a {
             display: block;
             width: 100%;
@@ -3539,16 +3553,28 @@ input, select, textarea {
 
 .zoomableImg{
     box-shadow: none;
+    transition: all 0.3s ease;
 }
 
 .zoomableImg:hover {
     filter: brightness(115%);
     transition: all 0.3s ease; /* smooth transition */
-    transform: scale(1.075);
+    transform: scale(1.05);
 }
 
 .image-display-container:has(a img.zoomableImg):hover {
     box-shadow: 5px 5px 10px 0em rgba(0, 0, 0, 0.85);
     /* Optional: add a transition for a smoother effect if the class is added dynamically */
     transition: box-shadow 0.2s ease;
+}
+
+.projectDetails-gallery {
+    display: flex;
+    gap: 1em;
+    width: 100%;
+}
+
+.projectDetails-gallery .image-display-container.projectDetail-img img {
+    width: fit-content;
+    height: inherit;
 }

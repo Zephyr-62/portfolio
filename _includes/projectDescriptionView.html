@@ -1,8 +1,20 @@
 {% for elem in include.description %}
     {% if elem.type == "text" %}
         <p>{{ elem.content }}</p>
+    {% elsif elem.type == "link" %}
+        <p><a href="{{elem.url}}" target="_blank">→ {{elem.text}}</a></p>
+    {% elsif elem.type == "list" %}
+        <ul>
+        {% for item in elem.items %}
+            <li>{{ item }}</li>
+        {% endfor %}
+        </ul>
+    {% elsif elem.type == "galleryStart" %}
+        <div class="projectDetails-gallery">
+    {% elsif elem.type == "galleryEnd" %}
+         </div>
     {% elsif elem.type == "yt" %}
-        <div style=" display: flex; justify-content: center;">
+        <div style=" display: flex; justify-content: center; margin-bottom: 2em;">
             <iframe
                 width="100%"
                 height="480"
@@ -15,7 +27,7 @@
             </iframe>                                
         </div>
     {% elsif elem.type == "media" %}
-        <div class="image-display-container" style="margin: 2em 0;">
+        <div class="image-display-container projectDetail-img">
             <a class="glightbox2 image"><img class="glightbox project-image-dev zoomableImg" data-project-id="{{page.projId}}" data-image-id="{{elem.id}}"></a>
         </div>
     {% endif %}
