@@ -4,19 +4,17 @@ title: "Projects - Raúl Martín"
 permalink: /projectListing/
 ---
 
-<section id="banner" style=" overflow: auto; padding: 1em 0;">
-	<div class="column-container" style="float: right; gap: 0.25em;">
-        <div class="column columnRest" style="display: contents;">
-            <p style="text-align: right; padding-left: 1em;"> <b>Filter By</b></p>
-            <button style="padding: 0.7em; margin-right: 1em;" class="button filter-btn ld-btn" onclick="toggleFilter('LevelDesign')" >Level Design</button> 
-            <button style="padding: 0.7em; margin-right: 1em;" class="button filter-btn tools-btn" onclick="toggleFilter('Tool')" >Tools Programming</button> 
-            <button style="padding: 0.7em; margin-right: 1em;" class="button filter-btn others-btn" onclick="toggleFilter('Others')" >Others</button> 
-        </div>
-        <p class="column column40"></p>
-        <p class="column columnRest">
-            <p style="text-align: right;"> <b>Sorted By</b></p>
-            <button style="padding: 0.7em; margin-right: 1em;" class="button filter-btn sort-btn" onclick="toggleSort()" >Relevance ↓</button> 
-        </p>
+<section id="banner" class="filter-btns-container" style=" overflow: auto; padding: 1em 0; margin-bottom: 0.25em;">
+    <div class="filter-btns" >
+        <p style="text-align: center; padding-left: 1em; margin: 0;"> <b>Filter By</b></p>
+        <button class="button filter-btn ld-btn" onclick="toggleFilter('LevelDesign')" >Level Design</button> 
+        <button class="button filter-btn tools-btn" onclick="toggleFilter('Tool')" >Tools Programming</button> 
+        <button class="button filter-btn others-btn" onclick="toggleFilter('Others')" >Others</button> 
+    </div>
+    
+    <div class="filter-btns">
+        <p style="text-align: center; margin: 0;"> <b>Sorted By</b></p>
+        <button style="margin-right: 1em;" class="button filter-btn sort-btn" onclick="toggleSort()" >Relevance ↓</button> 
     </div>
 </section>
 

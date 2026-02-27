@@ -7,7 +7,7 @@ startDate: "2025-01-24"
 endDate: "2025-01-26"
 halted: true
 featured: false
-relevance: 70
+relevance: 60
 categoryTags:
     - Game
     - LevelDesign

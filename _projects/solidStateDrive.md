@@ -7,7 +7,7 @@ startDate: "2024-01-28"
 endDate: "2024-03-07"
 halted: false
 featured: false
-relevance: 60
+relevance: 45
 categoryTags:
     - Game
     - Others

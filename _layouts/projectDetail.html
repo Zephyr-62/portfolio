@@ -5,13 +5,13 @@ permalink: /project/{{page.id}}
 ---
 <div class="wrapper style1">
     <div class="container">
-        <div class="row gtr-200">
+        <header>
+            <h2 style="margin-bottom: 0;">{{ page.title }}</h2>
+            <p>{{ page.subtitle }}</p>
+        </header>
+        <div class="row gtr-200">            
             <div class="col-8 col-12-mobile" id="content">
                 <article id="main">
-                    <header>
-                        <h2>{{ page.title }}</h2>
-                        <p>{{ page.subtitle }}</p>
-                    </header>
                     <div class="image-display-container" style="height:25em">
                         <a class="glightbox-cover image featured">
                             <img class="project-image" data-project-id="{{page.projId}}" data-image-idx="0">
@@ -68,7 +68,7 @@ permalink: /project/{{page.id}}
 
                 </article>
             </div>
-            <div class="col-3 col-12-mobile project-details" id="sidebar" style="margin-left: 2em;">
+            <div class="col-3 col-12-mobile project-details" id="sidebar">
                 <hr class="first">
                 <section>
                     <header>
@@ -109,7 +109,6 @@ permalink: /project/{{page.id}}
                             </p>
                         </div>                    
                     </div>
-                    <br>
                     <h4>Keywords</h4>
                     <ul style="list-style-type:none">
                         {% for tag in page.techTags %}
@@ -128,7 +127,6 @@ permalink: /project/{{page.id}}
                         {% endfor %}
                     </ul>
                 </section>
-                <br>
             </div>
         </div>
     </div>

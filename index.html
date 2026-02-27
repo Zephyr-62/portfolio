@@ -7,7 +7,7 @@ permalink: "/"
 <section id="banner">
 	<header>
 		<p>
-			Welcome! I'm a Computer Science engineer currently studying Game Design and Technology at University of Gothenburg.
+			Welcome! I'm a Computer Science engineer currently studying <i>Game Design and Technology</i> at University of Gothenburg.
 			<br/>
 			I enjoy working on <b>level design</b> and <b>tool development</b>.
 			
@@ -28,7 +28,7 @@ permalink: "/"
 	</section>
 </div>
 <section class="carousel">
-	<div class="reel">
+	<div class="reel" style="margin-bottom: 2em;">
 		{% for project in site.projects %}
 		{% if project.featured %}
 		{% include projectReelView.html project=project %}
@@ -36,9 +36,5 @@ permalink: "/"
 		{% endfor %}
 	</div>
 </section>
-<div>
-	<a href="{{ 'projectListing' | relative_url }}" class="button" style="padding: 0.5em; margin: 2em; display: block;"><b>Project archive →</b></a>
-</div>
-
 
 <script src="{{site.baseurl}}/assets/js/projectsReel.js"></script>

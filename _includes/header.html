@@ -1,44 +1,45 @@
 
 {% assign home_url = site.baseurl | append: "/" %}
-{% if page.url == home_url %}
+
 <div id="header" style="background-image: {{ site.baseurl }}/images/header.png;">
-{% else %}
-<div id="header" style="background-image: {{ site.baseurl }}/images/header.png;">
-{% endif %}
-<!-- Nav -->
-	<nav id="nav">
-		<ul>
-			{% assign base = 'projectListing' | relative_url %}
-			<li><a href="{{home_url}}" id="navElem">HOME PAGE</a></li>
-			<li>||</li>
-			<li><a href="{{ base }}?filter=LevelDesign" id="navElem">Level Design</a></li>
-			<li><a href="{{ base }}?filter=Tool" id="navElem">Tool Development</a></li>
-			<!--
-			<li style="user-select: none; cursor: pointer; white-space: nowrap; opacity: 1;" class="opener">
-				<a href="{{ base }}">Projects List</a>		
-				<ul style="user-select: none; display: none; position: absolute;">
-					<li style="white-space: nowrap;"><a href="{{ base }}" style="display: block;">All</a></li>
-					<li style="white-space: nowrap;"><a href="{{ base }}?filter=Game" style="display: block;">Games</a></li>
-					<li style="white-space: nowrap;"><a href="{{ base }}?filter=Software" style="display: block;">Software</a></li>
-					<li style="white-space: nowrap;"><a href="{{ base }}?filter=Research" style="display: block;">Research</a></li>
-				</ul>
-			</li>	
-			-->
-			<li>||</li>
-			<li><a href="{{ 'resume' | relative_url }}" id="navElem">Resume</a></li>
-			<li><a href="{{ 'aboutMe' | relative_url }}" id="navElem">About Me</a></li>
-			<li><a href="#footer" id="navElem">Contact</a></li>
-		</ul>
-	</nav>
 	<!-- Inner -->
 	<div class="inner">
 		<header>
-				{% if page.url == home_url %}
-				<h1><a id="logo">Raúl Martín</a></h1>
-				<p>Game Dev & Computer Science Engineer</p>
+			<div>
+				{% if page.url == home_url or page.url == '/' %}
+					<h1><a id="logo">Raúl Martín</a></h1>
+					<p>Game Dev & Computer Science Engineer</p>
 				{% else %}
-				<h1><a href="{{home_url}}" id="logo">Raúl Martín</a></h1>
+					<h1 style="margin: 1em;"><a href="{{home_url}}" id="logo">Raúl Martín</a></h1>
 				{% endif %}
-			</header>
-		</div>
+			</div>
+			<!-- Nav -->
+			
+		</header>
+	</div>
 </div>
+
+<nav id="nav">
+	<ul>
+		{% assign base = 'projectListing' | relative_url %}
+		<li id="navElem"><a href="{{home_url}}" id="navElem">HOME PAGE</a></li>
+		<li>||</li>
+		<li id="navElem"><a href="{{ base }}?filter=LevelDesign" id="navElem">Level Design</a></li>
+		<li id="navElem"><a href="{{ base }}?filter=Tool" id="navElem">Tool Development</a></li>
+		<!--
+		<li style="user-select: none; cursor: pointer; white-space: nowrap; opacity: 1;" class="opener">
+			<a href="{{ base }}">Projects List</a>		
+			<ul style="user-select: none; display: none; position: absolute;">
+				<li style="white-space: nowrap;"><a href="{{ base }}" style="display: block;">All</a></li>
+				<li style="white-space: nowrap;"><a href="{{ base }}?filter=Game" style="display: block;">Games</a></li>
+				<li style="white-space: nowrap;"><a href="{{ base }}?filter=Software" style="display: block;">Software</a></li>
+				<li style="white-space: nowrap;"><a href="{{ base }}?filter=Research" style="display: block;">Research</a></li>
+			</ul>
+		</li>	
+		-->
+		<li>||</li>
+		<li id="navElem"><a href="{{ 'resume' | relative_url }}" id="navElem">Resume</a></li>
+		<li id="navElem"><a href="{{ 'aboutMe' | relative_url }}" id="navElem">About Me</a></li>
+		<li id="navElem"><a href="#footer" id="navElem">Contact</a></li>
+	</ul>
+</nav>
