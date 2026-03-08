@@ -2591,6 +2591,7 @@ input, select, textarea {
             color: rgba(128, 128, 128, 0.75);
             font-size: 0.8em;
             cursor: default;
+            display: block ruby;
         }
 
             #footer .copyright a {
@@ -3539,7 +3540,7 @@ input, select, textarea {
     background-image: radial-gradient(circle, var(--alt-dark-color2) -10%, var(--alt-dark-color1)90%,  var(--alt-dark-color1) 100%);
     background-color: transparent;
     filter: drop-shadow(4px 4px 6px rgba(0,0,0,0.4));
-    margin: 2em 1em 1em 1em;
+    margin: 0;
     padding: 2em !important;
     height: fit-content;
 }
@@ -3555,8 +3556,8 @@ input, select, textarea {
 }
 
 .outlined-block{
-    outline-style: groove;
-    outline-color: black;
+    outline-style: double;
+    outline-color: grey;
     border-radius: 1em;
     margin: 0.5em;
     padding: 1em;
