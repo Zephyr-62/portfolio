@@ -34,6 +34,10 @@
   --accent-color: white;
   --hover-color: #ffd560;
   --highlight-color: #fede84;
+  --status-color-active: #7ff683;
+  --status-color-halted: #fede84;
+  --status-color-closed: #e84444;
+
 
   --button-blink1-color: #e87b44;
   --button-blink2-color: #f6d07f;
@@ -252,6 +256,7 @@ input, select, textarea {
     p, ul, ol, dl, table {
         margin-bottom: 1em;
         align-content: center;
+        text-align: justify;
     }
 
     br.clear {
@@ -300,7 +305,7 @@ input, select, textarea {
     .container {
         margin: 0 auto;
         max-width: 100%;
-        width: 1400px;
+        width: 1200px;
     }
 
         @media screen and (max-width: 1680px) {
@@ -350,6 +355,7 @@ input, select, textarea {
         flex-wrap: wrap;
         box-sizing: border-box;
         align-items: stretch;
+        justify-content: space-between;
     }
 
         .row > * {
@@ -405,7 +411,7 @@ input, select, textarea {
         }
 
         .row > .col-3 {
-            width: 25%;
+            width: 30%;
         }
 
         .row > .off-3 {
@@ -445,7 +451,7 @@ input, select, textarea {
         }
 
         .row > .col-8 {
-            width: 66.66667%;
+            width: 70%;
         }
 
         .row > .off-8 {
@@ -2239,7 +2245,7 @@ input, select, textarea {
 
     .wrapper {
         background: transparent;
-        padding: 4em 0;
+        padding: 2em 0;
     }
 
         .wrapper.style2 {
@@ -2286,6 +2292,7 @@ input, select, textarea {
             color: #fff;
             font-size: 3em;
             line-height: 1em;
+            margin-bottom: 0;
         }
             #header > p{
                 text-align: center;
@@ -2365,7 +2372,7 @@ input, select, textarea {
         padding: .75em 0 .75em 0;
         z-index: 10;
         overflow: hidden;
-        background-color: rgba(0, 0, 0, 0.85);
+        background-color: black;
     }
 
         #nav > ul {
@@ -3251,6 +3258,8 @@ input, select, textarea {
         width: fit-content;
         align-content: center;
         max-height: 20em;
+        min-height: 8em;
+        background-color: var(--dark-color1);
     }
 
     .image-display-container.projectDetail-img img{
@@ -3540,7 +3549,7 @@ input, select, textarea {
     background-image: radial-gradient(circle, var(--alt-dark-color2) -10%, var(--alt-dark-color1)90%,  var(--alt-dark-color1) 100%);
     background-color: transparent;
     filter: drop-shadow(4px 4px 6px rgba(0,0,0,0.4));
-    margin: 0 0.5em 0 0;
+    margin: 0;
     padding: 2em !important;
     height: fit-content;
 }
@@ -3627,3 +3636,25 @@ input, select, textarea {
     width: fit-content;
     height: inherit;
 }
+
+
+.status {
+    font-style: italic;
+    font-weight: bold;
+    filter: drop-shadow(1px 1px 1px black);
+}
+    .status.Active{
+        color: var(--status-color-active);
+    }
+
+    .status.Halted{
+        color: var(--status-color-halted);
+    }
+
+    .status.Closed{
+        color: var(--status-color-closed);
+    }
+
+    .projectTabContent{
+        text-align: justify;
+    }

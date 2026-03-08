@@ -1,6 +1,8 @@
 {% for elem in include.description %}
     {% if elem.type == "text" %}
         <p>{{ elem.content }}</p>
+    {% elsif elem.type == "plain_html" %}
+        {{ elem.content }}
     {% elsif elem.type == "link" %}
         <p><a href="{{elem.url}}" target="_blank">→ {{elem.text}}</a></p>
     {% elsif elem.type == "list" %}

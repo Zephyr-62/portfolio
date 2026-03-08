@@ -36,36 +36,36 @@ permalink: /project/{{page.id}}
 
                     {% if page.ldDescription or page.toolDescription %}
                     <div class="projectTabs">
-                        <button class="projectTab projectTabSelected" data-target="overview">Overview</button>
+                        <button class="projectTab" id="overviewButton" data-target="overview">Overview</button>
                         {% if page.ldDescription %}
-                            <button class="projectTab" data-target="levelDesign">Level Design</button>
+                            <button class="projectTab" id="levelDesignButton" data-target="levelDesign">Level Design</button>
                         {% endif %}
                         {% if page.toolDescription %}
-                            <button class="projectTab" data-target="tool">Tools Programming</button>
+                            <button class="projectTab" id="toolButton" data-target="tool">Tools Programming</button>
                         {% endif %}
                     </div>
                     <hr>
                     {% endif %}
+                    <div class="projectTabContent">
+                        <div id="overview">
+                            <h2> Project Overview </h2>
+                            {% include projectDescriptionView.html description=page.longDescription %}
+                        </div>
+                        
+                        {% if page.ldDescription %}
+                            <div id="levelDesign">
+                                <h2> Level Design </h2>
+                                {% include projectDescriptionView.html description=page.ldDescription %}
+                            </div>
+                        {% endif %}
 
-                    <div id="overview">
-                        <h2> Project Overview </h2>
-                        {% include projectDescriptionView.html description=page.longDescription %}
+                        {% if page.toolDescription %}
+                            <div id="tool">
+                                <h2> Tools Implementation </h2>
+                                {% include projectDescriptionView.html description=page.toolDescription %}
+                            </div>
+                        {% endif %}                   
                     </div>
-                    
-                    {% if page.ldDescription %}
-                        <div id="levelDesign">
-                            <h2> Level Design </h2>
-                            {% include projectDescriptionView.html description=page.ldDescription %}
-                        </div>
-                    {% endif %}
-
-                    {% if page.toolDescription %}
-                        <div id="tool">
-                            <h2> Tools Implementation </h2>
-                            {% include projectDescriptionView.html description=page.toolDescription %}
-                        </div>
-                    {% endif %}                   
-
                 </article>
             </div>
             <div class="col-3 col-12-mobile project-details" id="sidebar">
@@ -96,17 +96,16 @@ permalink: /project/{{page.id}}
                         </div>
                         <div class="col-5">
                             <h4>Status</h4>
-                            <p> 
-                                {% unless page.endDate == "" %} 
-                                    {% if page.halted %}
-                                        Halted
-                                    {% else %}
-                                        Closed
-                                    {% endif %}
+                            {% unless page.endDate == "" %} 
+                                {% if page.halted %}
+                                    {% assign status = "Halted" %}
                                 {% else %}
-                                    Active
-                                {% endunless %}
-                            </p>
+                                    {% assign status = "Closed" %}
+                                {% endif %}
+                            {% else %}
+                                {% assign status = "Active" %}
+                            {% endunless %}
+                            <p class="status {{ status }}"> {{ status }} </p>
                         </div>                    
                     </div>
                     <h4>Keywords</h4>
