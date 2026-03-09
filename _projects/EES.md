@@ -18,20 +18,17 @@ techTags:
     - Genetic Algorithm
     - Data Visualization
 summary: "Simulator that tests the prey-predator model with bushes and trees, and trains a genetic algorithm to fine tune the parameters."
-shortDescription: "This project was my computer science's bachelor's thesis. I worked on it for over a year, and it encompased working on an ecosysten simulator: <ul style='list-style-type:circle'>
+shortDescription: "This project was my computer science's bachelor's thesis. I worked on it for over a year, and it encompased working on an ecosysten simulator where I managed to implement 2 competing entity types: <ul style='list-style-type:circle'>
  <li>Implementing rules for evolution such as genomes, mutation and gene crossover</li>
  <li>Implementing several data analysis tools</li>
  <li>Implementing a genetic algorithm that runs the simulator dozens of times to fine-tune the parameters and find stability between both types of entities: bushes and trees</li>
  <li>Working on all the UI and data serialization</li>
  </ul>"
-longDescription: "
-                  <header><h3>Description of Systems</h3></header>
-                  <p>
-                  This is my very long description, it could go on, and on, and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on, but it wont. It can also include html tags like <strong>this one</strong>...
-                  </p>
-                 "
-teamSize: 1
+longDescription:
+  - type: text
+    content: "This page is a <i><b>Work In Progress</b></i>"
 
+teamSize: 1
 contributions-short:
   - GPU Compute Shaders
   - Spatio-temporal Clustering Algorithm

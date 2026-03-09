@@ -18,8 +18,10 @@ techTags:
     - Raytracing
     - Rasterizing
 summary: "Basic game engine with a gameobject system and a hybrid renderer of rasterized 3D meshes and raytraced objects (e.g. voxels)."
-shortDescription: "This is a template with example data that shows how an example project should look. This short description could extend a paragraph or two, but not get too much into detail."
-longDescription: "This is my very long description, it could go on, and on, and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on, but it wont. It can also include html tags like <strong>this one</strong>..."
+shortDescription: "I participated in the development of this basic game engine in a team of 4 people. The game engine counts on a gameobject system that supports rasterized meshes instancing, an audio manager system, and CPU raytraced objects (cubes, spheres, and octrees).<br><br> I was personally in charge of building the hybrid renderer (rasterization + raytracing), the implementation of octrees, and the post-processing pipeline."
+longDescription:
+  - type: text
+    content: "This page is a <i><b>Work In Progress</b></i>"
 teamSize: 4
 contributions-short:
   - Hybrid Renderer (Rasterizer + CPU Raytracer)
@@ -28,27 +30,27 @@ contributions-short:
   - Camera Implementation
 images:
     - name: treeView.png
-      alt: "Miniature"
-      footnote: "note"
-    - name: blocks1.png
-      alt: "Miniature"
-      footnote: "note"
-    - name: postprocess.png
-      alt: "Miniature"
-      footnote: "note"
+      alt: "Thumbnail"
+      footnote: "Randomly generated octree with color shifting on branches."
     - name: rayCastAndRasterized.png
-      alt: "Miniature"
-      footnote: "note"
-    - name: postprocess1.png
-      alt: "Miniature"
-      footnote: "note"
-    - name: postprocess2.png
-      alt: "Miniature"
-      footnote: "note"
+      alt: "Raycasted-Rasterized interaction"
+      footnote: "Raycasted cube (pink) intersects with rasterized cubes (RGB gradient)."
     - name: treeview2.png
-      alt: "Miniature"
-      footnote: "note"
+      alt: "Octree Scene"
+      footnote: "Overview of a randomly generated octree."
+    - name: blocks1.png
+      alt: "Cubic Octree"
+      footnote: "Blocky octree with fractal colors."
     - name: blocks2.png
-      alt: "Miniature"
-      footnote: "note"
+      alt: "Cubic Octree 2"
+      footnote: "Blocky octree with fractal colors."
+    - name: postprocess.png
+      alt: "CRT"
+      footnote: "Dummy implementation of a CRT shader."
+    - name: postprocess1.png
+      alt: "Pixelization shader"
+      footnote: "Implementation of a pixelization shader."
+    - name: postprocess2.png
+      alt: "CRT & Pixel Shaders"
+      footnote: "Combination of both implemented example shaders."
 ---

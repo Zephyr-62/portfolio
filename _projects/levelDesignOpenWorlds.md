@@ -20,9 +20,31 @@ techTags:
     - PCG
     - Research
 summary: "Research that explores how to influence open-world experiences through level design using procedural content generation."
-shortDescription: "This is a template with example data that shows how an example project should look. This short description could extend a paragraph or two, but not get too much into detail."
-longDescription: "This is my very long description, it could go on, and on, and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on, but it wont. It can also include html tags like <strong>this one</strong>..."
-toolDescription: "This is my description for tools"
+shortDescription: " "
+longDescription:  
+  - type: text
+    content: ""
+  - type: link
+    url: '/portfolio/docs/mastersThesis.pdf'
+    text: Master's Thesis Current Draft (before final corrections)
+  - type: text
+    content: ""
+  - type: text
+    content: "Things to talk about in this portfolio entry"
+  - type: list
+    items:
+      - "Overview: 4 pillars of research, Dual prototype thesis. Guidelines as LD; Gameplay prototype + island generation, map generation as Tools. Show off character controller + interaction system + inventory. Present result imgs of generations"
+      - "Level Design Tab: taxonomy 4 categories, 11 guidelines, structure of a guideline, key LD concepts, diagrams..."
+      - "Tools: Island generation & Map generation process (as explained in Thesis) --> usage of AET + ref"
+
+toolDescription:
+  - type: text
+    content: ""
+ldDescription:
+  - type: text
+    content: ""
+
+
 teamSize: 1
 contributions-short:
   - Level Design Taxonomy
@@ -30,19 +52,29 @@ contributions-short:
   - Floating Islands Generator
   - Map Prototype Generator
 images:
-    - name: islands.png
-      alt: "Miniature"
-      footnote: "note"
-    - name: biomes.png
-      alt: "Miniature"
-      footnote: "note"
-    - name: mainGraph.png
-      alt: "Miniature"
-      footnote: "note"
-    - name: LD.png
-      alt: "Miniature"
-      footnote: "note"
-    - name: PCG.png
-      alt: "Miniature"
-      footnote: "note"
+  - name: islands.png
+    alt: "Islands"
+    footnote: "Procedurally generated islands following the specific biome generation parameters."
+  - name: biomes.png
+    alt: "Biomes Cells"
+    footnote: "Cells used to represent an area of the prototype that belongs to a specific biome."
+  - name: mainGraph.png
+    alt: "Main Concept Diagram"
+    footnote: "Concept diagram I used to structure all my findings in a graph."
+  - name: LD.png
+    alt: "Level Design Diagram"
+    footnote: "Level design diagram I used to link and group every concept I run into during my research."
+  - name: PCG.png
+    alt: "PCG Diagram"
+    footnote: "PCG Diagram I used to arrange benefits/drawbacks, taxonomy, methods, and its integration with Level Design."
+
+devImages:
+  - id: imgID
+    name: LD/imgID.png
+    alt: "altDesc"
+    footnote: "note"
+  - id: imgID
+    name: LD/imgID.png
+    alt: "altDesc"
+    footnote: "note"
 ---

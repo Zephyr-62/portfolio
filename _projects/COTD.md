@@ -5,7 +5,7 @@ title: "Creatures of the Deep"
 subtitle: "Course Project ~ Game Development Project"
 startDate: "2024-09-12"
 endDate: "2024-11-03"
-halted: true
+halted: false
 featured: true
 relevance: 90
 categoryTags:
@@ -18,9 +18,14 @@ techTags:
     - Procedural Animation
     - Game Design
 summary: "Venture into the depths of the sea to collect ancient artefacts for your company while piloting an old rusty submarine. Avoid looming creatures..."
-shortDescription: "This is a first-person game set in the depths of the ocean where you control an unreliable and rusty submarine. Your goal is to collect some lost ancient artefacts while trying to maneuver through an underwater ravine with indirect controls, and fixing any malfunction that might show up during your voyage. You also have to be cautious with the <i>creatures of the deep</i>. Use the different books that you have available to learn about those two things. <br>
+shortDescription: "This is a first-person game set in the depths of the ocean where you control an unreliable and rusty submarine. Your goal is to collect some lost ancient artefacts while trying to maneuver through an underwater ravine with indirect controls, and fixing any malfunction that might show up during your voyage. You also have to be cautious with the <i>creatures of the deep</i>. Use the different books that you have available to learn about those two things. <br><br>
  This was a project course made in the span of 7 weeks with the topic 'Public Domain', which whe implemented through real life scans of ancient sculptures."
-longDescription: "This is my very long description, it could go on, and on, and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on, but it wont. It can also include html tags like <strong>this one</strong>..."
+longDescription:
+  - type: text
+    content: "This page is a <i><b>Work In Progress</b></i>"
+  - type: link
+    url: "https://raul-martin.itch.io/creatures-of-the-deep"
+    text: Click here to see the game on Itch.io
 teamSize: 6
 contributions-short:
   - Submarine Physics Controller
@@ -41,30 +46,29 @@ contributions: "<p>
                 "
 images:
     - name: Cover.png
-      alt: "Miniature"
-      footnote: "note"
+      alt: "Thumbnail"
     - name: display.png
-      alt: "Miniature"
-      footnote: "note"
+      alt: "Promotional Image"
+      footnote: "Promotional image of the game shared with the classmates to show off our game."
     - name: quest.png
-      alt: "Miniature"
-      footnote: "note"
+      alt: "Quest Entry"
+      footnote: "This text explains the quest to the player through a fax machine."
     - name: book.png
-      alt: "Miniature"
-      footnote: "note"
+      alt: "Manual"
+      footnote: "The player uses the manual to learn about the malfunctions of the submarine."
     - name: valves.png
-      alt: "Miniature"
-      footnote: "note"
+      alt: "Systems"
+      footnote: "Display of the malfunction warning lights and the pump system."
     - name: engine.png
-      alt: "Miniature"
-      footnote: "note"
+      alt: "Engine Hot"
+      footnote: "The engine is overheating."
     - name: depths1.png
-      alt: "Miniature"
-      footnote: "note"
+      alt: "Lights out!"
+      footnote: "The player navigates with all their lights off, making use of the sonar and the built-in cameras."
     - name: crabAttack.png
-      alt: "Miniature"
-      footnote: "note"
+      alt: "Monster Sighting"
+      footnote: "The silhouette of a monster appears on the cameras."
     - name: depths2.png
-      alt: "Miniature"
-      footnote: "note"
+      alt: "Ravine Navigation"
+      footnote: "The player navigates close to the bottom of an underwater ravine."
 ---

@@ -16,8 +16,13 @@ techTags:
     - Procedural Generation
     - Gameplay Programming
 summary: "48h Halloween Gamejam with the theme 'Possession'. Glide around the city as a crow and scavenge all the shinies!"
-shortDescription: "This is a template with example data that shows how an example project should look. This short description could extend a paragraph or two, but not get too much into detail."
-longDescription: "This is my very long description, it could go on, and on, and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on, but it wont. It can also include html tags like <strong>this one</strong>..."
+shortDescription: "You are Crowley, a cleptomaniac crow obsessed with shiny objects! Fly around the city collecting shiny objects to avoid getting paranoid and anxious. You must return to your nest to drop your items and recover some of your sanity.  Other birds and cursed crows will try to steal from you, watch out!<br><br> You lose when your paranoia overwhelms you. You win when you collect the special shiny object and drop it at your nest."
+longDescription:
+  - type: text
+    content: "This page is a <i><b>Work In Progress</b></i>"
+  - type: link
+    url: https://raul-martin.itch.io/crowley
+    text: Click here to see the game on Itch.io
 teamSize: 4
 contributions-short:
   - Flight & Camera Controls

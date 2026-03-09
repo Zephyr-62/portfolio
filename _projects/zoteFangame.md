@@ -16,20 +16,21 @@ techTags:
     - C#
     - Level Editor
 summary: "First small unity prototype that implements systems like character controller, camera confinement, enemy AI, animations, quests, dialogue systems..."
-shortDescription: "This is a template with example data that shows how an example project should look. This short description could extend a paragraph or two, but not get too much into detail."
+shortDescription: "This was a course project I took in my bachelors with a couple of friends. We were interested in the character Zote from <i>Hollow Knight (2017)</i>, and we wanted to imagine what his backstory was. This prototype was the start of this project, although due to time constraints (and of course copyright issues) we decided to close the project at the end of this course. However, as a first introduction to Unity it was a success."
 longDescription: 
   - type: text
-    content: "SYSTEMS: Camera confinment & discovery, quest system, dialogue system, auto-map generator (doors to levels)."
+    content: "This page is a <i><b>Work In Progress</b></i>"
   - type: text
-    content: "This is my very long description, it could go on, and on, and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on, but it wont. It can also include html tags like <strong>this one</strong>... Another sentence here "
+    content: "We made an alpha trailer for our bachelor's course. Along with this, we also uploaded a walkthrough video, featuring all the implemented systems."
   - type: yt
     videoId: "q4P7AiaYRQ4"
-  - type: media
-    id: zote-title
+  - type: yt
+    videoId: "Zn65SlHgJqo"
+
+contributions:
   - type: text
-    content: "This is the rest of the explanation"
-  - type: media
-    id: zote-demo
+    content: "SYSTEMS: Camera confinment & room discovery, quest system, dialogue system, auto-map generator (doors to levels)."
+
 
 teamSize: 3
 contributions-short:
@@ -39,33 +40,22 @@ contributions-short:
   - Character Controllers
 images:
     - name: zote-title.png
-      alt: "Miniature"
-      footnote: "This is my example miniature"
+      alt: "Thumbnail"
     - name: zote-cave.png
-      alt: "Example image"
-      footnote: "This is an example image"
+      alt: "Cave Preview"
+      footnote: "Preview of the cave scene."
     - name: zote-alpha.gif
-      alt: "Example image"
-      footnote: "This is an example image"
+      alt: "Zote movement"
+      footnote: "Implementation of the first character controller. Jump, fall, floor slam, recover..."
     - name: zotefly-demo.gif
-      alt: "Example image"
-      footnote: "This is an example image"
+      alt: "Zotefly"
+      footnote: "Implementation of the fly version of zote. He can float, fly, and crawl on the floor."
     - name: zote-scene-doors.png
-      alt: "Example image"
-      footnote: "This is an example image"
+      alt: "Doorway system"
+      footnote: "Implementation of the doorway system, which we used to create different scenes and connect their door triggers by physically drawing a map."
     - name: zote-demo.mp4
-      alt: "Example image"
-      footnote: "This is an example image"
+      alt: "Gameplay Vid"
+      footnote: "A bit of gameplay with zote jumping around."
       thumbnail: zote-demo-thumb.png
 
-devImages:
-  - id: zote-title
-    name: zote-title.png
-    alt: "Miniature"
-    footnote: "This is my example miniature"
-  - id: zote-demo
-    name: zote-demo.mp4
-    alt: "Example image"
-    footnote: "This is an example image"
-    thumbnail: zote-demo-thumb.png
 ---

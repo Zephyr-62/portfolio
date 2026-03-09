@@ -16,8 +16,13 @@ techTags:
     - Procedural Generation
     - Shaders
 summary: "Dodge projectiles and obstacles for as long as you can on the road to the Cybersoviet Union's mainframe."
-shortDescription: "This is a template with example data that shows how an example project should look. This short description could extend a paragraph or two, but not get too much into detail."
-longDescription: "This is my very long description, it could go on, and on, and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on,and on, but it wont. It can also include html tags like <strong>this one</strong>..."
+shortDescription: "In this game you drive towards the sunset while avoiding obstacles and defeating enemies. You have a protective shield which you can use to deflect their projectiles into them. The game is score-based, and the difficulty increases the longer you play.<br><br> This game was part of an Agile methodology course, where most of the time was spent on doing management chores instead of actually working on the game."
+longDescription:
+  - type: text
+    content: "This page is a <i><b>Work In Progress</b></i>"
+  - type: link
+    url: https://edneedsbread.itch.io/solid-state-drive-highway-to-shell
+    text: Click here to see the game on Itch.io
 teamSize: 6
 contributions-short:
   - Project Management
@@ -26,15 +31,15 @@ contributions-short:
   - Landscape Generation
 images:
     - name: mainMenu.png
-      alt: "Miniature"
-      footnote: "This is my example miniature"
+      alt: "Thumbnail"
+      footnote: "Main menu."
     - name: lore.png
-      alt: "Example image"
-      footnote: "This is an example image"
+      alt: "Lore"
+      footnote: "Small bit of story to introduce the game."
     - name: play1.png
-      alt: "Example image"
-      footnote: "This is an example image"
+      alt: "Cube stare"
+      footnote: "This image displays how we used a cube as a placeholder to code the logic of enemies, which float around and point at the player at all times."
     - name: play2.png
-      alt: "Example image"
-      footnote: "This is an example image"
+      alt: "Gameplay"
+      footnote: "The player deflects a projectile from the enemy."
 ---

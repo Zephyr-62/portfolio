@@ -43,7 +43,7 @@ longDescription:
 
 ldDescription:
   - type: text
-    content: "Since the game is still in development, this section is <b>Under Construction</b>."
+    content: "The game is still in development and this section is <b>Under Construction</b>. Bear in mind the level design of this game is on it's early stages, so there is not much to say as of March 2026. You can expect updates in the following months..."
   - type: text
     content: "The process of level design started by acquiring metrics for both playable characters, and assessing their different ways in which they can interact with the space. With this, different paths can be created for both characters, which gives some variety and independence to each player. For note taking purposes, Rodolfo is identified with the purple color, while Ramon's color is orange."
   - type: galleryStart
@@ -68,7 +68,7 @@ ldDescription:
     id: firstSketch
 
   - type: text
-    content: "Here I haven't shared any design decissions nor I have explained the intent of the layouts I created, but these will be acknowledged in the future when more progress is made."
+    content: "I don't want to share all my design yet, since they are under development. Many design decissions will be acknowledged and explained in the future when more progress is made."
   - type: text
     content: "<i>More updates coming soon!</i>"
 
