@@ -3511,6 +3511,7 @@ input, select, textarea {
 
 .button {
     box-shadow: 3px 3px 2px 3px rgba(0, 0, 0, 0.5);  
+    min-width: fit-content;
 }
 .button h1, .button h2, .button h3, .button h4, .button h5, .button h6 {
     margin: 0;
@@ -3536,17 +3537,17 @@ input, select, textarea {
 }
 
 .resume-details {
-    border-radius: 2.5em;
+    border-radius: 1.5em;
     background-image: radial-gradient(circle, var(--alt-dark-color2) -10%, var(--alt-dark-color1)90%,  var(--alt-dark-color1) 100%);
     background-color: transparent;
     filter: drop-shadow(4px 4px 6px rgba(0,0,0,0.4));
-    margin: 0;
+    margin: 2em 0 0 0;
     padding: 2em !important;
     height: fit-content;
 }
 
 .project-details {
-    border-radius: 2.5em;
+    border-radius: 1.5em;
     background-image: radial-gradient(circle, var(--alt-dark-color2) -10%, var(--alt-dark-color1)90%,  var(--alt-dark-color1) 100%);
     background-color: transparent;
     filter: drop-shadow(4px 4px 6px rgba(0,0,0,0.4));

@@ -52,7 +52,7 @@ images:
       footnote: "Implementation of the fly version of zote. He can float, fly, and crawl on the floor."
     - name: zote-scene-doors.png
       alt: "Doorway system"
-      footnote: "Implementation of the doorway system, which we used to create different scenes and connect their door triggers by physically drawing a map."
+      footnote: "Implementation of the doorway system, which we used to connect different unity scenes. This system automatically links all the transition triggers. We drew a map with my custom tool <a href='/portfolio/projects/worldPainter2D'>[World Painter 2D]</a> to keep track of which door is which."
     - name: zote-demo.mp4
       alt: "Gameplay Vid"
       footnote: "A bit of gameplay with zote jumping around."
