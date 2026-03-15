@@ -40,6 +40,10 @@ images:
       alt: "Cube stare"
       footnote: "This image displays how we used a cube as a placeholder to code the logic of enemies, which float around and point at the player at all times."
     - name: play2.png
-      alt: "Gameplay"
+      alt: "Projectile Deflect"
       footnote: "The player deflects a projectile from the enemy."
+    - name: gameplay.mp4
+      thumbnail: gameplay.png
+      alt: "Gameplay"
+      footnote: "In this gameplay I show off how you can deflect enemy projectiles with your rotating shield. The shield can store projectiles while it spins."
 ---

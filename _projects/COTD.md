@@ -26,49 +26,71 @@ longDescription:
   - type: link
     url: "https://raul-martin.itch.io/creatures-of-the-deep"
     text: Click here to see the game on Itch.io
+
+  - type: text
+    content: "In this game I wanted to focus on learning how to use Blender, and I worked on most of the 3D assets not related to the submarine. However, I also implemented some other technical bits:"
+  - type: list
+    items:
+      - PID Controller for the physics of the submarine and controls.
+      - All the interaction system with the bookshelf, including the procedural animation of the robot arm.
+      - Fully implemented the 3D model and texture, AI, and procedural animations of a creature of the depths.
+      - Composed and performed the main theme that plays in the start menu.
+      - Helping coleagues integrate their systems in a structured way.
+      - Pushing forward with bugfixing on the last stretch of the project.
+  - type: galleryStart
+  - type: media
+    id: faxMachine
+  - type: media
+    id: engine
+  - type: media
+    id: sonarMalfunction
+  - type: galleryEnd
+  
 teamSize: 6
 contributions-short:
   - Submarine Physics Controller
   - Enemy 3D Model, Animation & AI
   - Procedural Animations
   - Music - Main Theme
-contributions: "<p>
-                    In this game I wanted to focus on learning how to use Blender, and I worked on most of the 3D assets outside the submarine. However, I also implemented some other technical bits: 
-                </p>
-                <ul style='list-style-type:circle'>
-                  <li>PID Controller for the physics of the submarine and controls</li>
-                  <li>All the interaction system with the bookshelf, including the procedural animation of the robot arm</li>
-                  <li>Fully implemented the 3D model and texture, AI, and procedural animations of a creature of the depths</li>
-                  <li>Composed the main theme that plays in the start menu</li>
-                  <li>Helping coleagues integrate their systems in a structured way</li>
-                  <li>Pushing forward with bugfixing on the last stretch of the project</li>
-                </ul>
-                "
+
 images:
-    - name: Cover.png
-      alt: "Thumbnail"
-    - name: display.png
-      alt: "Promotional Image"
-      footnote: "Promotional image of the game shared with the classmates to show off our game."
-    - name: quest.png
-      alt: "Quest Entry"
-      footnote: "This text explains the quest to the player through a fax machine."
-    - name: book.png
-      alt: "Manual"
-      footnote: "The player uses the manual to learn about the malfunctions of the submarine."
-    - name: valves.png
-      alt: "Systems"
-      footnote: "Display of the malfunction warning lights and the pump system."
-    - name: engine.png
-      alt: "Engine Hot"
-      footnote: "The engine is overheating."
-    - name: depths1.png
-      alt: "Lights out!"
-      footnote: "The player navigates with all their lights off, making use of the sonar and the built-in cameras."
-    - name: crabAttack.png
-      alt: "Monster Sighting"
-      footnote: "The silhouette of a monster appears on the cameras."
-    - name: depths2.png
-      alt: "Ravine Navigation"
-      footnote: "The player navigates close to the bottom of an underwater ravine."
+  - name: Cover.png
+    alt: "Thumbnail"
+  - name: display.png
+    alt: "Promotional Image"
+    footnote: "Promotional image of the game shared with the classmates to show off our game."
+  - name: quest.png
+    alt: "Quest Entry"
+    footnote: "This text explains the quest to the player through a fax machine."
+  - name: book.png
+    alt: "Manual"
+    footnote: "The player uses the manual to learn about the malfunctions of the submarine."
+  - name: valves.png
+    alt: "Systems"
+    footnote: "Display of the malfunction warning lights and the pump system."
+  - name: engine.png
+    alt: "Engine Hot"
+    footnote: "The engine is overheating."
+  - name: depths1.png
+    alt: "Lights out!"
+    footnote: "The player navigates with all their lights off, making use of the sonar and the built-in cameras."
+  - name: crabAttack.png
+    alt: "Monster Sighting"
+    footnote: "The silhouette of a monster appears on the cameras."
+  - name: depths2.png
+    alt: "Ravine Navigation"
+    footnote: "The player navigates close to the bottom of an underwater ravine."
+devImages:
+  - id: engine
+    name: engine.gif
+    alt: "Engine Gif"
+    footnote: "The engine glows brighter when more systems are being used."
+  - id: faxMachine
+    name: faxMachine.gif
+    alt: "Fax Machine Gif"
+    footnote: "This machine prints the instructions and goals of the player."
+  - id: sonarMalfunction
+    name: sonarMalfunction.gif
+    alt: "Sonar Glitch Gif"
+    footnote: "With voltage surges your sonar or cameras can get a distortion effect."
 ---

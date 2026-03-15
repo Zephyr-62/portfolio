@@ -23,6 +23,9 @@ longDescription:
   - type: link
     url: "https://assetstore.unity.com/packages/tools/painting/world-painter-2d-207836"
     text: Click here to open the tool in Unity's Asset Store
+  - type: yt
+    videoId: fePdLfk_jl0
+    
 teamSize: 1
 contributions-short:
   - Primitive Shapes and Free-Hand Polygons
