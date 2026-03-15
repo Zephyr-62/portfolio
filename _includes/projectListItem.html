@@ -28,6 +28,6 @@
             </p>
             <p class="details"> Project {% if project.endDate != "" %} Finished: <b>{{project.endDate}}</b> {% else %} Started: <b>{{project.startDate}}</b> {% endif %} </p>       
         </div>
-        <a href="{{ project.id | relative_url }}" style="font-weight: bold; width: 30%; height: 2.5em; padding: 0.5em; text-align: center;" class="button"> Read More </a>
+        <a href="{{ project.id | relative_url }}" style="font-weight: bold; width: 30%; height: auto; padding: 0.5em; text-align: center;" class="button"> Read More </a>
     </div>
 </div>

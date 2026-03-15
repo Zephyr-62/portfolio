@@ -7,7 +7,7 @@ startDate: "2021-09-16"
 endDate: "2022-01-09"
 halted: false
 featured: false
-relevance: 20
+relevance: 25
 categoryTags:
     - Game
     - Tool

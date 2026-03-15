@@ -2689,7 +2689,6 @@ input, select, textarea {
         .carousel article {
             display: inline-block;
             width: 18em;
-            height: 29em;
             background: var(--dark-color1);
             text-align: center;
             padding: 0 1em 1em 1em;
@@ -3312,7 +3311,7 @@ input, select, textarea {
         align-items: left;
         border-radius: 0;
         margin-bottom: 0.25em;
-        padding: 2em 400px;
+        padding: 2em 0;
         background-image: radial-gradient(circle, var(--alt-dark-color2) -10%, var(--alt-dark-color1)90%,  var(--alt-dark-color1) 100%);
         background-color: var(--alt-dark-color2);
         width: auto;
@@ -3336,10 +3335,15 @@ input, select, textarea {
         transition-property: background-image;
     }
 
+    .projects-list .project .projectContainer{
+        margin: 0 auto;
+        width: 70rem;
+    }
+
     .projects-list .project article{
         scale: 1;
         transition: scale 0.1s cubic-bezier(0.25,0.1,0.25,1);
-        transition-delay: 0.05s ;
+        transition-delay: 0.05s;
     }
 
     .projects-list .project:hover article{
@@ -3440,6 +3444,24 @@ input, select, textarea {
     flex: 1; /* take the rest (40%) */
   }
 
+
+.button {
+    box-shadow: 3px 3px 2px 3px rgba(0, 0, 0, 0.5);  
+    min-width: fit-content;
+}
+.button h1, .button h2, .button h3, .button h4, .button h5, .button h6 {
+    margin: 0;
+}
+
+.button:hover{
+    background: var(--hover-color);
+    color: var(--dark-color2);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation: pulse;
+    animation-duration: 0.5s;
+    --animate-repeat: infinite;
+}
+
 .column-container .filter-btn{
     display: block;
     padding: 0.7em;
@@ -3509,22 +3531,6 @@ input, select, textarea {
     margin: 0.5em;
 }
 
-.button {
-    box-shadow: 3px 3px 2px 3px rgba(0, 0, 0, 0.5);  
-    min-width: fit-content;
-}
-.button h1, .button h2, .button h3, .button h4, .button h5, .button h6 {
-    margin: 0;
-}
-
-.button:hover{
-    background: var(--hover-color);
-    color: var(--dark-color2);
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-    animation: pulse;
-    animation-duration: 0.5s;
-    --animate-repeat: infinite;
-}
 
 #logo {
     filter: drop-shadow(0px 0px 4px rgb(50,50,50));
@@ -3659,4 +3665,18 @@ input, select, textarea {
 
     .projectTabContent{
         text-align: justify;
+    }
+
+    .homeProjectButtons{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 2rem;
+    }
+
+    .homeProjectButton{
+        width: 20vw;
+        min-width: fit-content;
+        max-width: 200px;
+        height: auto; 
     }

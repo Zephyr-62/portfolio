@@ -3,9 +3,11 @@
 	{% for project in site.projects %}
 		<div class="column-container project" data-project-id="{{project.projId}}">
 			<!-- article class="column10"></article-->
-			<article class="columnRest" style="margin: 0 2em;">
-				{% include projectListItem.html project=project isLeft=true %}
-			</article>
+			 <div class="projectContainer">
+				 <article class="columnRest">
+					{% include projectListItem.html project=project isLeft=true %}
+				</article>
+			</div>
 		</div>	
 	{% endfor %}	
 	{% if include.showAllButtonEnabled %}

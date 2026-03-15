@@ -27,16 +27,22 @@ shortDescription: "This is my master's thesis project, in which I did some deep 
 
 longDescription:  
   - type: text
-    content: "The work of thesis spanned over a year and a half. It consisted of 6 months of research, 2 months of design & implementation, and 4 months of writting the final document. This project presents two resulting artefacts, a theoretical one (Level Design Guidelines) and a practical one (Two Implementation Prototypes)."
+    content: "The work of this thesis spanned over a year and a half. It consisted of 6 months of research, 2 months of design & implementation, and 4 months of writting the final document. This project presents two artefacts, a theoretical one (Level Design Guidelines) and a practical one (Two Prototypes in Unity)."
   - type: text
-    content: "Although level design has a purely theoretical nature in this project, it has served my as a foundation to understand its core principles and become a better designer. Additionally, the two prototypes portray my current experience in tool development and algorithmic coding challenges. You can find my thesis in the next link:"
+    content: "Although level design has a purely theoretical nature in this project, it has served me as a foundation to understand the core principles and become a better designer. Additionally, the two prototypes portray my current experience in tool development and algorithmic coding challenges. In this portfolio entry I will explain a summary of my findings and implementation details. However, you can find my full thesis in the next link:"
   - type: link
     url: '/portfolio/docs/mastersThesis.pdf'
     text: Master's Thesis Current Draft (before final corrections)
   - type: plain_html
     content: "<h3>Level Design Taxonomy</h3>"
   - type: text
-    content: "My work on level design research focused on describing a list of guidelines that could serve future designers (such as myself) understand level design principles in a way that they were easy to grasp and applicable. With this, I explored dozens of professional resources and GDC talks to gather a collection of level design concepts, tips, practices, patterns, etc. Then I arranged them in several diagrams, grouping and linking concepts until my current taxonomy of level design emerged. It is not perfect nor finished, but rather a foundation of knoledge that can be expanded methodically."
+    content: "My work on level design research focused on describing a list of guidelines that could serve future designers (such as myself) understand level design principles in a way that they are applicable and easy to grasp. I explored dozens of professional resources and GDC talks to gather a collection of level design concepts, tips, practices, patterns, etc. Then, I arranged them in a diagram, grouping and linking concepts until my current taxonomy of level design emerged. It is not perfect nor finished, but rather a foundation of knoledge that can be expanded methodically."
+  - type: text 
+    content: "I define level design through two main categories: <i>Guidance</i> and <i>Spatial Communication</i>. "
+  - type: list
+    items:
+      - "<b>Guidance</b>. "
+      - "<b>Spatial Communication</b>. "
   - type: text
     content: "Here you can find the tree of concepts of level design:"
   - type: media
