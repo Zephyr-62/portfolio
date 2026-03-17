@@ -27,9 +27,12 @@ longDescription:
     content: "These gifs show how the engine runs in real time. Each of these displays a specific feature:"
   - type: list
     items: 
-      - "<b>1.</b> This shows how the raytraced objects (octree) can overlap with the rasterized ones (RGB cubes). This works thanks to how I implemented a custom depth texture for raytraced objects, which I then merge with the one automatically generated for the rasterized objects. Raytraced objects are rendered into their own texture and then merged with the final frame buffer as a post-process effect."
-      - "<b>2.</b> Here I display how quickly octrees are generated (7 levels deep)."
-      - "<b>3.</b> Rendering the Octrees on the CPU is quite expensive, since they are intended to be used on non-runtime environments. For this reason, when the camera is moving I undersample its render texture, which creates the smearing effect. This allows the user to move around the scene without losing responsiveness due to low framerates."
+      - type: text
+        content: "<b>1.</b> This shows how the raytraced objects (octree) can overlap with the rasterized ones (RGB cubes). This works thanks to how I implemented a custom depth texture for raytraced objects, which I then merge with the one automatically generated for the rasterized objects. Raytraced objects are rendered into their own texture and then merged with the final frame buffer as a post-process effect."
+      - type: text
+        content: "<b>2.</b> Here I display how quickly octrees are generated (7 levels deep)."
+      - type: text
+        content: "<b>3.</b> Rendering the Octrees on the CPU is quite expensive, since they are intended to be used on non-runtime environments. For this reason, when the camera is moving I undersample its render texture, which creates the smearing effect. This allows the user to move around the scene without losing responsiveness due to low framerates."
   - type: galleryStart
   - type: media
     id: cubesIntersection

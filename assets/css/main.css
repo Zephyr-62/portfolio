@@ -1904,6 +1904,15 @@ input, select, textarea {
         ul li {
             padding-left: 0.5em;
         }
+    
+    ul ul {
+        list-style: circle;
+        list-style-position: inside;
+    }
+    ul ul ul {
+        list-style: square;
+        list-style-position: inside;
+    }
 
     ol {
         list-style: decimal;
@@ -3679,4 +3688,8 @@ input, select, textarea {
         min-width: fit-content;
         max-width: 200px;
         height: auto; 
+    }
+
+    .gslide-image img{
+        min-height: 50vh;
     }

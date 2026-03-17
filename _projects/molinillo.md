@@ -84,11 +84,16 @@ toolDescription:
     content: "This tool started with the need to have an easy system to automatize the process of writting lines of dialogue that could be attributed to different characters, in such a way that they would display their character image in their dialogue box. With this, more necessities arrived, which were implemented into the tool:"
   - type: list
     items:
-      - Rich text tags (bold, italics, colors, and wave effects)
-      - Possibility to execute game events and call remote methods
-      - Playing the voicelines as the text spawns 
-      - Dialogue choices that lead to alternate lines and consequences
-      - Online sync support
+      - type: text
+        content: Rich text tags (bold, italics, colors, and wave effects)
+      - type: text
+        content: Possibility to execute game events and call remote methods
+      - type: text
+        content: Playing the voicelines as the text spawns 
+      - type: text
+        content: Dialogue choices that lead to alternate lines and consequences
+      - type: text
+        content: Online sync support
   - type: text
     content: "Along with these functionalities, an IDE was in development, and it supported syntax highlighting. However, during the end phase of development of this tool we found a working free asset published in Godot's AssetLib, which fullfilled all the necessities. At this stage, our custom tool was still a work in process with the choices functionality and the IDE usability."
   - type: text
@@ -123,9 +128,12 @@ toolDescription:
     content: "The tool is divided into three tabs, as seen in the following image (in spanish)"
   - type: list
     items:
-      - "The first one defines the dimensions, style, and materials of the building."
-      - "On the second tab the user can select a facade and type the specific layout they desire for every building level. They do so by typing letters each element has assigned, which are explained in the tool through a tooltip."
-      - "The final tab is used to set the random distribution parameters of the height of the window blinds. These include mean and standard deviation."
+      - type: text
+        content: "The first one defines the dimensions, style, and materials of the building."
+      - type: text
+        content: "On the second tab the user can select a facade and type the specific layout they desire for every building level. They do so by typing letters each element has assigned, which are explained in the tool through a tooltip."
+      - type: text
+        content: "The final tab is used to set the random distribution parameters of the height of the window blinds. These include mean and standard deviation."
   - type: media
     id: buildingTool
 
@@ -133,9 +141,12 @@ toolDescription:
     content: "Other functionalities and QOL features implemented in this tool include:"
   - type: list
     items:
-      -  "You can set a facade empty, which will remove all of its skirtings and columns so that several buildings can be put together without wasting resources."
-      -  "The tool serializes all the settings per building, so if a building needs to change in future iterations it just needs to be selected to tweak those parameters."
-      -  "The most useful feature is the pattern repetition. When the input for walls and elements is parsed, if the end of the pattern is reached before finishing the row of walls or all the building stories, the pattern is reset and repeated. This means that if you only define the first layer of a building with a sequence of wall and window, this pattern will spread through the whole building. This behavior is visualized in the next image."
+      - type: text
+        content: "You can set a facade empty, which will remove all of its skirtings and columns so that several buildings can be put together without wasting resources."
+      - type: text
+        content: "The tool serializes all the settings per building, so if a building needs to change in future iterations it just needs to be selected to tweak those parameters."
+      - type: text
+        content: "The most useful feature is the pattern repetition. When the input for walls and elements is parsed, if the end of the pattern is reached before finishing the row of walls or all the building stories, the pattern is reset and repeated. This means that if you only define the first layer of a building with a sequence of wall and window, this pattern will spread through the whole building. This behavior is visualized in the next image."
   - type: media
     id: patternRepetition
 

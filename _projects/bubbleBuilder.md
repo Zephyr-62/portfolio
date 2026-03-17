@@ -101,11 +101,16 @@ ldDescription:
     content: "In this level two new elements are introduced: the walls and the back plates. The walls prevent the bubble from crossing the direction they are blocking, and the plates prevent the player from placing elements on top. The level is intentionally designed to look more daunting, with spikes acting as boundaries and a convoluted collection of elements. Although the path the bubble has to take in this puzzle is very explicit, the specific way to achieve is not, and it is intended to show new interactions to the player:"
   - type: list
     items:
-      - First of all, they can learn how pushing a bubble against a vertical wall will prevent it from moving sideways and will keep floating instead.
-      - Then they realize they can push bubbles with a fan being on the other side of a wall
-      - Then, if they havent thought about it yet, they can learn to push bubbles downwards. 
-      - As seen in <b><i>[Figure 2]</i></b>, if the player hasn't been careful with the placement of the first fan, the bubble might be pushed against the bottom spikes with the third fan. This can result in them using their last fan to correct this, but then they would need a fifth one to make the final move, so they realise they can reuse the first fan if they place it higher up.
-      - Once the bubble is past the U turn, players will most likely run into the situation of <b><i>[Figure 3]</i></b>, where the second fan pushes the bubble away. Here they realize they have to move this fan further to the left so that it doesn't interact with the bubble at that position.
+      - type: text
+        content: First of all, they can learn how pushing a bubble against a vertical wall will prevent it from moving sideways and will keep floating instead.
+      - type: text
+        content: Then they realize they can push bubbles with a fan being on the other side of a wall
+      - type: text
+        content: Then, if they havent thought about it yet, they can learn to push bubbles downwards. 
+      - type: text
+        content: As seen in <b><i>[Figure 2]</i></b>, if the player hasn't been careful with the placement of the first fan, the bubble might be pushed against the bottom spikes with the third fan. This can result in them using their last fan to correct this, but then they would need a fifth one to make the final move, so they realise they can reuse the first fan if they place it higher up.
+      - type: text
+        content: Once the bubble is past the U turn, players will most likely run into the situation of <b><i>[Figure 3]</i></b>, where the second fan pushes the bubble away. Here they realize they have to move this fan further to the left so that it doesn't interact with the bubble at that position.
   - type: text
     content: "The metal plates serve several purposes. The leftmost plate helps create the negative space that encourages players to place fans right underneath it. The middle and right plates allow the last bullet point situation to happen, while also they limit the amount of choices the player can make. Although this is already getting into actual puzzle territory we didn't want judges to be overwhelmed at this stage so we kept their options limited."
   - type: galleryStart

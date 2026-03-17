@@ -31,12 +31,18 @@ longDescription:
     content: "In this game I wanted to focus on learning how to use Blender, and I worked on most of the 3D assets not related to the submarine. However, I also implemented some other technical bits:"
   - type: list
     items:
-      - PID Controller for the physics of the submarine and controls.
-      - All the interaction system with the bookshelf, including the procedural animation of the robot arm.
-      - Fully implemented the 3D model and texture, AI, and procedural animations of a creature of the depths.
-      - Composed and performed the main theme that plays in the start menu.
-      - Helping coleagues integrate their systems in a structured way.
-      - Pushing forward with bugfixing on the last stretch of the project.
+      - type: text
+        content: PID Controller for the physics of the submarine and controls.
+      - type: text
+        content: All the interaction system with the bookshelf, including the procedural animation of the robot arm.
+      - type: text
+        content: Fully implemented the 3D model and texture, AI, and procedural animations of a creature of the depths.
+      - type: text
+        content: Composed and performed the main theme that plays in the start menu.
+      - type: text
+        content: Helping coleagues integrate their systems in a structured way.
+      - type: text
+        content: Pushing forward with bugfixing on the last stretch of the project.
   - type: galleryStart
   - type: media
     id: faxMachine

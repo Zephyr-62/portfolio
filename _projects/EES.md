@@ -35,7 +35,8 @@ longDescription:
     content: "The application I implemented encompassed many systems. These are divided into four subsystems: the simulator, the statistics gathering and generation system, the genetic algorith, and the GUI." 
   - type: list
     items: 
-      - "<b>The Simulator</b>: This is the core system of the thesis. It was in charge of configuring and running a single simulation. It envolved many advanced performance optimizations, to ensure a simulation could run as quickly as possible. The most interesting bits are the generation of the 'Plants Requirements' Tracker Texture' (Appendix D) and the encoding of the specific evolution rules for both trees and bushes, so that they could drastically interact with one another."
+      - type: text
+        content: "<b>The Simulator</b>: This is the core system of the thesis. It was in charge of configuring and running a single simulation. It envolved many advanced performance optimizations, to ensure a simulation could run as quickly as possible. The most interesting bits are the generation of the 'Plants Requirements' Tracker Texture' (Appendix D) and the encoding of the specific evolution rules for both trees and bushes, so that they could drastically interact with one another."
   - type: galleryStart
   - type: media
     id: simExec1
@@ -47,7 +48,8 @@ longDescription:
   
   - type: list
     items: 
-      - "<b>Statistics Gathering and Generation</b>: This system serializes the data of a simulation step. I named these instances 'mementos'. With a collection of mementos, this system, detects species and generates several data visualization graphs such as the species distributions and heatmaps. Here, the most interesting implementation is the Spatio-Temporal Clustering algorithm I designed to detect the different species."
+      - type: text
+        content: "<b>Statistics Gathering and Generation</b>: This system serializes the data of a simulation step. I named these instances 'mementos'. With a collection of mementos, this system, detects species and generates several data visualization graphs such as the species distributions and heatmaps. Here, the most interesting implementation is the Spatio-Temporal Clustering algorithm I designed to detect the different species."
   - type: galleryStart
   - type: media
     id: bushes_balance
@@ -57,8 +59,10 @@ longDescription:
   
   - type: list
     items: 
-      - "<b>The Genetic Algorithm</b>: A genetic algorithm can be run on top of the simulation subsystem to find an initial configuration that leads to every entity type coexisting, instead of one dominating over the other."
-      - "<b>The GUI</b>: I designed the whole interface myself. This was a massive task given the amount of fields the user can tweak, and the many visualization modes the application presents. I had to implement the plotting visualization myself, since Unity does not provide a 'line' or 'circle' renderer."
+      - type: text
+        content: "<b>The Genetic Algorithm</b>: A genetic algorithm can be run on top of the simulation subsystem to find an initial configuration that leads to every entity type coexisting, instead of one dominating over the other."
+      - type: text
+        content: "<b>The GUI</b>: I designed the whole interface myself. This was a massive task given the amount of fields the user can tweak, and the many visualization modes the application presents. I had to implement the plotting visualization myself, since Unity does not provide a 'line' or 'circle' renderer."
   - type: text
     content: "Here is a video that displays all the functionalities of the simulator I implemented, and the timestamps are listed below:" 
   - type: yt
@@ -67,14 +71,22 @@ longDescription:
     content: "<h3>Timestamps</h3>" 
   - type: list
     items: 
-      - "0:00 - Configure a new simulation"
-      - "0:48 - Run the simulation"
-      - "1:36 - Load/delete simulations"
-      - "2:00 - View simulation statistics"
-      - "2:46 - Navigate simulation"
-      - "3:35 - Configure experiment with the Genetic Algorithm"
-      - "3:59 - Run experiment with the Genetic Algorithm"
-      - "4:37 - Auto-configure simulator with the Genetic Algorithm results"
+      - type: text
+        content: "0:00 - Configure a new simulation"
+      - type: text
+        content: "0:48 - Run the simulation"
+      - type: text
+        content: "1:36 - Load/delete simulations"
+      - type: text
+        content: "2:00 - View simulation statistics"
+      - type: text
+        content: "2:46 - Navigate simulation"
+      - type: text
+        content: "3:35 - Configure experiment with the Genetic Algorithm"
+      - type: text
+        content: "3:59 - Run experiment with the Genetic Algorithm"
+      - type: text
+        content: "4:37 - Auto-configure simulator with the Genetic Algorithm results"
 ############################################################
 ############################################################
 ############################################################
