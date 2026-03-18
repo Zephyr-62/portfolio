@@ -28,7 +28,7 @@ permalink: "/"
 	</section>
 </div>
 <section class="carousel">
-	<div class="reel" style="margin-bottom: 2em;">
+	<div class="reel" >
 		{% for project in site.projects %}
 		{% if project.featured %}
 		{% include projectReelView.html project=project %}

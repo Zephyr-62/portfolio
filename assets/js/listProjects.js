@@ -138,6 +138,8 @@ function processProjects(){
     let projShownCount = 0;
     let categories = queryParams.filter?.split(";");
 
+    let disableImageAlternation = screen.orientation.type.includes('portrait');
+
     projectContainers.forEach(projContainer => {
         listParentContainer.appendChild(projContainer);
 
@@ -167,7 +169,8 @@ function processProjects(){
         if(projectShown){
             let imgColumn = projContainer.querySelector('#projListItemImg');
             let parentImgContainer = imgColumn.parentElement;
-            if(projShownCount%2 == 0) {
+
+            if(projShownCount%2 == 0 || disableImageAlternation) {
                 if (imgColumn != parentImgContainer.children[0])
                     swapColumns();
             }
@@ -187,4 +190,12 @@ function processProjects(){
     if(buttonContainer != null)
         listParentContainer.append(buttonContainer);        
 
+}
+
+if (screen.orientation) {
+    screen.orientation.addEventListener('change', (e) => {
+        // e.target.type will be 'landscape-primary', 'portrait-secondary', etc.
+        console.log(`Current orientation: ${e.target.type}`);
+        processProjects();
+    });
 }

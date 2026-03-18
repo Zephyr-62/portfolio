@@ -1848,7 +1848,12 @@ input, select, textarea {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        gap: 30em;
+        gap: 15vw;
+        margin-bottom: 1em;
+    }
+
+    #footerButtons a{
+        min-width: fit-content;
     }
 
 
@@ -2515,9 +2520,16 @@ input, select, textarea {
     #banner .filter-btns {
         display: flex;
         flex-direction: row;
-        align-items: left;
+        flex-wrap: wrap;
+        align-items: center;
+        align-self: end;
+        
+        justify-content: left;
         gap: 1em;
+        padding: 0 1em;
     }
+
+
 
 
 /* Content */
@@ -2616,7 +2628,8 @@ input, select, textarea {
     .carousel {
         position: relative;
         overflow: hidden;
-        margin-bottom: 0;
+        margin-bottom: 2em;
+        background: rgba(0,0,0,0.25);
     }
 
         .carousel .forward, .carousel .backward {
@@ -2692,7 +2705,7 @@ input, select, textarea {
             white-space: nowrap;
             position: relative;
             -webkit-overflow-scrolling: touch;
-            padding: 0 2em 0 2em;
+            padding: .75em 2em;
         }
 
         .carousel article {
@@ -2728,9 +2741,19 @@ input, select, textarea {
                     transition: filter 0.3s ease; /* smooth transition */
                 }
 
+            
             .carousel article p {
                 text-align: center;
             }
+
+            @media screen and (max-width: 960px) {
+                .carousel article p {
+                    font-size: 1rem;
+                    line-height: 1.5em;
+                }
+            }
+
+
 
 /* Wide */
 
@@ -2964,7 +2987,7 @@ input, select, textarea {
             .button {
                 display: block;
                 padding: 0;
-                line-height: 3em;
+                line-height: 1em;
                 width: 100%;
             }
 
@@ -3078,7 +3101,6 @@ input, select, textarea {
                     top: 0;
                     width: 100%;
                     height: 100%;
-                    background: url("images/overlay.png");
                     background-size: 128px 128px;
                 }
 
@@ -3331,6 +3353,13 @@ input, select, textarea {
         transition-delay: 0.05s;
     }
 
+    
+    .projects-list .project .projectContainer{
+        margin: 0 auto;
+        width: 70rem;
+    }
+
+@media screen and (min-width: 1200px) {
     .projects-list .project:hover{   
         /*
         background-image: radial-gradient(circle, var(--alt-dark-color2) -10%, var(--alt-dark-color1)90%,  var(--alt-dark-color1) 100%);
@@ -3343,27 +3372,27 @@ input, select, textarea {
         transition-delay: 0.05s;
         transition-property: background-image;
     }
-
-    .projects-list .project .projectContainer{
-        margin: 0 auto;
-        width: 70rem;
-    }
-
+    
     .projects-list .project article{
         scale: 1;
         transition: scale 0.1s cubic-bezier(0.25,0.1,0.25,1);
         transition-delay: 0.05s;
     }
-
+    
     .projects-list .project:hover article{
         scale: 1.075;
     }
-    
+}
 
-        .projects-list div div{
-            background-image: none;
-            margin: 0;
-        }
+    .projects-list .project article{
+        padding: 0 1.5em;
+    }
+    
+    
+    .projects-list div div{
+        background-image: none;
+        margin: 0;
+    }
 
         .projects-list .image-display-container{
             border-radius: 6px;
@@ -3411,14 +3440,28 @@ input, select, textarea {
     flex: 1; /* Take remaining space */
     overflow-y: auto; /* Scroll only inside this */
     text-align: justify;
+    line-height: 1.25em;
 }
 
-.column .description {
-    word-break: normal;
-    line-height: 1.2em;
-    width: 100%;
-    overflow-y: scroll;
-    display: block;
+.column-container.project-column{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#projListItemImg{
+    min-height: 200px;
+}
+
+.project-column > div{
+    width: 45%;
+}
+
+@media (orientation: portrait) {
+    .project-column > div{
+        width: 100%;
+    }
 }
 
 .column10 {
@@ -3456,7 +3499,9 @@ input, select, textarea {
 
 .button {
     box-shadow: 3px 3px 2px 3px rgba(0, 0, 0, 0.5);  
-    min-width: fit-content;
+    min-width: auto;
+    padding: 0.5em;
+    align-content: center;
 }
 .button h1, .button h2, .button h3, .button h4, .button h5, .button h6 {
     margin: 0;
@@ -3693,3 +3738,4 @@ input, select, textarea {
     .gslide-image img{
         min-height: 50vh;
     }
+
