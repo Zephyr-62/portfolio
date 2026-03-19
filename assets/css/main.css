@@ -356,6 +356,7 @@ input, select, textarea {
         box-sizing: border-box;
         align-items: stretch;
         justify-content: space-between;
+        gap: 2em;
     }
 
         @media screen and (max-width: 736px) {
@@ -512,7 +513,7 @@ input, select, textarea {
         .row > .col-11,
         .row > .col-12 {
             width: 100%;
-            margin: 0 2em;
+            margin: 0;
         }
     }
 
@@ -2242,6 +2243,10 @@ input, select, textarea {
     width: 100%;
 }
 
+.project-detail .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
 .gallery a {
   aspect-ratio: 3 / 2;  /* makes every tile square */
   overflow: hidden;
@@ -2305,10 +2310,17 @@ input, select, textarea {
 #sidebar {
     border-radius: 1em;
     background-color: rgba(0,0,0,0.25);
-    margin: 0 0 0 2em;
-    padding: 2em !important;
+
     height: fit-content;
-    width: auto;
+    width: 35%;
+
+    margin: 0 0 1em !important;
+    padding: 1em !important;
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .outlined-block{
@@ -2323,6 +2335,8 @@ input, select, textarea {
   display: flex;
   width: 100%;
   gap: 2em;
+  flex-wrap: wrap;
+  margin-bottom: 1.5em;
 }
 
 .projectTab {
@@ -2387,6 +2401,7 @@ input, select, textarea {
     display: flex;
     gap: 1em;
     width: 100%;
+    justify-content: space-around;
 }
 
 .projectDetails-gallery .image-display-container.projectDetail-img img {
@@ -2436,18 +2451,6 @@ input, select, textarea {
         }
     }
 
-
-    .resume-details{
-        margin: 0 0 1em !important;
-        padding: 1em !important;
-        display: flex;
-        justify-content: space-evenly;
-        gap: 1em;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-
 .highlightOnTarget:target {
     animation: highlight-blink 1.25s ease-in-out;
     animation-delay: 0.5s;
@@ -2474,9 +2477,15 @@ input, select, textarea {
     }
 }
 
+@media screen and (max-width: 736px) {
+    #sidebar {
+        width: auto;
+    }
+}
+
 @media screen and ((max-width: 736px) or (max-height: 400px)) {
     .about p {
         font-size: 16px;
         line-height: 1.5em;
-    }
+    }    
 }

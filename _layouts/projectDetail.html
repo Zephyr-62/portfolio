@@ -4,79 +4,34 @@ title: {{page.shortTitle}}
 permalink: /project/{{page.id}}
 ---
 <div class="wrapper">
-    <div class="container">
+    <div class="container project-detail">
         <header>
             <h2 style="margin-bottom: 0;">{{ page.title }}</h2>
             <p>{{ page.subtitle }}</p>
         </header>
-        <div class="row gtr-200">            
-            <div class="col-8 col-12-mobile" id="content">
+
+        <!-- ######### Thumbnail and details ######### -->
+        <div class="row">            
+            <div class="col-8" id="content">
                 <article id="main">
-                    <div class="image-display-container" style="height:25em">
-                        <a class="glightbox-cover image featured">
-                            <img class="project-image" data-project-id="{{page.projId}}" data-image-idx="0">
-                        </a>
-                    </div>
-
-                    <br>                
-                    <p>{{ page.shortDescription }}</p>
-                    <div class="row">
-                        <div class="gallery">
-                            {% for img in page.images %}
-                            {% unless forloop.index0 == 0 %}
-                            <div class="image-display-container">
-                                <a class="glightbox1 image featured"><img class="glightbox project-image zoomableImg" data-project-id="{{page.projId}}" data-image-idx="{{forloop.index0}}"></a>
-                            </div>
-                            {% endunless %}
-                            {% endfor %}
-                        </div>
-                    </div>
-                    
-                    <br>   
-
-                    {% if page.ldDescription or page.toolDescription %}
-                    <div class="projectTabs">
-                        <button class="projectTab" id="overviewButton" data-target="overview">Overview</button>
-                        {% if page.ldDescription %}
-                            <button class="projectTab" id="levelDesignButton" data-target="levelDesign">Level Design</button>
-                        {% endif %}
-                        {% if page.toolDescription %}
-                            <button class="projectTab" id="toolButton" data-target="tool">Tools Programming</button>
-                        {% endif %}
-                    </div>
-                    <hr>
-                    {% endif %}
-                    <div class="projectTabContent">
-                        <div id="overview">
-                            <h2> Project Overview </h2>
-                            {% include projectDescriptionView.html description=page.longDescription %}
-                        </div>
-                        
-                        {% if page.ldDescription %}
-                            <div id="levelDesign">
-                                <h2> Level Design </h2>
-                                {% include projectDescriptionView.html description=page.ldDescription %}
-                            </div>
-                        {% endif %}
-
-                        {% if page.toolDescription %}
-                            <div id="tool">
-                                <h2> Tools Implementation </h2>
-                                {% include projectDescriptionView.html description=page.toolDescription %}
-                            </div>
-                        {% endif %}                   
-                    </div>
+                    <div>
+                        <div class="image-display-container" style="height:25em">
+                            <a class="glightbox-cover image featured">
+                                <img class="project-image" data-project-id="{{page.projId}}" data-image-idx="0">
+                            </a>
+                        </div>                        
+                        <p>{{ page.shortDescription }}</p>
+                    </div>                    
                 </article>
             </div>
-            <div class="col-3 col-12-mobile project-details" id="sidebar">
-                <hr class="first">
+            
+            <div class="project-details" id="sidebar">
                 <section>
                     <header>
                         <h3>Summary</h3>
                     </header>
                     {{ page.summary }} </p>
                 </section>
-                <hr>
                 <section>
                     <header> <h3>Details</h3> </header>                    
                     <h4>Dates</h4>
@@ -90,7 +45,7 @@ permalink: /project/{{page.id}}
                             {% endif %}
                         </i>
                     </p>
-                    <div class="row gtr-50">
+                    <div>
                         <div class="col-5">
                             <h5>Team size: <b>{{ page.teamSize }}</b></h5>
                         </div>
@@ -105,28 +60,77 @@ permalink: /project/{{page.id}}
                             {% else %}
                                 {% assign status = "Active" %}
                             {% endunless %}
-                            <p class="status {{ status }}"> {{ status }} </p>
+                            <p class="status {{ status }}" style="margin: 0;"> {{ status }} </p>
                         </div>                    
                     </div>
-                    <h4>Keywords</h4>
+                </section>
+                <section>
+                    <header> <h3>Keywords</h3> </header>
                     <ul style="list-style-type:none">
                         {% for tag in page.techTags %}
                             <li>{{tag}}</li>
                         {% endfor %}
                     </ul>
                 </section>
-                <hr>
                 <section>
                     <header>
                         <h3>Contributions</h3>
                     </header>             
                     <ul style="list-style-type:disc">
-                         {% for contribution in page.contributions-short %}
+                        {% for contribution in page.contributions-short %}
                             <li>{{contribution}}</li>
                         {% endfor %}
                     </ul>
                 </section>
             </div>
+        </div>
+        
+        <!-- ######### GALLERY ######### -->
+        <div class="row">
+            <div class="gallery">
+                {% for img in page.images %}
+                {% unless forloop.index0 == 0 %}
+                <div class="image-display-container">
+                    <a class="glightbox1 image featured"><img class="glightbox project-image zoomableImg" data-project-id="{{page.projId}}" data-image-idx="{{forloop.index0}}"></a>
+                </div>
+                {% endunless %}
+                {% endfor %}
+            </div>
+        </div>
+        
+        <br>   
+        <!-- ######### PROJ DESCRIPTIONS ######### -->
+        {% if page.ldDescription or page.toolDescription %}
+        <div class="projectTabs">
+            <button class="projectTab" id="overviewButton" data-target="overview">Overview</button>
+            {% if page.ldDescription %}
+                <button class="projectTab" id="levelDesignButton" data-target="levelDesign">Level Design</button>
+            {% endif %}
+            {% if page.toolDescription %}
+                <button class="projectTab" id="toolButton" data-target="tool">Tools Programming</button>
+            {% endif %}
+        </div>
+        
+        {% endif %}
+        <div class="projectTabContent">
+            <div id="overview">
+                <h2> Project Overview </h2>
+                {% include projectDescriptionView.html description=page.longDescription %}
+            </div>
+            
+            {% if page.ldDescription %}
+                <div id="levelDesign">
+                    <h2> Level Design </h2>
+                    {% include projectDescriptionView.html description=page.ldDescription %}
+                </div>
+            {% endif %}
+
+            {% if page.toolDescription %}
+                <div id="tool">
+                    <h2> Tools Implementation </h2>
+                    {% include projectDescriptionView.html description=page.toolDescription %}
+                </div>
+            {% endif %}                   
         </div>
     </div>
 </div>
