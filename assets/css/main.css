@@ -2323,6 +2323,10 @@ input, select, textarea {
     flex-wrap: wrap;
 }
 
+.resume-details {
+    width:auto !important;
+}
+
 .outlined-block{
     outline-style: double;
     outline-color: grey;
