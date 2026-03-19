@@ -38,6 +38,10 @@ function updateFilterButtons(){
     buttonUpdate('.ld-btn', "LevelDesign");
     buttonUpdate('.tools-btn', "Tool");
     buttonUpdate('.others-btn', "Others");
+    // Make selected option in dropdown selected on projFilter element
+    queryParams.filter = queryParams.filter || "LevelDesign;Tool;Others";
+    const filterSelect = document.querySelector('#projFilter');
+    filterSelect.value = queryParams.filter;
 }
 
 function buttonUpdate(btnClass, categoryName){

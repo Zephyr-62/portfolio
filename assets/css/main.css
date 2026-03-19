@@ -2567,7 +2567,7 @@ input, select, textarea {
 
     #main {
         margin-bottom: 0;
-        padding: 0 2em 0 0;
+        padding: 0;
     }
 
         #main section:first-of-type {
@@ -3607,13 +3607,12 @@ input, select, textarea {
 }
 
 .project-details {
-    border-radius: 1.5em;
-    background-image: radial-gradient(circle, var(--alt-dark-color2) -10%, var(--alt-dark-color1)90%,  var(--alt-dark-color1) 100%);
-    background-color: transparent;
-    filter: drop-shadow(4px 4px 6px rgba(0,0,0,0.4));
-    margin: 0;
+    border-radius: 1em;
+    background-color: rgba(0,0,0,0.25);
+    margin: 0 0 0 2em;
     padding: 2em !important;
     height: fit-content;
+    width: auto;
 }
 
 .outlined-block{
@@ -3735,7 +3734,9 @@ input, select, textarea {
         height: auto; 
     }
 
-    .gslide-image img{
-        min-height: 50vh;
+    @media screen and (min-width: 1200px) {
+        .gslide-image img{
+            max-width: 100vw;
+        }
     }
 
