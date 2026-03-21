@@ -2453,12 +2453,15 @@ input, select, textarea {
         flex-direction: row;
         justify-content: space-evenly;
         gap: 2rem;
+        margin: inherit -1em;
     }
 
     .homeProjectButton{ 
         font-family: 'Times New Roman', Times, serif;
         font-size: xx-large;
         font-weight: bold;
+        padding: 0.5em;
+        border-radius: 1.5em;
     }
 
     @media screen and (min-width: 1200px) {
