@@ -9,26 +9,28 @@
 
 :root {
     
-    --light-color0: #fef8ff;
+    --light-color0: #e6e6ec;
     --light-color1:#cfcfcf;
-    --light-color2: #6d566f;
-    --dark-color1: #483949;
-    --dark-color2: #2b252c;
+    --light-color2: #1b2330;
+    --dark-color1: #29364a;
+    --dark-color2: #191f29;
     
     --alt-light-color: #2ba2e2;
-    --alt-dark-color1: #523d53;
-    --alt-dark-color2: #3d2f40;
+    --alt-dark-color1: #3d5271;
+    --alt-dark-color2: #273345;
     
-    /*
+    /* Lighter blue
     --light-color0: #fef8ff;
-    --light-color2: #715ebc;
-    --dark-color1: #433871;
-    --dark-color2: #2a2442;
+    --light-color1:#cfcfcf;
+    --light-color2: #385785;
+    --dark-color1: #20314d;
+    --dark-color2: #1e2436;
     
-    --alt-light-color2: #7894c8;
-    --alt-light-color1: #3f9bcc;
-    --alt-dark-color1: #372b7c;
-    --alt-dark-color2: #271f52;
+    --alt-light-color: #2ba2e2;
+    --alt-dark-color1: #0c2448;
+    --alt-dark-color2: #0a0f2b;
+
+    --button-blink1-color: #d65e5e;
     */
 
   --accent-color: white;
@@ -36,14 +38,14 @@
   --highlight-color: #fede84;
   --status-color-active: #7ff683;
   --status-color-halted: #fede84;
-  --status-color-closed: #e84444;
+  --status-color-closed: #d24848;
 
 
-  --button-blink1-color: #e87b44;
+  --button-blink1-color: #c74c4c;
   --button-blink2-color: #f6d07f;
-  --tab-selected-color: #8265aa;
+  --tab-selected-color: #c74c4c;
 
-  --footer-color: #342b38;
+  --footer-color: #080f1f;
 
 }
 /* Alt color #3f9bcc ♥*/
@@ -860,7 +862,7 @@ input, select, textarea {
         text-align: center;
         font-family: "PT Sans", Helvetica, Arial, sans-serif;
         vertical-align: middle;
-        border-radius: 0.5em;
+        border-radius: 2em;
         text-decoration: none;
         padding: 0.65em 3em 0.65em 3em;
         border: 0;
@@ -1061,7 +1063,7 @@ input, select, textarea {
 
         body.homepage #header:after {
             content: '';
-            background: #1C0920;
+            background: var(--footer-color);
             display: block;
             position: absolute;
             left: 0;
@@ -1294,11 +1296,11 @@ input, select, textarea {
         overflow: hidden;
         padding: 6em 0 6em 0;
         background: var(--footer-color);
-        color: #fff;
+        color: var(--light-color1);
     }
 
         #footer .icon.circled {
-            background: #fff;
+            background: var(--light-color0);
             color: var(--footer-color);
         }
 
@@ -1308,7 +1310,7 @@ input, select, textarea {
         }
 
         #footer h2, #footer h3, #footer h4, #footer h5, #footer h6 {
-            color: #fff;
+            color: var(--light-color0);
         }
 
         #footer .contact {
@@ -2064,8 +2066,6 @@ input, select, textarea {
         border-radius: 0;
         margin-bottom: 0.25em;
         padding: 2em 0;
-        background-image: radial-gradient(circle, var(--alt-dark-color2) -10%, var(--alt-dark-color1)90%,  var(--alt-dark-color1) 100%);
-        background-color: var(--alt-dark-color2);
         width: auto;
         box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.6);
 
@@ -2086,7 +2086,7 @@ input, select, textarea {
         background-image: radial-gradient(circle, var(--alt-dark-color2) -10%, var(--alt-dark-color1)90%,  var(--alt-dark-color1) 100%);
         animation: pulse 0.25s;
         */
-        background-image: none;    
+        background-color: rgba(0,0,0, 0.25);    
 
         transition-timing-function: cubic-bezier(0.25,0.1,0.25,1);
         transition-duration: 0.20s;
@@ -2219,9 +2219,9 @@ input, select, textarea {
 
 
 .button {
-    box-shadow: 3px 3px 2px 3px rgba(0, 0, 0, 0.5);  
+    box-shadow: 4px 4px 5px 1px rgba(0, 0, 0, 0.5);  
     min-width: auto;
-    padding: 0.5em;
+    padding: 0.5em 1em;
     align-content: center;
 }
 .button h1, .button h2, .button h3, .button h4, .button h5, .button h6 {
@@ -2456,11 +2456,10 @@ input, select, textarea {
         gap: 2rem;
     }
 
-    .homeProjectButton{
-        width: 20vw;
-        min-width: fit-content;
-        max-width: 200px;
-        height: auto; 
+    .homeProjectButton{ 
+        font-family: 'Times New Roman', Times, serif;
+        font-size: xx-large;
+        font-weight: bold;
     }
 
     @media screen and (min-width: 1200px) {
@@ -2475,9 +2474,9 @@ input, select, textarea {
 }
 
 @keyframes highlight-blink {
-    0%   { background-color: inherit; scale: inherit; }
-    40%  { background-color: var(--highlight-color); scale: 1.05; }
-    100% { background-color: inherit; scale: inherit; }
+    0%   { background-color: inherit; scale: inherit; color: inherit; }
+    40%  { background-color: var(--highlight-color); scale: 1.05; color: var(--light-color2); }
+    100% { background-color: inherit; scale: inherit; color: inherit; }
 }
 
 .resume ul{
