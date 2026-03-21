@@ -1053,8 +1053,7 @@ input, select, textarea {
         }
 
     body.homepage #header {
-        height: 100vh;
-        min-height: 40em;
+        height: 20vh;
     }
 
         body.homepage #header h1 {
@@ -1082,7 +1081,7 @@ input, select, textarea {
         }
 
     body.homepage.is-preload #header:after {
-        opacity: 1;
+
     }
 
 /* Nav */
