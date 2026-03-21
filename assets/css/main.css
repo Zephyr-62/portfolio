@@ -2452,8 +2452,8 @@ input, select, textarea {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        gap: 2rem;
-        margin: inherit -1em;
+        margin: 1em -1em;
+        gap: 1em;
     }
 
     .homeProjectButton{ 
