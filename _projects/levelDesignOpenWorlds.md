@@ -301,10 +301,8 @@ toolDescription:
   - type: text
     content: "Enemies are quite interesting. The specific type of enemy to instantiate is ruled by two variables: intensity and difficulty. There are 3 levels of intensity (minion, enemy camp, and boss fight), each of which has variations with increasing difficulty. The spawn constraints for enemies are also governed by these two variables. Additionally, enemies are more likely to spawn in higher altitudes. To determine areas with higher difficulty and intensity, I created a system to generate Perlin Noise textures, one for each variable. With these two designer inputs, the system offers a highly controllability over the pacing of the game. One can define pockets of tension and spikes of difficulty organically, and how these combine with each other."
   ## Unique POIs, frequency, spawn constraints (elevation, inclination, ) explain enemy requirements.
-  - type: galleryStart 
   - type: media
     id: EnemyRanking 
-  - type: galleryEnd 
 
   - type: text
     content: "In the future, I want to come back to this project and integrate some specific guidelines on these maps. I particularly want to focus on the Pathing guideline, which would probably require implementing some kind of progression graph generator on top of the map generator. I also want to move some of these generation algorithms into the GPU to get faster results (right now generating this map takes about 15 seconds on an Ryzen 7 2700). A further improvement I would look into would be changing some of the generation rules to allow for infinite worlds generation."

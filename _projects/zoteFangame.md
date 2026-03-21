@@ -22,10 +22,12 @@ longDescription:
     content: "This page is a <i><b>Work In Progress</b></i>"
   - type: text
     content: "We made an alpha trailer for our bachelor's course. Along with this, we also uploaded a walkthrough video, featuring all the implemented systems."
+  - type: galleryStart
   - type: yt
     videoId: "q4P7AiaYRQ4"
   - type: yt
     videoId: "Zn65SlHgJqo"
+  - type: galleryEnd
 
 contributions:
   - type: text

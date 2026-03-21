@@ -33,10 +33,12 @@ longDescription:
     text: Watch a clip of TheCatacroquer playing the demo here! 
   - type: text
     content: "The game is being built using Godot Engine, and it features combat and platforming bits, along with puzzles and a strong driving narrative. You can watch the cinematographic and gameplay trailers here (in spanish)."
+  - type: galleryStart
   - type: yt
     videoId: EgrzzQubbuI
   - type: yt
     videoId: 07g8WOh6sjI
+  - type: galleryEnd
 # ---------------------------------------------------- 
 # ---------------------------------------------------- 
 # ----------------------------------------------------
