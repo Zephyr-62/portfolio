@@ -2002,6 +2002,10 @@ input, select, textarea {
         border-radius: 8px;
     }
 
+    .about .image-display-container{
+        aspect-ratio: 1/1;
+    }
+    
     .image-display-container.project-thumbnail{
         margin-bottom: 1em;
     }
