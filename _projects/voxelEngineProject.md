@@ -55,7 +55,7 @@ images:
   - name: rayCastAndRasterized.png
     alt: "Raycasted-Rasterized interaction"
     footnote: "Raycasted cube (pink) intersects with rasterized cubes (RGB gradient)."
-  - name: treeview2.png
+  - name: treeView2.png
     alt: "Octree Scene"
     footnote: "Overview of a randomly generated octree."
   - name: blocks1.png

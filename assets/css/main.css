@@ -1526,6 +1526,10 @@ input, select, textarea {
                     padding-right: 2em;
                 }
 
+                #header .homeProjectButtons {
+                    margin: 1em -1em;
+                }
+
         /* Banner */
 
             #banner {
@@ -2339,6 +2343,7 @@ input, select, textarea {
 .resume-details {
     width:auto !important;
     justify-content: space-evenly !important;
+    align-items: center;
 }
 
 .outlined-block{
@@ -2452,7 +2457,7 @@ input, select, textarea {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        margin: 1em -1em;
+        margin: 1em 0em;
         gap: 1em;
     }
 
