@@ -2028,6 +2028,7 @@ input, select, textarea {
         max-height: 20em;
         width: auto;
         max-width: 100%;
+        min-height: 9em;
     }
 
         .image-display-container a {
