@@ -6,20 +6,20 @@ permalink: "/"
 
 <section id="banner" style="margin: 0;">
 	<header>
-		<p>
+		<p style="margin-bottom: 0;">
 			Welcome! I'm a Computer Science engineer currently studying <i>Game Design and Technology</i> at University of Gothenburg.
 			<br/>
 			I enjoy working on <b>level design</b> and <b>tool development</b>.
 		</p>
 			
-		<div class="homeProjectButtons">
+		<!--div class="homeProjectButtons">
 			<a href="{{ 'projectListing?filter=LevelDesign' | relative_url  }}" class="button homeProjectButton">Level Design Projects</a>
 			<a href="{{ 'projectListing?filter=Tool' | relative_url  }}" class="button homeProjectButton">Tool Dev Projects</a>
-		</div>
+		</div-->
 	</header>
 </section>
 
-<div class="wrapper style1" style="margin: 2em; padding:0;">
+<!--div class="wrapper style1" style="margin: 2em; padding:0;">
 	<section id="features" class="container special">
 		<header>
 			<h2>Featured Projects</h2>
@@ -35,6 +35,19 @@ permalink: "/"
 		{% endif %}			
 		{% endfor %}
 	</div>
-</section>
+</section-->
+
+<div class="split-wrapper">
+  <a href="{{ 'projectListing?filter=LevelDesign' | relative_url  }}" class="side design" style="background-image: url('images/LD.gif');">
+    <div class="content">
+      <h2>Level Design</h2>
+    </div>
+  </a>
+  <a href="{{ 'projectListing?filter=Tool' | relative_url  }}" class="side tools" style="background-image: url('images/TOOLS.gif');">
+    <div class="content">
+      <h2>Tools Programming</h2>
+    </div>
+  </a>
+</div>
 
 <script src="{{site.baseurl}}/assets/js/projectsReel.js"></script>

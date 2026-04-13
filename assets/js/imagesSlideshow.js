@@ -9,6 +9,9 @@ document.addEventListener("projectsReady", function() {
 		return;
 	}
 
+	let startDelay = 350;
+	let startDelayAcc = 0;
+
 	document.querySelectorAll('.image-display-container').forEach(function (imgContainer, imgIndex) {
 		/** @type {HTMLElement} */
 		const container = /** @type {HTMLElement} */ (imgContainer);
@@ -44,22 +47,27 @@ document.addEventListener("projectsReady", function() {
 		 */
 		function showNextImage(index) {
 			if (frontIsImg) {
-				setImage(img2, index);
-				img2.style.opacity = "1";
+				// FIX: How can i await for setImage to update the source before starting the fade-in
+				// This is a bit hacky but it ensures the image is loaded before starting the transition
+				setImage(img2, index);				
+				img2.onload = () => {					
+					img2.style.opacity = "1";
+				}
 			} else {
 				setImage(img, index);
-				img2.style.opacity = "0";
+				img.onload = () => {
+					img2.style.opacity = "0";
+				}
 			}
 			frontIsImg = !frontIsImg;
 		}
 		
 		let timeoutId = -1;
 		function slideshow() {
-			if (activeSlideshow) {
-				currentImg = (currentImg + 1) % images.length;
-				showNextImage(currentImg);
-				timeoutId = setTimeout(slideshow, slideshowSpeed);
-			}
+			currentImg = (currentImg + 1) % images.length;
+			showNextImage(currentImg);
+			// return;
+			timeoutId = setTimeout(slideshow, slideshowSpeed);			
 		}
 
 		/**
@@ -70,35 +78,12 @@ document.addEventListener("projectsReady", function() {
 		function setImage(imgTarget, index){
 			const image = images[index];
 			if (!image) return;
-			imgTarget.src = image.path;
+			imgTarget.src = image.thumbnail || image.path;
 			imgTarget.alt = image.alt || '';
 		}
 
-		container.addEventListener('mouseenter', function () {
-			activeSlideshow = true;
-			if (timeoutId !== -1) {
-				clearTimeout(timeoutId);
-				timeoutId = -1;
-			}
-			slideshow();
-		});
-		
-		container.addEventListener('mouseleave', function () {
-			if (timeoutId !== -1) {
-				clearTimeout(timeoutId);
-				timeoutId = -1;
-			}
-			activeSlideshow = false;
-
-			// reset to a consistent initial state to avoid parity/skipping issues
-			setImage(img, 0);
-			currentImg = 0;
-			frontIsImg = true;
-			
-			// Instantly set transparency to 0
-			img2.style.transition = `opacity 0ms ease`;
-			img2.style.opacity = "0";
-			img2.style.transition = `opacity ${transitionDuration}ms ease`;
-		});
+		// Start the slideshow with a staggered delay to avoid all containers changing at the same time
+		setTimeout(slideshow, slideshowSpeed + startDelayAcc);
+		startDelayAcc += startDelay;
 	});
 });
