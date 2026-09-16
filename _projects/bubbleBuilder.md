@@ -25,9 +25,9 @@ longDescription:
     text: Click here to check the game on Itch.io
 
   - type: text
-    content: "During the ideation phase, many ideas were considered about different mechanics on how to manage bubbles. These included simple elements like buttons, gates, or dividers. Some more complex and intricate ideas also showed up, like different types of bubbles, delayers, activators..."
+    content: "During the ideation phase, many interesting puzzle mechanics were considered. These included simple elements like buttons, gates, or dividers. Some more complex and intricate ideas also showed up, like different types of bubbles, delayers, activators..."
   - type: text
-    content: "At the end, we stuck to the basics of just having walls, spikes, and fans. We also included backplates to define areas where the player wouldn't be able to place elements."
+    content: "At the end, due to the limited scope (48 hours) we stuck to the basics of just having walls, spikes, and fans. We also included backplates to define areas where the player wouldn't be able to place elements."
   - type: galleryStart
   - type: media
     id: ideationPhase
@@ -42,7 +42,7 @@ longDescription:
 
 ldDescription:
   - type: text
-    content: "In this section I'm going to present all the 5 levels implemented during the gamejam, and the design decissions behind them. Although, most levels were designed in one evening, they had to undergo some tweaks to improve readability and teaching of new concepts. I highly encourage you to play through the levels (5-10 minutes), and then check how much of your though process I could predict. Many of our playtesters exactly followed the steps explained in this section."
+    content: "In this section I'm going to present all the 5 levels implemented during the gamejam, and the design decissions behind them. Although, most levels were designed in one evening, they had to undergo some tweaks to improve readability and teaching of new concepts. I highly encourage you to play through the levels (5-10 minutes), and then check how much of your thought process I could predict. Many of our playtesters followed the exact steps explained in this section."
   - type: media
     id: levelsOverview
   - type: text
@@ -62,11 +62,11 @@ ldDescription:
   - type: plain_html
     content: "<h3>Level 1</h3>"
   - type: text
-    content: "This is the first actual puzzle. Here, players are presented with the first obstacle, with which they can learn how to push the bubble around them. In this level, they learn that the bubble always spawns from the middle grid tile of the generator. In this level the boundary walls are also removed to provide the opportunity to push the bubble outside the play area." 
+    content: "This is the first actual puzzle. Here, players are presented with the first obstacle, spikes. With these players can learn how to push the bubble around to avoid them. In this level, players can learn that the bubble always spawns from the middle grid tile of the generator. Additionally, the level's boundary walls are removed to provide the opportunity to push the bubble outside of the play area." 
   - type: text
-    content: "At this point, players might feel inclined to use a fan to push the bubble upwards since they might not be aware that it can float on its own when not influenced by a fan <b><i>[Figure 2]</i></b>. To solve this, a limited amount of fans prevents such solution. Additionally, the bottom row of spikes extends all the way to the left to discourage players from trying this behaviour on that side of the board. Although a solution wouldn't be possible, they could learn about a mechanic early on which could hinder their understanding of the basics."
+    content: "At this point, players might feel inclined to use a fan to push the bubble upwards since they might not be aware that it can float on its own when not influenced by a fan <b><i>[Figure 2]</i></b>. To solve this, a limited amount of fans prevents such solution. Additionally, the bottom row of spikes extends all the way to the left to discourage players from trying this behaviour on that side of the board. Although a solution wouldn't be possible, they could learn about another mechanic early on which could hinder their understanding of the basics."
   - type: text
-    content: "Once they realize they don't need to push the bubble upwards, they can approach the correct solution. At this point they might learn that fans push bubbles 3 square units away from them by getting stuck as shown in <b><i>[Figure 3]</i></b>."
+    content: "Once they realize they don't need to push the bubble upwards, they can approach the correct solution. At this point, players might learn that fans push bubbles 3 square units away from them by getting stuck as shown in <b><i>[Figure 3]</i></b>."
   - type: text
     content: "With this, the correct solution is most likely to be reached by the player. The level still provides some flexibility in the exact position of the fans, allowing the player to feel confident in the choices they made."
   - type: galleryStart
@@ -85,7 +85,7 @@ ldDescription:
   - type: text
     content: "This level is a twist on the previous one. Here, the player might try to approach the puzzle in the same way as the previous, but they will quickly realize that this time they only have two fans to place." 
   - type: text
-    content: "Here they can also point out the altered position of the collector, which is one unit to the right. This allows the solution to have the bubble float up the right-most column. However, the absence of boundaries in the level will most likely have players push the bubbles off the play area, which can reinforce the idea that bubbles get pushed by fans 3 square units. To help understand this measurement, the length of the spike obstacles are also 3 units long. This level still provides some flexibility on the exact position of both fans, although it does get a bit more restrictive than the previous one."
+    content: "Here, players can also point out the altered position of the collector, which is one unit to the right. This allows the solution to have the bubble float up the right-most column. However, the absence of boundaries in the level will most likely have players push the bubbles off the play area, which can reinforce the idea that bubbles get pushed by fans 3 square units. To help understand this measurement, the length of the spike obstacles are also 3 units long. This level still provides some flexibility on the exact position of both fans, although it does get a bit more restrictive than the previous one."
   - type: galleryStart
   - type: media
     id: level2
@@ -98,7 +98,7 @@ ldDescription:
   - type: plain_html
     content: "<h3>Level 3</h3>"
   - type: text
-    content: "In this level two new elements are introduced: the walls and the back plates. The walls prevent the bubble from crossing the direction they are blocking, and the plates prevent the player from placing elements on top. The level is intentionally designed to look more daunting, with spikes acting as boundaries and a convoluted collection of elements. Although the path the bubble has to take in this puzzle is very explicit, the specific way to achieve is not, and it is intended to show new interactions to the player:"
+    content: "In this level two new elements are introduced: the walls and the back plates. The walls prevent the bubble from crossing the direction they are blocking, and the plates prevent the player from placing elements on top. The level is intentionally designed to look more daunting, with spikes acting as boundaries and a convoluted collection of elements. Although the path the bubble has to take in this puzzle is very explicit, the specific way to achieve it is not, and it is intended to teach these new interactions to the player:"
   - type: list
     items:
       - type: text
@@ -108,9 +108,9 @@ ldDescription:
       - type: text
         content: Then, if they havent thought about it yet, they can learn to push bubbles downwards. 
       - type: text
-        content: As seen in <b><i>[Figure 2]</i></b>, if the player hasn't been careful with the placement of the first fan, the bubble might be pushed against the bottom spikes with the third fan. This can result in them using their last fan to correct this, but then they would need a fifth one to make the final move, so they realise they can reuse the first fan if they place it higher up.
+        content: As seen in <b><i>[Figure 2]</i></b>, if the player hasn't been careful with the placement of the first fan, the bubble might be pushed against the bottom spikes with the third fan. This can result in them using their last fan to correct this, but then they would need a fifth one to make the final move. Players needs to realise they can reuse the first fan if they place it higher up.
       - type: text
-        content: Once the bubble is past the U turn, players will most likely run into the situation of <b><i>[Figure 3]</i></b>, where the second fan pushes the bubble away. Here they realize they have to move this fan further to the left so that it doesn't interact with the bubble at that position.
+        content: Once the bubble is past the U turn, players will most likely run into the situation of <b><i>[Figure 3]</i></b>, where the second fan pushes the bubble away. Here they must realize they can move this fan further to the left so that it doesn't interact with the bubble at that position.
   - type: text
     content: "The metal plates serve several purposes. The leftmost plate helps create the negative space that encourages players to place fans right underneath it. The middle and right plates allow the last bullet point situation to happen, while also they limit the amount of choices the player can make. Although this is already getting into actual puzzle territory we didn't want judges to be overwhelmed at this stage so we kept their options limited."
   - type: galleryStart
@@ -138,7 +138,7 @@ ldDescription:
   - type: galleryEnd
 
   - type: text
-    content: "When the player finally figures out they have to use the left path, and achieve to do so, they will be likely running into a new problem, where they have no way to push a bubble back into the right without overshooting. This is designed to prompt them into using a fan to push the bubble upwards. I avoided this behaviour before, so it was necessary to explicitly implement it this way. This action teaches them about the basics of fan priority, at least intuitively, where a bubble influenced by two fans will follow the direction of the one that is closer. As a small addition to this, the number of available fans (5 in this case), also serves as a hint that they are not using all the tools they are provided."
+    content: "When the player finally figures out they have to use the left path and achieve to overcome the first obstacle, they will be likely running into a new problem, where they have no way to push a bubble back into the right without overshooting. This is designed to prompt them into using a fan to push the bubble upwards. I avoided the need for this behaviour in previous levels, so it was necessary to explicitly implement it this way. This action teaches them about the basics of fan priority, at least intuitively, where a bubble influenced by two fans will follow the direction of the one that is closer. As a small addition to this, the number of available fans (5 in this case), also serves as a hint that they are not using all the tools they are provided."
   - type: galleryStart
   - type: media
     id: level4_2
@@ -151,7 +151,7 @@ ldDescription:
   - type: text
     content: "This puzzle is a step up in difficulty, and tests all the knowledge of the player. An additional puzzle before this one would have helped with pacing the difficulty, but due to the time constraints of the gamejam a 6th puzzle couldn't make it into the released version."
   - type: text
-    content: "This level has been constructed to present many apparently possible paths, but only one of them is a solution. In the second image you can see marked all these possible paths in blue. There is also a red square that indicates where the bubble could be without being stuck next to a wall. Paths 1 and 6' exit this red square, so they are impossible. Path 2 is blocked by the back plate under the path number 1 and by fan B."
+    content: "This level has been constructed to present many apparently possible paths, but only one of them is a solution. In the second image you can see marked all these paths in blue. There is also a red square that indicates where the bubble could be without being stuck next to a wall. Paths 1 and 6' exit this red square, so they are impossible. Path 2 is blocked by the back plate under the path number 1 and by fan B."
   - type: galleryStart
   - type: media
     id: level5
@@ -160,7 +160,7 @@ ldDescription:
   - type: galleryEnd
 
   - type: text
-    content: "Once players reach to the conclussion they have to approach the fork at position #3, they learn to use a fan to block the bubble from following the 2nd path. They can either have opposing fans that cancel eachother, or they can just use a fan as a wall. Once they reach the fork, players are more likely to try the paths on the right (as intended and as seen in friends' playthroughs), since this side has more open space. With paths #4 and #5 players are likely to learn more about the fan priority mechanic. Even if they manage to surpass the obstacles, they will always be one fan short before reaching a solution."
+    content: "Once players reach to the conclussion they have to approach the fork at position #3, they can learn how to use a fan to block the bubble from following the 2nd path. They can either have opposing fans that cancel eachother, or they can just use a fan as a wall. Once they reach the fork, players are more likely to try the paths on the right (as intended and as seen in friends' playthroughs), since this side has more open space. With paths #4 and #5 players are likely to learn more about the fan priority mechanic. Even if they manage to surpass the obstacles, they will always be one fan short before reaching a solution."
   - type: galleryStart
   - type: media
     id: level5_2

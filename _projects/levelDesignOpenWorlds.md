@@ -1,10 +1,10 @@
 ---
 layout: projectDetail
 projId: level-design-pcg
-title: "Level Design in Open Worlds using PCG"
+title: "Level Design Guidelines and Procedural Open Worlds"
 subtitle: "Master's Thesis"
 startDate: "2024-11-18"
-endDate: ""
+endDate: "2026-05-15"
 halted: false
 featured: true
 relevance: 90
@@ -31,7 +31,6 @@ longDescription:
   - type: link
     url: '/portfolio/docs/mastersThesis.pdf'
     text: Master's Thesis Current Draft (before final corrections)
-    
   - type: text
     content: "The work of this thesis spanned over a year and a half. It consisted of 6 months of research, 2 months of design & implementation, and 4 months of writting the final document. The research is framed around four pillars: Game Experiences, Open Worlds, Level Design and Procedural Content Generation (PCG). The two more important pillars are Level Design and PCG, each of which is treated in the 'Level Design' and 'Tools Programming' tabs of this project's description. Here is a summary of the two resulting artefacts of the work in this thesis:"
   - type: list
@@ -40,6 +39,10 @@ longDescription:
         content: "<b>Theoretical artefact</b>: Level Design Guidelines. These are a collection of level design concepts, principles, tips, practices, patterns, etc. that serve as the foundation of a taxonomy. Although level design has a purely theoretical nature in this project, it has served me as to grasp the core design principles and practices and become a better designer."
       - type: text
         content: "<b>Practical artefacts</b>: Two Prototypes in Unity. My first idea consisted of building a small scale open-world prototype. However, due to implementation challenges and time constraints I ditched this project for a simpler proof of concept. The second prototype generates a map following specific level design guidelines."
+  - type: link
+    url: 'https://zephyr-62.github.io/Level-Design-Guidelines/'
+    text: Level Design Guidelines (My Thesis' Artefact)
+    
  
   ############################################
   - type: plain_html
