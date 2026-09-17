@@ -9,7 +9,8 @@ halted: false
 featured: false
 relevance: 70
 categoryTags:
-    - Tools
+    - Software
+    - Tool
 techTags: 
     - Custom Engine C++
     - OpenGL 
