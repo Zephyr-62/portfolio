@@ -55,7 +55,7 @@ longDescription:
   - type: text
     content: "The tool remembers all the parameters from buttons and state of foldouts. One particular QOL feature allows users to rename or relocate their elements in the script without the tool forgetting these settings. Buttons in particular support changes of their signature: their button or method name, and the parameters inside."
   - type: text
-    content: "The development of this tool is currently halted, and some improvements and fixes are already targeted, but due to time constraints it will have to wait a little longer to get some more love. I expect to get back to it by summer 2026... ."
+    content: "The development of this tool is currently halted, and several improvements and fixes are already targeted, but due to time constraints it will have to wait a little longer to get some more love. I expect to get back to it by some time in 2027... ."
 
 teamSize: 1
 contributions-short:

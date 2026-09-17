@@ -30,7 +30,7 @@ longDescription:
     content: "In this portfolio entry I summarize my research outcomes (Level Design tab) and implementation details (Tools Programming tab). You can find my full thesis in the next link:"
   - type: link
     url: '/portfolio/docs/mastersThesis.pdf'
-    text: Master's Thesis Current Draft (before final corrections)
+    text: Master's Thesis Final Version
   - type: text
     content: "The work of this thesis spanned over a year and a half. It consisted of 6 months of research, 2 months of design & implementation, and 4 months of writting the final document. The research is framed around four pillars: Game Experiences, Open Worlds, Level Design and Procedural Content Generation (PCG). The two more important pillars are Level Design and PCG, each of which is treated in the 'Level Design' and 'Tools Programming' tabs of this project's description. Here is a summary of the two resulting artefacts of the work in this thesis:"
   - type: list
