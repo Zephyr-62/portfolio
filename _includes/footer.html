@@ -9,9 +9,13 @@
 					<header>
 						<h3>That's all for now! Check my links down here ↓</h3>
 					</header>
-					<p>
+					<p class="v-game">
 						Feel free to <b>contact me</b> through e-mail or LinkedIn <br>
 						More tools and games to come in the future...
+					</p>
+					<p class="v-swe">
+						Feel free to <b>contact me</b> through e-mail or LinkedIn <br>
+						More systems and tools to come in the future...
 					</p>
 					<ul class="icons highlightOnTarget" id="footerUrls">
 						<li><a href="mailto:raul.martin.principal@gmail.com" class="icon fa-envelope"><span class="label">Mail</span></a></li>
@@ -23,7 +27,10 @@
 				</section>
 				<div id="footerButtons">
 					<a href="#header">Go back up ↑</a>					
-					<a href="{{ 'projectListing' | relative_url }}" class="button"><b>See All Projects →</b></a>
+					<a href="{{ '/gameDev/' | relative_url }}" class="button v-swe"><b>Go To Game Dev Portfolio →</b></a>
+					<a href="{{ '/swe/' | relative_url }}" class="button v-game"><b>Go To Software Engineering Portfolio →</b></a>
+					<a href="{{ 'projectListing' | relative_url }}?v=game" class="button v-game"><b>See All Projects →</b></a>
+					<a href="{{ 'projectListing' | relative_url }}?v=swe" class="button v-swe"><b>See All Projects →</b></a>
 				</div>
 
 				<!-- Copyright -->

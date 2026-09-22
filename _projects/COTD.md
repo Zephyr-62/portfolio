@@ -7,16 +7,24 @@ startDate: "2024-09-12"
 endDate: "2024-11-03"
 halted: false
 featured: true
-relevance: 90
+relevance: 70
+relevance_swe: 0
 categoryTags:
     - Game
     - Others
+categoryTags_swe:
+    - AlgorithmsSystems
 techTags: 
     - Unity
     - Blender
     - PID Controller
     - Procedural Animation
     - Game Design
+techTags_swe:
+    - C#
+    - PID Controller
+    - Procedural Animation
+    - Gameplay Systems
 summary: "Venture into the depths of the sea to collect ancient artefacts for your company while piloting an old rusty submarine. Avoid looming creatures..."
 shortDescription: "This is a first-person game set in the depths of the ocean where you control an unreliable and rusty submarine. Your goal is to collect some lost ancient artefacts while trying to maneuver through an underwater ravine with indirect controls, and fixing any malfunction that might show up during your voyage. You also have to be cautious with the <i>creatures of the deep</i>. Use the different books that you have available to learn about those two things. <br><br>
  This was a project course made in the span of 7 weeks with the topic 'Public Domain', which whe implemented through real life scans of ancient sculptures."
@@ -59,6 +67,11 @@ contributions-short:
   - Procedural Animations
   - Music - Main Theme
 
+contributions-short_swe:
+    - Submarine Physics Controller
+    - Enemy AI
+    - Procedural Animation
+    - PID-Based Movement
 images:
   - name: Cover.png
     alt: "Thumbnail"
@@ -99,4 +112,5 @@ devImages:
     name: sonarMalfunction.gif
     alt: "Sonar Glitch Gif"
     footnote: "With voltage surges your sonar or cameras can get a distortion effect."
+
 ---

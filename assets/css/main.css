@@ -12,6 +12,7 @@
     --light-color0: #e6e6ec;
     --light-color1:#cfcfcf;
     --light-color2: #1b2330;
+    --light-color2-alt:#1b2330e0;
     --dark-color1: #29364a;
     --dark-color2: #191f29;
     
@@ -20,6 +21,11 @@
     --alt-dark-color2: #273345;
     
     --homePage-slant: 2rem; 
+
+    /* Height of the navigation chrome. Refined at runtime from the real
+       measured height (see assets/js/projectTabs.js); this is the desktop
+       value used before that runs. */
+    --nav-height: 61px;
 
     /* Lighter blue
     --light-color0: #fef8ff;
@@ -51,6 +57,36 @@
 
 }
 /* Alt color #3f9bcc ♥*/
+
+/*
+    Portfolio versions
+    ------------------
+    `data-version` is set on <html> (page front matter, `?v=` query parameter or
+    the last visited version, see _layouts/default.html). Markup that depends on
+    the version is rendered twice, tagged `.v-game` / `.v-swe`.
+
+    `assets/js/portfolioVersion.js` removes the unused version from the DOM
+    (the mobile nav panel is rebuilt from `#nav` without classes, so it would
+    otherwise list both versions); these rules cover the no-JS case and keep the
+    hidden version from being painted before that script runs.
+*/
+html:not([data-version="swe"]) .v-swe,
+html[data-version="swe"] .v-game {
+    display: none !important;
+}
+
+/* Software engineering palette. Same structure as the default (game) one, only
+   the accent colours change. */
+html[data-version="swe"] {
+    --hover-color: #6fd3e8;
+    --highlight-color: #a6e6f2;
+    --button-blink1-color: #2f6fd0;
+    --button-blink2-color: #8fbdf0;
+    --tab-selected-color: #2f6fd0;
+    --footer-color: #060d1c;
+    --alt-dark-color1: #2f5560;
+    --alt-dark-color2: #1f3a45;
+}
 
 
 html, body, div, span, applet, object,
@@ -219,7 +255,7 @@ input, select, textarea {
         transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
     }
 
-    a:not(.button):not(#logo):not(#navElem):not(#noAEffects):not(> img) {
+    a:not(.button):not(.logo):not(#navElem):not(#noAEffects):not(> img) {
         border-bottom: solid 1px rgba(255,255,255,0.75);
         font-style: italic;
     }
@@ -1601,7 +1637,11 @@ input, select, textarea {
         /* Basic */
 
             html, body {
+                /* `clip` instead of `hidden`: `hidden` turns the element into a
+                   scroll container, which stops the sticky project detail tabs
+                   (and anything else sticky) from sticking. */
                 overflow-x: hidden;
+                overflow-x: clip;
             }
 
             body, input, textarea, select {
@@ -2321,7 +2361,7 @@ input, select, textarea {
 }
 
 
-#logo {
+.logo {
     filter: drop-shadow(0px 0px 4px rgb(50,50,50));
     color: rgb(230,230,230);
 }
@@ -2366,6 +2406,18 @@ input, select, textarea {
   gap: 2em;
   flex-wrap: wrap;
   margin-bottom: 1.5em;
+  padding: .5em;
+  /* Keeps the tabs reachable while reading a section. `--nav-height` is the
+     height of the navigation chrome, measured by assets/js/projectTabs.js (the
+     value in :root is the desktop one, used until that script runs). */
+  position: sticky;
+  top: var(--nav-height);
+  z-index: 9;
+}
+
+.projectTabs.stuck {
+  background-color: var(--light-color2-alt);
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.45);
 }
 
 .projectTab {
@@ -2586,6 +2638,7 @@ input, select, textarea {
   justify-content: center;
   text-decoration: none;
   color: white;
+  background-color: var(--dark-color2); /* matte behind panels that do not fill */
 }
 
 .side h2 {
@@ -2609,6 +2662,27 @@ input, select, textarea {
   background-position: center;
   background-size: cover;
   z-index: 1;
+}
+
+/* Panels with `zoom: false` in _data/versions.yml: the whole image is shown
+   instead of being magnified and cropped to fill the panel. Small images are
+   still enlarged to fit the panel height, so pair it with a source image that
+   is close to the panel proportions. */
+.side-fitted {
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* The software engineering landing panels use screenshots rather than the
+   artwork of the game landing page, so they get a scrim that keeps the panel
+   headings readable. */
+html[data-version="swe"] .side::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(to bottom, rgba(8, 20, 31, 0.45), rgba(8, 20, 31, 0.8));
+    pointer-events: none;
 }
 
 /* Hover Interaction */

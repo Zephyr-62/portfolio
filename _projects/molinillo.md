@@ -7,15 +7,22 @@ startDate: "2023-06-12"
 endDate: ""
 halted: false
 featured: true
-relevance: 95
+relevance: 90
+relevance_swe: 70
 categoryTags:
     - Game
     - LevelDesign
     - Tool
+categoryTags_swe:
+    - DevTools
 techTags: 
     - Godot
     - Level Design
     - Engine Tools
+techTags_swe:
+    - Godot
+    - Editor Tooling
+    - Procedural Generation
 summary: "Action-Adventure 3D Sidescroller game <b><i>to be released</i></b> <a href='https://store.steampowered.com/app/2542580/Rodolfo_Mascarpone_y_Ramn_Cazanuecos_Amenaza_en_el_Molinillo/'>on Steam</a> by <a href='https://x.com/numaegames'>Numae Games</a>, with the collaboration of several famous Spanish streamers."
 shortDescription: "This game is a 2-player coop action-adventure 3D sidescroller, currently being developed by a team of 3 people. It was born as a small tribute to the famous spanish streamers <a href='https://www.twitch.tv/borjapavon'>Borja Pavón</a> and <a href='https://www.twitch.tv/thecatacroquer'>TheCatacroquer</a> and their GTA V roleplay characters, but the project grew quite large. Now we count with their <b>collaboration</b> and support of their communities."
 
@@ -160,11 +167,9 @@ contributions-short:
   - Lead Level Designer
   - Building Generator Tool
   - Custom Dialogue System
-contributions:
-  - GPU Compute Shaders
-  - Spatio-temporal Clustering Algorithm
-  - Simulation Snapshots
-  - Data Serialization
+contributions-short_swe:
+  - Building Generator Tool
+  - Custom Dialogue System
 images:
   - name: cover.jpg
     alt: "Cover Image"
@@ -237,4 +242,5 @@ devImages:
     alt: "First sketch of a level"
     footnote: "This is the original sketch of part of a level in Act 1"
   
+
 ---

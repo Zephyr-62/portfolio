@@ -2,10 +2,31 @@
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"{% if page.version %} data-version="{{ page.version }}"{% endif %}>
 	<head>
 		<title>Raúl Martín - {{ page.title }}</title>
 		<meta charset="utf-8" />
+		<script>
+			// Active portfolio version: page front matter > ?v= > last visited > game.
+			// Runs before the stylesheets so the version specific styles apply on the
+			// first paint (no flash of the other version).
+			(function () {
+				var el = document.documentElement,
+					version = el.getAttribute("data-version"),
+					query = null;
+
+				try { query = new URLSearchParams(window.location.search).get("v"); } catch (e) { }
+
+				if (version !== "game" && version !== "swe") version = query;
+				if (version !== "game" && version !== "swe") {
+					try { version = window.localStorage.getItem("portfolioVersion"); } catch (e) { }
+				}
+				if (version !== "game" && version !== "swe") version = "game";
+
+				el.setAttribute("data-version", version);
+				try { window.localStorage.setItem("portfolioVersion", version); } catch (e) { }
+			})();
+		</script>
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="icon" type="image/png" href="{{ site.baseurl }}/images/favicon.png">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
@@ -13,7 +34,7 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 		<noscript><link rel="stylesheet" href="{{ site.baseurl }}/assets/css/noscript.css" /></noscript>
 	</head>
-	{% if page.url == "/" %}
+	{% if page.homepage %}
 	<body class="homepage is-preload">	
 	{% else %}
 	<body>	

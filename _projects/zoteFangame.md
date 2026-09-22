@@ -8,13 +8,20 @@ endDate: "2022-01-09"
 halted: false
 featured: false
 relevance: 25
+relevance_swe: 0
 categoryTags:
     - Game
     - Tool
+categoryTags_swe:
+    - AlgorithmsSystems
 techTags: 
     - Unity
     - C#
     - Level Editor
+techTags_swe:
+    - Unity
+    - C#
+    - Level Editor Tooling
 summary: "First small unity prototype that implements systems like character controller, camera confinement, enemy AI, animations, quests, dialogue systems..."
 shortDescription: "This was a course project I took in my bachelors with a couple of friends. We were interested in the character Zote from <i>Hollow Knight (2017)</i>, and we wanted to imagine what his backstory was. This prototype was the start of this project, although due to time constraints (and of course copyright issues) we decided to close the project at the end of this course. However, as a first introduction to Unity it was a success."
 longDescription: 
@@ -28,11 +35,6 @@ longDescription:
   - type: yt
     videoId: "Zn65SlHgJqo"
   - type: galleryEnd
-
-contributions:
-  - type: text
-    content: "SYSTEMS: Camera confinment & room discovery, quest system, dialogue system, auto-map generator (doors to levels)."
-
 
 teamSize: 3
 contributions-short:

@@ -1,0 +1,19 @@
+{% comment %}
+List that differs between the two portfolio versions, rendered for both and
+tagged `.v-game` / `.v-swe` (see vText.html).
+
+Usage: {% include vList.html game=project.techTags swe=project.techTags_swe %}
+{% endcomment %}
+
+{%- assign swe = include.swe | default: include.game -%}
+{%- assign style = include.style | default: "" -%}
+<ul class="v-game"{% if style != "" %} style="{{ style }}"{% endif %}>
+	{% for item in include.game %}
+	<li>{{ item }}</li>
+	{% endfor %}
+</ul>
+<ul class="v-swe"{% if style != "" %} style="{{ style }}"{% endif %}>
+	{% for item in swe %}
+	<li>{{ item }}</li>
+	{% endfor %}
+</ul>

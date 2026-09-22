@@ -1,0 +1,20 @@
+{% comment %}
+Split landing panels of a portfolio version, generated from _data/versions.yml.
+The version comes from `page.version`, which every landing page declares.
+{% endcomment %}
+
+{% assign version = site.data.versions[page.version] %}
+{% assign listing = 'projectListing' | relative_url %}
+
+<div class="split-wrapper">
+	{% for category in version.categories %}
+	{% if category.panel %}
+	<a href="{{ listing }}?v={{ page.version }}&amp;filter={{ category.id }}" class="side {{ category.panel.cssClass }}{% if category.panel.zoom == false %} side-fitted{% endif %}"
+		style="background-image: {% if category.panel.image %}url('{{ category.panel.image | relative_url }}'){% else %}{{ category.panel.gradient }}{% endif %};">
+		<div class="content">
+			<h2>{{ category.label }}</h2>
+		</div>
+	</a>
+	{% endif %}
+	{% endfor %}
+</div>

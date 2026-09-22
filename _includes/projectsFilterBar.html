@@ -1,0 +1,36 @@
+{% comment %}
+Filter bar of the project listing.
+
+One dropdown per portfolio version, driven by _data/versions.yml: the
+categories of one version never show up in the other (e.g. "Level Design" is
+not a filter of the software engineering listing). Both dropdowns share the
+`.projFilter` class, so the listing script only has to deal with the one left in
+the DOM (see assets/js/portfolioVersion.js).
+
+"All Projects" is the union of every category of that version, which is also
+what the listing falls back to when no `filter` parameter is given.
+{% endcomment %}
+
+<section id="banner" class="filter-btns-container" style=" overflow: auto; padding: 1em 0; margin-bottom: 0.25em;">
+    <div class="filter-btns">
+        <p style="text-align: center; margin: 0;"><b>Filter By:</b></p>
+
+        {% for version in site.data.versions %}
+        {% assign categories = version[1].categories %}
+        {% capture allCategories %}{% for category in categories %}{{ category.id }}{% unless forloop.last %};{% endunless %}{% endfor %}{% endcapture %}
+        <select class="button filter-btn projFilter v-{{ version[0] }}"
+                data-default-filter="{{ allCategories }}"
+                onchange="toggleFilter(this.value)">
+            {% for category in categories %}
+            <option value="{{ category.id }}" class="filter-btn">{{ category.label }}</option>
+            {% endfor %}
+            <option value="{{ allCategories }}" class="filter-btn">All Projects</option>
+        </select>
+        {% endfor %}
+    </div>
+
+    <div class="filter-btns">
+        <p style="text-align: center; margin: 0;"> <b>Sorted By:</b></p>
+        <button style="margin-right: 1em;" class="button filter-btn sort-btn" onclick="toggleSort()" >Relevance ↓</button> 
+    </div>
+</section>

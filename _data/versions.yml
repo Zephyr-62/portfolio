@@ -1,0 +1,74 @@
+# The portfolio is presented in two "versions": `game` and `swe`. Both share the
+# same project collection, and each one defines
+#
+#   landing     - the landing page of that version (written in pages/)
+#   tagline     - the subtitle shown in the header of every page
+#   categories  - the taxonomy of that version. Every id has to match a value
+#                 used in the project front matter: `categoryTags` for `game`,
+#                 `categoryTags_swe` for `swe`.
+#
+#                 Per category:
+#                   nav: true     adds a link to the site navigation
+#                   section       id of the project detail tab and section (also
+#                                 the URL hash, e.g. /projects/EES#algorithms);
+#                                 sections are only rendered when the project has
+#                                 a `description` for them
+#                   description   project front matter field holding that
+#                                 section of the project detail page
+#                   panel         adds one panel to the landing page split
+#                                 (see _includes/landingPanels.html). Panels are
+#                                 read left to right, the first one is the
+#                                 slanted one (`.design`, see main.css).
+#                                 `zoom: false` fits the whole image instead of
+#                                 magnifying and cropping it to fill the panel.
+#
+#                 Categories without a panel are only offered as a filter in
+#                 the project listing, and categories without a `section` have no
+#                 project detail tab.
+#
+# `game` is the default version: pages without a version of their own fall back
+# to it (see the resolution script in _layouts/default.html).
+
+game:
+  landing: /gameDev/
+  tagline: "Game Dev & Computer Science Engineer"
+  categories:
+    - id: LevelDesign
+      label: Level Design
+      nav: true
+      section: levelDesign
+      description: ldDescription
+      panel:
+        cssClass: design
+        image: images/LD.gif
+    - id: Tool
+      label: Tools Programming
+      nav: true
+      section: tool
+      description: toolDescription
+      panel:
+        cssClass: tools
+        image: images/TOOLS.gif
+    - id: Others
+      label: Others
+
+swe:
+  landing: /swe/
+  tagline: "Software Engineer ~ Algorithms, Systems & Tooling"
+  categories:
+    - id: AlgorithmsSystems
+      label: Algorithms & Systems
+      nav: true
+      section: algorithms
+      description: algorithmsDescription
+      panel:
+        cssClass: design
+        image: images/projects/VoxelEngine/treeView2.png
+    - id: DevTools
+      label: Developer Tools
+      nav: true
+      section: devTools
+      description: devToolsDescription
+      panel:
+        cssClass: tools
+        image: images/projects/molinillo/Tool/BuildingGeneratorTool.png

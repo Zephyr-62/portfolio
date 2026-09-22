@@ -8,14 +8,21 @@ endDate: "2023-06-22"
 halted: true
 featured: true
 relevance: 100
+relevance_swe: 100
 categoryTags:
     - Software
     - Tool
+categoryTags_swe:
+    - DevTools
 techTags: 
     - Unity
     - C#
     - Reflection
     - Engine Tool
+techTags_swe:
+    - C#
+    - Reflection
+    - Editor Tooling
 summary: "Unity plugin used to create custom inspectors by adding C# property attributes to fields and methods."
 shortDescription: "This is a free tool I developed on my own to easily modify the Unity Inspector without the need to create an additional editor script. It follows the same principle as the default Unity property attributes like [Header] or [Range].<br><br> This asset includes layout functionality for collapsible sections (foldouts) and columns. The tool allows nesting layout styles and serializes complex types like custom classes/structures, and nested Lists/Arrays.<br> However, by far the most useful functionality is converting methods into clickable buttons with a property attribute, supporting dynamic input parameters and async execution."
 longDescription:
@@ -63,6 +70,11 @@ contributions-short:
   - Columns Layout
   - Nested Layouts
   - Run Methods With Buttons
+contributions-short_swe:
+    - C# Reflection-Based Attribute System
+    - Nested Layout System
+    - Method-to-Button Binding
+    - Shipped Unity Asset
 images:
     - name: Advanced Editor Tools graphics-2.png
       alt: "Thumbnail"
@@ -116,4 +128,5 @@ devImages:
     name: Overview/advancedDataTypes.png
     alt: "Other datatypes examples"
     footnote: "Other examples of lists of data types not supported by Unity by default."
+
 ---

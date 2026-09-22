@@ -20,7 +20,7 @@ permalink: /project/{{page.id}}
                                 <img class="project-image" data-project-id="{{page.projId}}" data-image-idx="0">
                             </a>
                         </div>                        
-                        <p>{{ page.shortDescription }}</p>
+                        {% include vText.html game=page.shortDescription swe=page.shortDescription_swe %}
                     </div>                    
                 </article>
             </div>
@@ -30,7 +30,7 @@ permalink: /project/{{page.id}}
                     <header>
                         <h3>Summary</h3>
                     </header>
-                    {{ page.summary }} </p>
+                    {% include vText.html game=page.summary swe=page.summary_swe %}
                 </section>
                 <section>
                     <header> <h3>Details</h3> </header>   
@@ -68,21 +68,13 @@ permalink: /project/{{page.id}}
                 </section>
                 <section>
                     <header> <h3>Keywords</h3> </header>
-                    <ul>
-                        {% for tag in page.techTags %}
-                            <li>{{tag}}</li>
-                        {% endfor %}
-                    </ul>
+                    {% include vList.html game=page.techTags swe=page.techTags_swe %}
                 </section>
                 <section>
                     <header>
                         <h3>Contributions</h3>
                     </header>             
-                    <ul>
-                        {% for contribution in page.contributions-short %}
-                            <li>{{contribution}}</li>
-                        {% endfor %}
-                    </ul>
+                    {% include vList.html game=page.contributions-short swe=page.contributions-short_swe %}
                 </section>
             </div>
         </div>
@@ -102,37 +94,45 @@ permalink: /project/{{page.id}}
         
         <br>   
         <!-- ######### PROJ DESCRIPTIONS ######### -->
-        {% if page.ldDescription or page.toolDescription %}
-        <div class="projectTabs">
-            <button class="projectTab" id="overviewButton" data-target="overview">Overview</button>
-            {% if page.ldDescription %}
-                <button class="projectTab" id="levelDesignButton" data-target="levelDesign">Level Design</button>
-            {% endif %}
-            {% if page.toolDescription %}
-                <button class="projectTab" id="toolButton" data-target="tool">Tools Programming</button>
-            {% endif %}
+        {% comment %}
+        One tab bar per portfolio version, listing the categories of that version
+        (_data/versions.yml) that this project has a description for
+        (`category.description` → project front matter field). Only the bar and
+        the sections of the active version survive in the DOM (see main.css and
+        assets/js/portfolioVersion.js), so a software engineering reader never
+        gets "Level Design" tabs and a game reader never gets "Developer Tools".
+        {% endcomment %}
+        {% for version in site.data.versions %}
+        {% assign sections = "" | split: "" %}
+        {% for category in version[1].categories %}
+        {% if page[category.description] %}{% assign sections = sections | push: category %}{% endif %}
+        {% endfor %}
+        {% if sections.size > 0 %}
+        <div class="projectTabs v-{{ version[0] }}">
+            <button class="projectTab" data-target="overview">Overview</button>
+            {% for category in sections %}
+            <button class="projectTab" data-target="{{ category.section }}">{{ category.label }}</button>
+            {% endfor %}
         </div>
-        
         {% endif %}
+        {% endfor %}
         <div class="projectTabContent">
             <div id="overview">
                 <h2> Project Overview </h2>
                 {% include projectDescriptionView.html description=page.longDescription %}
             </div>
             
-            {% if page.ldDescription %}
-                <div id="levelDesign">
-                    <h2> Level Design </h2>
-                    {% include projectDescriptionView.html description=page.ldDescription %}
-                </div>
+            {% for version in site.data.versions %}
+            {% for category in version[1].categories %}
+            {% if page[category.description] %}
+            {% assign sectionContent = page[category.description] %}
+            <div id="{{ category.section }}" class="v-{{ version[0] }}">
+                <h2> {{ category.label }} </h2>
+                {% include projectDescriptionView.html description=sectionContent %}
+            </div>
             {% endif %}
-
-            {% if page.toolDescription %}
-                <div id="tool">
-                    <h2> Tools Implementation </h2>
-                    {% include projectDescriptionView.html description=page.toolDescription %}
-                </div>
-            {% endif %}                   
+            {% endfor %}
+            {% endfor %}
         </div>
     </div>
 </div>

@@ -1,0 +1,13 @@
+{% comment %}
+Text that differs between the two portfolio versions, rendered for both and
+tagged `.v-game` / `.v-swe` (see main.css and assets/js/portfolioVersion.js).
+The software engineering value falls back to the game one when a project does
+not define it.
+
+Usage: {% include vText.html tag="p" game=project.summary swe=project.summary_swe %}
+{% endcomment %}
+
+{%- assign tag = include.tag | default: "p" -%}
+{%- assign swe = include.swe | default: include.game -%}
+<{{ tag }} class="v-game">{{ include.game }}</{{ tag }}>
+<{{ tag }} class="v-swe">{{ swe }}</{{ tag }}>

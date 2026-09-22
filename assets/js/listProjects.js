@@ -1,5 +1,12 @@
 // @ts-check
 
+// Which metadata a project shows depends on the active portfolio version
+// (`game` by default, see _layouts/default.html). Every `_swe` field falls back
+// to its game counterpart, so projects that were not given a software
+// engineering presentation yet keep working.
+const portfolioVersion = document.documentElement.getAttribute("data-version") || "game";
+const isSoftwareVersion = portfolioVersion === "swe";
+
 document.addEventListener("projectsReady", function() {
     processProjects();
     updateFilterButtons();
@@ -19,6 +26,47 @@ function getQueryParams() {
 let queryParams = getQueryParams();
 let featuredFilter = false;
 
+// Filter dropdown of the active version (_includes/projectsFilterBar.html),
+// rendered from the categories declared in _data/versions.yml.
+function filterSelect(){
+    return document.querySelector('.projFilter');
+}
+
+function defaultFilters(){
+    const filterSelectElem = filterSelect();
+    return filterSelectElem ? filterSelectElem.dataset.defaultFilter.split(";") : [];
+}
+
+// Categories requested by the URL, limited to the ones the active version
+// knows. A `filter` that only exists in the other version (cross version link
+// or bookmark) falls back to this version's default categories.
+function activeFilters(){
+    if(!("filter" in queryParams))
+        return null;
+
+    const known = Array.from(filterSelect().options)
+        .map(option => option.value)
+        .join(";")
+        .split(";");
+
+    const requested = queryParams.filter.split(";").filter(filter => known.includes(filter));
+
+    return requested.length > 0 ? requested : defaultFilters();
+}
+
+function projectCategories(project){
+    return (isSoftwareVersion && project.categoryTags_swe) ? project.categoryTags_swe : project.categoryTags;
+}
+
+function projectRelevance(project){
+    return (isSoftwareVersion && project.relevance_swe != null) ? project.relevance_swe : project.relevance;
+}
+
+// A relevance of 0 keeps the project out of that version's portfolio.
+function shownInVersion(project){
+    return projectRelevance(project) > 0;
+}
+
 function updateFilterButtons(){
     const sortBtn = document.querySelector('.sort-btn');
     if(sortBtn != null){
@@ -35,21 +83,18 @@ function updateFilterButtons(){
         }
     }
 
-    buttonUpdate('.ld-btn', "LevelDesign");
-    buttonUpdate('.tools-btn', "Tool");
-    buttonUpdate('.others-btn', "Others");
-    // Make selected option in dropdown selected on projFilter element
-    queryParams.filter = queryParams.filter || "LevelDesign;Tool;Others";
-    const filterSelect = document.querySelector('#projFilter');
-    filterSelect.value = queryParams.filter;
-}
+    const filterSelectElem = filterSelect();
+    if(filterSelectElem != null){
+        // Make selected option in dropdown selected on projFilter element
+        queryParams.filter = queryParams.filter || filterSelectElem.dataset.defaultFilter;
+        filterSelectElem.value = queryParams.filter;
+        // A `filter` coming from the other version is not one of the options
+        if(filterSelectElem.value === "")
+            filterSelectElem.value = filterSelectElem.dataset.defaultFilter;
 
-function buttonUpdate(btnClass, categoryName){
-    const gamesBtn = document.querySelector(btnClass);
-    if(gamesBtn != null){
-        if (queryParams.filter != null && queryParams.filter == categoryName)
-            gamesBtn.style.filter = "";        
-        else gamesBtn.style.filter = "grayscale()";
+        Array.from(filterSelectElem.options).forEach(option => {
+            option.style.filter = option.value == queryParams.filter ? "" : "grayscale()";
+        });
     }
 }
 
@@ -127,7 +172,7 @@ function processProjects(){
         }
         // Sort by relevance        
         else{
-            const diff = projectB.relevance - projectA.relevance;
+            const diff = projectRelevance(projectB) - projectRelevance(projectA);
             // If same relevance → random order (-0.5 to 0.5)
             if (diff === 0) return Math.random() - 0.5;
             return diff;
@@ -140,7 +185,7 @@ function processProjects(){
 
     // Reappend in order
     let projShownCount = 0;
-    let categories = queryParams.filter?.split(";");
+    let categories = activeFilters();
 
     let disableImageAlternation = screen.orientation.type.includes('portrait');
 
@@ -148,15 +193,15 @@ function processProjects(){
         listParentContainer.appendChild(projContainer);
 
         let project = projects[projContainer.dataset.projectId];
-        let projectShown = true;
+        let projectShown = shownInVersion(project);
 
         // Filter by category
-        if("filter" in queryParams){                
-            if(!project.categoryTags.some(x => categories.includes(x)))
+        if(projectShown && categories != null){                
+            if(!projectCategories(project).some(x => categories.includes(x)))
                 projectShown = false;
         }
         // Filter by featured
-        if(featuredFilter || "featured" in queryParams){
+        if(projectShown && (featuredFilter || "featured" in queryParams)){
             projectShown = project.featured;
         }
 

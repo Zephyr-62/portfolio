@@ -7,17 +7,25 @@ startDate: "2024-11-18"
 endDate: "2026-05-15"
 halted: false
 featured: true
-relevance: 90
+relevance: 80
+relevance_swe: 60
 categoryTags:
     - Software
     - Research
     - LevelDesign
     - Tool
+categoryTags_swe:
+    - AlgorithmsSystems
 techTags: 
     - Unity
     - C#
     - Level Design
     - PCG
+    - Research
+techTags_swe:
+    - C#
+    - Unity
+    - Procedural Content Generation
     - Research
 summary: "Research that explores how to influence open-world experiences through level design using procedural content generation."
 shortDescription: "This is my master's thesis project, in which I did some deep research about <i>Level Design</i> and how it relates to game experiences and open-world games. I also explored how to implement level design principles algorithmically with Procedural Content Generation (PCG)."
@@ -320,6 +328,11 @@ contributions-short:
   - Procedural Generation
   - Floating Islands Generator
   - Map Prototype Generator
+contributions-short_swe:
+    - Procedural Generation Algorithms
+    - Islands Generator
+    - Map Prototype Generator
+    - Level Design Taxonomy
 images:
   - name: vista.png
     alt: "Procedural vista"

@@ -7,15 +7,24 @@ startDate: "2026-09-16"
 endDate: ""
 halted: false
 featured: false
-relevance: 70
+relevance: 0
+relevance_swe: 80
 categoryTags:
     - Software
     - Tool
+categoryTags_swe:
+    - DevTools
+    - AlgorithmsSystems
 techTags: 
     - Custom Engine C++
     - OpenGL 
     - Procedural Mesh Generation
     - Interactive Tool
+techTags_swe:
+    - C++
+    - OpenGL
+    - Procedural Mesh Generation
+    - Editor Tooling
 summary: "WIP Custom editor designed to visualize/edit meshes, with additional functionality to generate them procedurally."
 shortDescription: "This is a WIP project. More to come in the future."
 longDescription:
@@ -31,4 +40,5 @@ contributions-short:
 images:
   - name: Cover.png
     alt: "WIP Thumbnail"
+
 ---

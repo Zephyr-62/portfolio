@@ -1,16 +1,27 @@
+{% comment %}
+Site header and nav. Everything that depends on the active portfolio version is
+rendered for both versions and tagged `.v-game` / `.v-swe` (see main.css and
+assets/js/portfolioVersion.js).
+{% endcomment %}
 
-{% assign home_url = site.baseurl | append: "/" %}
+{% assign base = 'projectListing' | relative_url %}
 
-<div id="header" style="background-image: {{ site.baseurl }}/images/header.png;">
+<div id="header" style="background-image: {{ site.baseurl }}/images/header.jpg;">
 	<!-- Inner -->
 	<div class="inner">
 		<header>
 			<div>
-				{% if page.url == home_url or page.url == '/' %}
-					<h1><a id="logo">Raúl Martín</a></h1>
-					<p style="text-align: center; margin: 0;">Game Dev & Computer Science Engineer</p>
+				{% if page.homepage %}
+					<h1><a class="logo">Raúl Martín</a></h1>
+					{% for version in site.data.versions %}
+					<p class="v-{{ version[0] }}" style="text-align: center; margin: 0;">{{ version[1].tagline }}</p>
+					{% endfor %}
 				{% else %}
-					<h1 style="margin: 1em;"><a href="{{home_url}}" id="logo">Raúl Martín</a></h1>
+					<h1 style="margin: 1em;">
+						{% for version in site.data.versions %}
+						<a href="{{ version[1].landing | relative_url }}" class="logo v-{{ version[0] }}">Raúl Martín</a>
+						{% endfor %}
+					</h1>
 				{% endif %}
 			</div>
 			<!-- Nav -->
@@ -21,22 +32,17 @@
 
 <nav id="nav">
 	<ul style="padding: 0;">
-		{% assign base = 'projectListing' | relative_url %}
-		<li id="navElem"><a href="{{home_url}}" id="navElem">HOME PAGE</a></li>
+		{% for version in site.data.versions %}
+		<li id="navElem" class="v-{{ version[0] }}"><a href="{{ version[1].landing | relative_url }}" id="navElem">HOME PAGE</a></li>
+		{% endfor %}
 		<li>||</li>
-		<li id="navElem"><a href="{{ base }}?filter=LevelDesign" id="navElem">Level Design</a></li>
-		<li id="navElem"><a href="{{ base }}?filter=Tool" id="navElem">Tool Development</a></li>
-		<!--
-		<li style="user-select: none; cursor: pointer; white-space: nowrap; opacity: 1;" class="opener">
-			<a href="{{ base }}">Projects List</a>		
-			<ul style="user-select: none; display: none; position: absolute;">
-				<li style="white-space: nowrap;"><a href="{{ base }}" style="display: block;">All</a></li>
-				<li style="white-space: nowrap;"><a href="{{ base }}?filter=Game" style="display: block;">Games</a></li>
-				<li style="white-space: nowrap;"><a href="{{ base }}?filter=Software" style="display: block;">Software</a></li>
-				<li style="white-space: nowrap;"><a href="{{ base }}?filter=Research" style="display: block;">Research</a></li>
-			</ul>
-		</li>	
-		-->
+		{% for version in site.data.versions %}
+		{% for category in version[1].categories %}
+		{% if category.nav %}
+		<li id="navElem" class="v-{{ version[0] }}"><a href="{{ base }}?v={{ version[0] }}&amp;filter={{ category.id }}" id="navElem">{{ category.label }}</a></li>
+		{% endif %}
+		{% endfor %}
+		{% endfor %}
 		<li>||</li>
 		<li id="navElem"><a href="{{ 'resume' | relative_url }}" id="navElem">Resume</a></li>
 		<li id="navElem"><a href="{{ 'aboutMe' | relative_url }}" id="navElem">About Me</a></li>

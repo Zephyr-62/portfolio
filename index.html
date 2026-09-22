@@ -1,53 +1,17 @@
 ---
-layout: default
-title: "Home"
-permalink: "/"
+layout: null
+permalink: /
 ---
-
-<section id="banner" style="margin: 0;">
-	<header>
-		<p style="margin-bottom: 0;">
-			Welcome! I'm a Computer Science engineer with a master's degree in <i>Game Design and Technology</i>.
-			<br/>
-			I enjoy working on <b>level design</b> and <b>tool development</b>.
-		</p>
-			
-		<!--div class="homeProjectButtons">
-			<a href="{{ 'projectListing?filter=LevelDesign' | relative_url  }}" class="button homeProjectButton">Level Design Projects</a>
-			<a href="{{ 'projectListing?filter=Tool' | relative_url  }}" class="button homeProjectButton">Tool Dev Projects</a>
-		</div-->
-	</header>
-</section>
-
-<!--div class="wrapper style1" style="margin: 2em; padding:0;">
-	<section id="features" class="container special">
-		<header>
-			<h2>Featured Projects</h2>
-			<p>These are the projects I'm most proud of working on,<br> although <b>not</b> necessarily related to level design or tool development</p>
-		</header>
-	</section>
-</div>
-<section class="carousel">
-	<div class="reel" >
-		{% for project in site.projects %}
-		{% if project.featured %}
-		{% include projectReelView.html project=project %}
-		{% endif %}			
-		{% endfor %}
-	</div>
-</section-->
-
-<div class="split-wrapper">
-  <a href="{{ 'projectListing?filter=LevelDesign' | relative_url  }}" class="side design" style="background-image: url('images/LD.gif');">
-    <div class="content">
-      <h2>Level Design</h2>
-    </div>
-  </a>
-  <a href="{{ 'projectListing?filter=Tool' | relative_url  }}" class="side tools" style="background-image: url('images/TOOLS.gif');">
-    <div class="content">
-      <h2>Tools Programming</h2>
-    </div>
-  </a>
-</div>
-
-<script src="{{site.baseurl}}/assets/js/projectsReel.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Raúl Martín - Portfolio</title>
+		<link rel="canonical" href="{{ '/gameDev/' | absolute_url }}" />
+		<meta http-equiv="refresh" content="0; url={{ '/gameDev/' | relative_url }}" />
+		<script>window.location.replace("{{ '/gameDev/' | relative_url }}");</script>
+	</head>
+	<body>
+		<p>Taking you to the <a href="{{ '/gameDev/' | relative_url }}">Game Dev portfolio</a>.</p>
+	</body>
+</html>

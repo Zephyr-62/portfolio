@@ -7,7 +7,8 @@ startDate: "2025-01-24"
 endDate: "2025-01-26"
 halted: true
 featured: false
-relevance: 60
+relevance: 85
+relevance_swe: 0
 categoryTags:
     - Game
     - LevelDesign
@@ -318,4 +319,5 @@ devImages:
     name: LD/level5_5.gif
     alt: "Level 5 Paths"
     footnote: "Possible solution to Level 5."
+
 ---

@@ -8,13 +8,21 @@ endDate: "2021-12-27"
 halted: false
 featured: false
 relevance: 50
+relevance_swe: 40
 categoryTags:
     - Software 
     - Tool
+categoryTags_swe:
+    - DevTools
 techTags: 
     - Unity
     - C#
     - Engine Tool
+techTags_swe:
+    - C#
+    - Unity
+    - Editor Tooling
+    - Serialization
 summary: "Unity editor tool used to paint 2D shapes and colliders. Prototype 2D levels or create the basic geometry."
 shortDescription: "This tool was my first introduction to tool development with Unity. I wanted to build a system to paint 2D levels following the organic style of <i>Hollow Knight (2017)</i>.<br><br> I found online an implementation of a system to draw simple 2D shapes (rectangles and spheres), and I extended it to construct this tool. I implemented a grid system, serialization, prefab instantiation, and vertex snapping."
 longDescription:
@@ -51,4 +59,5 @@ images:
       alt: "Example map 2"
       footnote: "Example usage of the tool to prototype 2D levels."
     
+
 ---

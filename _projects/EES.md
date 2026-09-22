@@ -7,13 +7,21 @@ startDate: "2022-01-12"
 endDate: "2023-01-24"
 halted: false
 featured: true
-relevance: 85
+relevance: 95
+relevance_swe: 90
 categoryTags:
     - Software 
     - Research
     - Tool
+categoryTags_swe:
+    - AlgorithmsSystems
 techTags: 
     - Unity
+    - Compute Shaders
+    - Genetic Algorithm
+    - Data Visualization
+techTags_swe:
+    - C#
     - Compute Shaders
     - Genetic Algorithm
     - Data Visualization
@@ -102,18 +110,36 @@ toolDescription:
     id: clustersLarge
   - type: galleryEnd
 
+algorithmsDescription:
+  - type: text
+    content: "The algorithmic core of the simulator, separated from the rest of the application. Every simulation step is serialized into a snapshot (<i>memento</i>), and those snapshots are what the analysis below runs on."
+
+  - type: list
+    items:
+      - type: text
+        content: "<b>Species detection</b>: a spatio-temporal clustering algorithm groups the entities of a snapshot into species, so their evolution can be followed across a whole run."
+      - type: text
+        content: "<b>GPU connectivity</b>: trees are labeled with a Connected-Component Labeling (CCL) algorithm computed on the GPU, so every group of interconnected trees can share their resources with the rest of the group."
+      - type: text
+        content: "<b>Genetic algorithm</b>: runs the simulation dozens of times to search for the parameters under which both entity types coexist instead of one dominating over the other."
+  - type: galleryStart
+  - type: media
+    id: clustersSmall
+  - type: media
+    id: clustersLarge
+  - type: galleryEnd
+
 teamSize: 1
 contributions-short:
   - GPU Compute Shaders
   - Spatio-temporal Clustering Algorithm
   - Simulation Snapshots
   - Data Serialization
-contributions: 
-  - Spatio-temporal clustering algorithm
-  - GPU compute shaders to detect collisions and calculate interactions between entities
-  - Genetic Algorithm that runs dozens of simulations to fine-tune the simulator itself
-  - Data Analysis tools like heatmaps, distribution plots, entity attributes, and more
-  - Snapshot system to revisit past simulation instances in a 3D scene
+contributions-short_swe:
+    - Spatio-Temporal Clustering Algorithm
+    - GPU Compute Shaders (CCL)
+    - Genetic Algorithm Optimization
+    - Data Serialization & Visualization
 
 images:
     - name: Miniatura_1.png

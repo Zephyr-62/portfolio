@@ -8,9 +8,12 @@ endDate: "2024-03-23"
 halted: false
 featured: false
 relevance: 70
+relevance_swe: 50
 categoryTags:
     - Software 
     - Tool
+categoryTags_swe:
+    - AlgorithmsSystems
 techTags: 
     - C#
     - OpenGL
@@ -87,4 +90,5 @@ devImages:
     alt: "Octree Smear"
     footnote: "This gif displays how I undersample the raytraced objects to improve performance and allow the user to move around the scene without losing responsiveness."
   
+
 ---
