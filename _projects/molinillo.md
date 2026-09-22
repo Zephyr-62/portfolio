@@ -84,6 +84,81 @@ ldDescription:
 # ---------------------------------------------------- 
 # ---------------------------------------------------- 
 # ----------------------------------------------------
+devToolsDescription:
+  - type: text
+    content: "My main role in this project is as lead level designer, but at the very beginning I also implemented a couple helper tools. I worked on two of them: the dialogue manager, and the building generator tool."
+  - type: text
+    content: "<h3>Dialogue Manager</h3>"
+  - type: text
+    content: "This tool started with the need to have an easy system to automatize the process of writting lines of dialogue that could be attributed to different characters, in such a way that they would display their character image in their dialogue box. With this, more necessities arrived, which were implemented into the tool:"
+  - type: list
+    items:
+      - type: text
+        content: Rich text tags (bold, italics, colors, and wave effects)
+      - type: text
+        content: Possibility to execute game events and call remote methods
+      - type: text
+        content: Playing the voicelines as the text spawns 
+      - type: text
+        content: Dialogue choices that lead to alternate lines and consequences
+      - type: text
+        content: Online sync support
+  - type: text
+    content: "Along with these functionalities, an IDE was in development, and it supported syntax highlighting. However, during the end phase of development of this tool we found a working free asset published in Godot's AssetLib, which fullfilled all the necessities. At this stage, our custom tool was still a work in process with the choices functionality and the IDE usability."
+  - type: text
+    content: "For this reason, the custom dialogue manager ended up being discarded to cut development time and focus on problems that weren't already solved by other users."
+  
+  # ---------------------------------------------------- 
+  # ---------------------------------------------------- 
+
+  - type: text
+    content: "<h3> Building Generator Tool </h3>"
+  - type: text
+    content: "Our 3D artist prepared all the assets pertinent to buildings in a modular way, so that he could choose a building style and texture and place doors, windows, awning, and more decorative elements. The level art of the first vertical slice was built entierly by hand, which took several dozens of hours."
+
+  - type: media
+    id: firstLevel
+
+  - type: text
+    content: "I built this tool to automatically assemble all the modular elements. The user can simply type the dimensions of the building, and select the style and material with a dropdown menu. The tool generates all the walls, skirtings, columns, and ceiling pieces automatically."
+  - type: media
+    id: buildingStyles
+
+  - type: text
+    content: "With this base, the user can then select a facade and indicate what elements to place in every wall. Here I display all the building elements that can be placed. These include empty walls, windows, several types of doors and garages, balconies, awnings, and decorations like columns and AC units."
+  - type: galleryStart
+  - type: media
+    id: buildingFacade
+  - type: media
+    id: buildingFacade2
+  - type: galleryEnd
+  
+  - type: text
+    content: "The tool is divided into three tabs, as seen in the following image (in spanish)"
+  - type: list
+    items:
+      - type: text
+        content: "The first one defines the dimensions, style, and materials of the building."
+      - type: text
+        content: "On the second tab the user can select a facade and type the specific layout they desire for every building level. They do so by typing letters each element has assigned, which are explained in the tool through a tooltip."
+      - type: text
+        content: "The final tab is used to set the random distribution parameters of the height of the window blinds. These include mean and standard deviation."
+  - type: media
+    id: buildingTool
+
+  - type: text
+    content: "Other functionalities and QOL features implemented in this tool include:"
+  - type: list
+    items:
+      - type: text
+        content: "You can set a facade empty, which will remove all of its skirtings and columns so that several buildings can be put together without wasting resources."
+      - type: text
+        content: "The tool serializes all the settings per building, so if a building needs to change in future iterations it just needs to be selected to tweak those parameters."
+      - type: text
+        content: "The most useful feature is the pattern repetition. When the input for walls and elements is parsed, if the end of the pattern is reached before finishing the row of walls or all the building stories, the pattern is reset and repeated. This means that if you only define the first layer of a building with a sequence of wall and window, this pattern will spread through the whole building. This behavior is visualized in the next image."
+  - type: media
+    id: patternRepetition
+
 toolDescription:
   - type: text
     content: "My main role in this project is as lead level designer, but at the very beginning I also implemented a couple helper tools. I worked on two of them: the dialogue manager, and the building generator tool."

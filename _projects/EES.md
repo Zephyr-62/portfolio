@@ -112,14 +112,16 @@ toolDescription:
 
 algorithmsDescription:
   - type: text
-    content: "The algorithmic core of the simulator, separated from the rest of the application. Every simulation step is serialized into a snapshot (<i>memento</i>), and those snapshots are what the analysis below runs on."
+    content: "This page is a <i><b>Work In Progress</b></i>"
+  - type: text
+    content: "The simulator algorithmic core can be split between the runtime and the offline logic. In runtime, certain logic determines how the entities behave and evolve. After the simulation finishes, several offline algorithms gather all the data and organizes it into a more understandable representation. For this purpose, the simulator saves a certain number of snapshots (<i>mementos</i>)."
 
   - type: list
     items:
       - type: text
-        content: "<b>Species detection</b>: a spatio-temporal clustering algorithm groups the entities of a snapshot into species, so their evolution can be followed across a whole run."
+        content: "<b>GPU connectivity (runtime)</b>: trees are labeled with a Connected-Component Labeling (CCL) algorithm computed on the GPU, so every group of interconnected trees can share their resources with the rest of the group."
       - type: text
-        content: "<b>GPU connectivity</b>: trees are labeled with a Connected-Component Labeling (CCL) algorithm computed on the GPU, so every group of interconnected trees can share their resources with the rest of the group."
+        content: "<b>Species detection (offline)</b>: a spatio-temporal clustering algorithm groups the entities of a snapshot into species, so their evolution can be followed across a whole run."
       - type: text
         content: "<b>Genetic algorithm</b>: runs the simulation dozens of times to search for the parameters under which both entity types coexist instead of one dominating over the other."
   - type: galleryStart

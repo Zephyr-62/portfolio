@@ -58,6 +58,5 @@ images:
     - name: map2.jpg
       alt: "Example map 2"
       footnote: "Example usage of the tool to prototype 2D levels."
-    
 
 ---

@@ -221,7 +221,101 @@ ldDescription:
   ############################################
   ############################################
   ############################################
+algorithmsDescription:
+    ## "Island generation & Map generation process (as explained in Thesis) --> usage of AET + ref"
+  - type: text
+    content: "The implementation of these procedural generators is deeply looked at in my thesis (check the Overview tab). Here I present a summary of the algorithms I had to implement and some of the design decissions I took during the development." 
 
+  - type: plain_html
+    content: "<h3>Prototype 1: Floating Islands Generation</h3>"
+  - type: text
+    content: "In this prototype I wanted to generate a world with floating islands, where the character could glide and fly across them, slowly gathering better materials and resources and improving their movement capabilities. I wanted to have different biomes, which would determine both the looks of the islands and their scale and distribution. I run into the issue of the complexity of measuring distances and constraints between islands, so this prototype wasn't fully implemented. However, here is a quick look at how far I got into it." 
+  - type: media
+    id: islands_overview 
+
+  - type: text
+    content: "Firstly, I defined a 3D grid space where each cell represents a biome, with its particular generation properties. These properties determine the shape, scale, scarcity, and sparsity of the islands. Biomes have specific settings that define where in the world they can appear. e.g. The green biome appears only at the bottom center layer, and purple can only appear in the shape of a torus in higher altitudes. The following image represents the process of populating the grid with biomes. The first image shows how the game occurs inside a dome. In the second image I sample random locations for every biome (following the previous constraints). In the third image I grow these samples to fill up the space. Each of these cells will then contain what I defined as a 'cluster of islands'." 
+  - type: media
+    id: BiomeGeneration 
+
+  - type: text
+    content: "To generate each individual cluster of islands, I sample a Perlin Noise texture filtered with a Sigmoid function and a threshold. This method provides a highly controllable result that looks like the image to the left. Then, to soften the hard cuts of the edges I discard every pixel that is outside the circumscripted circle area. With this texture, I run a CCL (Connected-component labeling) algorithm to identify individual islands, so that I can treat them separately and vary their Y position. For each individual island, I use the brightness of each pixel to discretely determine the altitude of an island piece (given a verticality factor). This translates in the three coloured levels on the image to the right. Once every island piece (1x1) has a set altitude, I group the pieces into larger squares and rects. This serves several purposes: aesthetic, performance, and instancing requirements. The islands look better from below, there are less individual pieces to render, and I can make sure I can instantiate large structures on top of large tiles without them overlapping with other geometry." 
+  - type: galleryStart 
+  - type: media
+    id: islands_noise 
+  - type: media
+    id: islands_noise_CCL 
+  - type: media
+    id: island_tiling 
+  - type: galleryEnd 
+
+  ## Different new approach: generate islands with texture, save their looks, discard the ones touching the edges, save metrics --> more organic and faster generation.
+  - type: text
+    content: "I my current implementation I run this process for each biome cell. At the scale I built the world that implied over 500 cells, which then resulted in about 12 seconds of generation time. This is a bit over 2ms of compute time for each cluster, which is quite good given I implemeted this logic on the CPU." 
+  - type: text
+    content: "While writting down my results on the thesis I realized a much better and performant way of approaching this generation. Instead of creating every island cluster in runtime for each biome cell, I could generate individual islands offline, discard the islands that collide with the edges of the texture (to avoid weird cutsoffs), and have precalculated metrics to easen the process of placing the islands on the generation step. I intend to implement this in a not so distant future, since I am quite curious about the performance improvement this could pose. This also means that I could generate infinite chunkable worlds if I were to change the biome generation algorithm as well." 
+
+#####################################################
+  - type: plain_html
+    content: "<h3>Prototype 2: Adventure Map Generation</h3>"
+
+  ## Intention of this prototype: create map following specific design guidelines/constraints (towns close to water, enemies follow distributions, POIs sampling (frequency, density), towns clustering, ) and testing different types of PCG methods (distribution sampling, absolute input control (water), noise, )
+  - type: text
+    content: "This prototype was born from the idea to propose a one to one translation of design ideas into algorithms. I didn't want to spend more time implementing game mechanics, I just wanted to get to the point of the thesis, which was to show the feasibility of translating the level design guidelines into procedural algorithms. I also wanted to showcase different types of PCG methods, that's why you can find a diversity of disconnected algorithms, instead of a cohesive generation structure. With this, I decided to create a map generator as a proof of concept (not-playable prototype). Here are some generation results. The first picture shows a top-down view of the map, where rivers, mountains, and paths between towns are visisble. The other two pictures display how buildings are spawned in clusters, usually close to the water. Paths connect nearby buildings."
+
+  ## Here are some examples of the results
+  - type: galleryStart 
+  - type: media
+    id: Map 
+  - type: media
+    id: river_house 
+  - type: media
+    id: Town 
+  - type: galleryEnd 
+
+  - type: text
+    content: "The map generation starts with the terrain. I first generate the altitude map with 3 octaves of Perlin Noise. I then use a hand-painted texture as input to showcase the integration of an algorithm with high designer controllability. This texture is used to define bodies of water. In the example portrayed in the thesis this texture is shaped as rivers. I calculate a new texture called 'near-water map', where brightests pixels are the ones closest to the water. Then I use this second texture to mask the elevation texture. This method 'paints' the water in the elevation map, and smooths out the areas around it to have more realistic-looking results. Finally, I calculate the gradient of the elevation map, which provides a new texture where brightest pixels represent the steepness of the terrain. These textures are the basic elements required to define spawn constraints of level elements later on."
+  ## Explain generated terrain textures
+  - type: galleryStart 
+  - type: media
+    id: Elevation 
+  - type: media
+    id: NearWater 
+  - type: media
+    id: Inclination 
+  - type: galleryEnd 
+
+  - type: text
+    content: "An interesting type of spawnable element are town buildings, of which there are two types: houses and towers. Towers in particular can alter the terrain and smooth it out in a 3x3 unit area. As design constraints, buildings should be more likely to spawn near water bodies, and they shoud also avoid too steep terrains. I also want to create villages, so that buildings cluster together instead of being randomly scattered across the whole map. To do so, I first sample random pixels with these previous constraints (using the 'near water' texture and the inclination map), and then paint circles at those locations with a random radius (up to 7 units). Then, I use these circles as a mask to create a spawn map for town buildings."
+  - type: galleryStart 
+  - type: media
+    id: Vista3 
+  - type: media
+    id: Vista4 
+  - type: galleryEnd 
+  - type: text
+    content: "Two other helper textures I generated are the 'global map' and some A* weights. I use the global map to determine safe locations to spawn elements without overlapping. This texture is always applied as a mask on top of the constraints textures of every spawnable element. For every type of spawnable element, I first pick all the required locations following its spawn constraints, and then I update the global map marking all these locations as unavailable all at once for the next pass."
+  - type: galleryStart 
+  - type: media
+    id: GlobalMap 
+  - type: media
+    id: A_StarWeights 
+  - type: galleryEnd 
+  - type: text
+    content: "The A* weights texture is used to connect town buildings with paths withing a maximum reach (which avoid paths being created across the whole map between two different buildings). This texture is created using both the water input texture and the 'inclination map' to determine areas where creating a path is more costly."
+  - type: media
+    id: Pathing 
+
+  - type: text
+    content: "As a general rule for spawnable elements, I wanted to have configurable parameters to determine their distribution following the POIs guideline. With these, I can define if an element is unique (can only be spawned once). Specific unique locations include the player's spawn point, a dungeon, and the castle. For non-unique elements, I can define their frequency, which is configured through distribution settings such as mean, standard deviation, and min/max thresholds. Each spawnable object also defines its area of influence, which determines its radius to black out from the global map. Some example spawnable elements I included were forest tiles, chests, quest markers, crystal caves, campfires, NPCs, and enemies."
+  - type: text
+    content: "Enemies are quite interesting. The specific type of enemy to instantiate is ruled by two variables: intensity and difficulty. There are 3 levels of intensity (minion, enemy camp, and boss fight), each of which has variations with increasing difficulty. The spawn constraints for enemies are also governed by these two variables. Additionally, enemies are more likely to spawn in higher altitudes. To determine areas with higher difficulty and intensity, I created a system to generate Perlin Noise textures, one for each variable. With these two designer inputs, the system offers a highly controllability over the pacing of the game. One can define pockets of tension and spikes of difficulty organically, and how these combine with each other."
+  ## Unique POIs, frequency, spawn constraints (elevation, inclination, ) explain enemy requirements.
+  - type: media
+    id: EnemyRanking 
+
+  - type: text
+    content: "In the future, I want to come back to this project and integrate some specific guidelines on these maps. I particularly want to focus on the Pathing guideline, which would probably require implementing some kind of progression graph generator on top of the map generator. I also want to move some of these generation algorithms into the GPU to get faster results (right now generating this map takes about 15 seconds on an Ryzen 7 2700). A further improvement I would look into would be changing some of the generation rules to allow for infinite worlds generation."
 toolDescription:
     ## "Island generation & Map generation process (as explained in Thesis) --> usage of AET + ref"
   - type: text
