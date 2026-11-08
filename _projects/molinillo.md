@@ -2,7 +2,7 @@
 layout: projectDetail
 projId: molinillo
 title: "Amenaza en el Molinillo"
-subtitle: "<i>Numae Games</i> First Released Game"
+subtitle: "<i>Numae Games</i> First Game (To Be Released)"
 startDate: "2023-06-12"
 endDate: ""
 halted: false
